@@ -119,6 +119,17 @@
     letter-spacing: 0.04em; text-decoration: none;
   }
   #contribBtn:hover { border-color: var(--accent2); color: var(--accent2); }
+  #pVotes { display: flex; gap: 8px; margin-left: auto; }
+  #pVotes.hidden { display: none; }
+  .vbtn {
+    display: flex; align-items: center; gap: 6px;
+    background: none; border: 1px solid var(--hair); border-radius: 16px;
+    color: #b9b7c2; padding: 6px 13px; font-size: 12px; cursor: pointer;
+    font-family: inherit;
+  }
+  .vbtn:hover { border-color: var(--accent2); color: var(--accent2); }
+  .vbtn.voted { border-color: var(--accent); color: var(--accent); }
+  .vbtn:disabled { opacity: 0.55; cursor: default; }
   #closeBtn {
     position: absolute; top: 18px; right: 18px; background: none; border: none;
     color: var(--dim); font-size: 20px; cursor: pointer; line-height: 1;
@@ -166,6 +177,10 @@
   <footer>
     <a id="srcBtn" href="#" target="_blank" rel="noopener">Open source ↗</a>
     <a id="contribBtn" href="#" target="_blank" rel="noopener">Add context ✚</a>
+    <div id="pVotes" class="hidden">
+      <button class="vbtn" id="vUp" title="this matters">👍 <span>0</span></button>
+      <button class="vbtn" id="vDown" title="disputed / overrated">👎 <span>0</span></button>
+    </div>
   </footer>
 </aside>
 
@@ -178,6 +193,7 @@
 const DATA = __GRAPH_DATA__;
 const REPO = "__REPO__";
 const REPO_URL = "https://github.com/" + REPO;
+const VOTES_URL = "__VOTES_URL__";
 
 const COLORS = {
   concept:    "#ff4fa3",
@@ -371,8 +387,46 @@ function select(n, fromKey) {
   if (n.source) { src.href = n.source; src.classList.remove("disabled"); src.textContent = "Open source ↗"; }
   else { src.href = "#"; src.classList.add("disabled"); src.textContent = "No source link"; }
   document.getElementById("contribBtn").href = contribUrl(n);
+  renderVotes(n);
   panel.classList.add("open");
   tick();
+}
+
+// ---------- votes ----------
+let voteCounts = {};
+const votesOn = VOTES_URL.startsWith("http");
+if (votesOn) {
+  fetch(VOTES_URL + "/votes").then(r => r.json())
+    .then(c => { voteCounts = c; if (selected) renderVotes(selected); })
+    .catch(() => {});
+}
+function renderVotes(n) {
+  const wrap = document.getElementById("pVotes");
+  if (!votesOn) { wrap.classList.add("hidden"); return; }
+  wrap.classList.remove("hidden");
+  const c = voteCounts[n.id] || { up: 0, down: 0 };
+  const mine = localStorage.getItem("vote:" + n.id);
+  [["vUp", "up"], ["vDown", "down"]].forEach(([elId, dir]) => {
+    const b = document.getElementById(elId);
+    b.querySelector("span").textContent = c[dir];
+    b.classList.toggle("voted", mine === dir);
+    b.disabled = !!mine;
+    b.onclick = () => castVote(n, dir);
+  });
+}
+function castVote(n, dir) {
+  if (localStorage.getItem("vote:" + n.id)) return;
+  localStorage.setItem("vote:" + n.id, dir);
+  const c = voteCounts[n.id] || (voteCounts[n.id] = { up: 0, down: 0 });
+  c[dir] += 1;
+  renderVotes(n);
+  fetch(VOTES_URL + "/vote", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ id: n.id, dir }),
+  }).then(r => r.ok ? r.json() : null)
+    .then(real => { if (real) { voteCounts[n.id] = real; if (selected === n) renderVotes(n); } })
+    .catch(() => {});
 }
 function deselect() {
   selected = null; focusSet = null;

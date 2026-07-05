@@ -18,6 +18,10 @@ OUT = ROOT / "site" / "index.html"
 # GitHub repo (owner/name) — used for the Contribute buttons on the site.
 REPO = "SonOfLasG/avant-gay-archive"
 
+# Cloudflare Worker URL for anonymous votes (see votes-worker/worker.js).
+# Leave empty to hide the vote buttons entirely.
+VOTES_URL = ""
+
 # Folders/files that are repo plumbing, not archive notes.
 EXCLUDE_DIRS = {".obsidian", ".github", ".git", "scripts", "website", "site", "node_modules"}
 EXCLUDE_FILES = {"README.md", "CONTRIBUTING.md", "LICENSE.md"}
@@ -161,6 +165,7 @@ def main():
     html = TEMPLATE.read_text(encoding="utf-8")
     html = html.replace("__GRAPH_DATA__", json.dumps(data, ensure_ascii=False))
     html = html.replace("__REPO__", REPO)
+    html = html.replace("__VOTES_URL__", VOTES_URL)
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(html, encoding="utf-8")
     print(f"built site/index.html — {len(data['nodes'])} nodes, {len(data['links'])} links")
