@@ -8,6 +8,7 @@ the finished site to site/index.html.
 """
 import json
 import re
+import shutil
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -23,6 +24,8 @@ EXCLUDE_FILES = {"README.md", "CONTRIBUTING.md", "LICENSE.md"}
 
 WIKILINK = re.compile(r"\[\[([^\]|#]+)(?:#[^\]|]*)?(?:\|([^\]]+))?\]\]")
 EMBED = re.compile(r"!\[\[[^\]]+\]\]")
+IMG_EMBED = re.compile(r"!\[\[([^\]|]+?\.(?:png|jpe?g|gif|webp))(?:\|[^\]]*)?\]\]", re.I)
+IMG_EXTS = {".png", ".jpg", ".jpeg", ".gif", ".webp"}
 SOURCE = re.compile(r"^Source:\s*(\S+)", re.M | re.I)
 AUTHOR = re.compile(r"^Author:\s*(.+)$", re.M | re.I)
 DATE = re.compile(r"^Date:\s*(.+)$", re.M | re.I)
@@ -52,9 +55,42 @@ def collect_files():
     return files
 
 
+def image_index():
+    """Map lowercase filename -> path, for every image in the vault."""
+    idx = {}
+    for p in ROOT.rglob("*"):
+        rel = p.relative_to(ROOT)
+        if rel.parts[0] in EXCLUDE_DIRS:
+            continue
+        if p.is_file() and p.suffix.lower() in IMG_EXTS:
+            idx[p.name.lower()] = p
+    return idx
+
+
+def slugify(name: str) -> str:
+    return re.sub(r"[^A-Za-z0-9.\-]+", "-", name).strip("-").lower()
+
+
 def build_graph():
     notes = {}
     md_files = collect_files()
+    images = image_index()
+    assets = OUT.parent / "assets"
+    copied = {}  # source path -> site-relative url
+
+    def resolve_images(text):
+        urls = []
+        for m in IMG_EMBED.finditer(text):
+            src = images.get(m.group(1).strip().lower())
+            if not src:
+                continue
+            if src not in copied:
+                assets.mkdir(parents=True, exist_ok=True)
+                dest = assets / slugify(src.name)
+                shutil.copy2(src, dest)
+                copied[src] = "assets/" + dest.name
+            urls.append(copied[src])
+        return urls
 
     for p in md_files:
         name = p.stem
@@ -72,6 +108,7 @@ def build_graph():
         clean = re.sub(r"^(Source|Author|Date):.*$", "", body, flags=re.M | re.I)
         clean = re.sub(r"\n{3,}", "\n\n", clean).strip().strip("-").strip()
         notes[canon(name)] = {
+            "images": resolve_images(text),
             "id": name,
             "type": TYPE_BY_FOLDER.get(folder, "concept"),
             "folder": folder,
@@ -96,7 +133,7 @@ def build_graph():
                 notes[ct] = {
                     "id": target, "type": "phantom", "folder": "",
                     "summary": "", "source": None, "author": None,
-                    "date": None, "stub": True, "outlinks": [],
+                    "date": None, "stub": True, "outlinks": [], "images": [],
                 }
             links.append({"source": name, "target": notes[ct]["id"]})
             notes[canon(name)]["outlinks"].append(notes[ct]["id"])

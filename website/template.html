@@ -76,6 +76,21 @@
   #panel .ptype { font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; margin-bottom: 8px; }
   #panel h2 { font-size: 22px; font-weight: 700; line-height: 1.2; }
   #panel .meta { margin-top: 8px; font-size: 11.5px; color: var(--dim); }
+  #pImgs { display: flex; gap: 8px; flex-wrap: wrap; padding: 16px 28px 0; }
+  #pImgs:empty { padding: 0; }
+  #pImgs img {
+    max-width: 100%; border-radius: 8px; border: 1px solid var(--hair);
+    cursor: zoom-in; display: block;
+  }
+  #pImgs img.single { width: 100%; }
+  #pImgs img.multi { width: calc(50% - 4px); object-fit: cover; aspect-ratio: 1; }
+  #lightbox {
+    position: fixed; inset: 0; z-index: 50; background: rgba(5,5,8,0.92);
+    display: none; align-items: center; justify-content: center; cursor: zoom-out;
+    backdrop-filter: blur(8px);
+  }
+  #lightbox.open { display: flex; }
+  #lightbox img { max-width: 92vw; max-height: 92vh; border-radius: 6px; }
   #panel .body { padding: 20px 28px; overflow-y: auto; flex: 1;
     font-size: 13.5px; line-height: 1.65; color: #cfcdd6; white-space: pre-wrap;
     scrollbar-width: thin; scrollbar-color: #333 transparent; }
@@ -145,6 +160,7 @@
     <h2 id="pTitle"></h2>
     <div class="meta" id="pMeta"></div>
   </header>
+  <div id="pImgs"></div>
   <div class="body" id="pBody"></div>
   <div class="conn"><h3>Connected</h3><div id="pConn"></div></div>
   <footer>
@@ -153,6 +169,7 @@
   </footer>
 </aside>
 
+<div id="lightbox"><img alt=""></div>
 <div id="legend"></div>
 <div id="hint">drag to explore · scroll to zoom · click a node · <a id="hintRepo" href="#" target="_blank" rel="noopener">submit material ✚</a></div>
 <canvas id="c"></canvas>
@@ -313,6 +330,19 @@ function select(n, fromKey) {
   if (n.date) meta.push(n.date);
   meta.push(n.backlinks + " backlinks");
   document.getElementById("pMeta").textContent = meta.join("  ·  ");
+  const imgs = document.getElementById("pImgs");
+  imgs.innerHTML = "";
+  (n.images || []).forEach(u => {
+    const im = document.createElement("img");
+    im.src = u; im.loading = "lazy";
+    im.className = (n.images.length === 1) ? "single" : "multi";
+    im.onclick = () => {
+      const lb = document.getElementById("lightbox");
+      lb.querySelector("img").src = u;
+      lb.classList.add("open");
+    };
+    imgs.appendChild(im);
+  });
   const body = document.getElementById("pBody");
   if (n.summary && n.summary.trim().length > 5) {
     body.textContent = n.summary
@@ -351,6 +381,7 @@ function deselect() {
   tick();
 }
 document.getElementById("closeBtn").onclick = deselect;
+document.getElementById("lightbox").onclick = e => e.currentTarget.classList.remove("open");
 
 function centerOn(n) {
   const t = d3.zoomIdentity.translate(W / 2 - 90, H / 2).scale(Math.max(transform.k, 1.4))
