@@ -20,7 +20,7 @@ REPO = "SonOfLasG/avant-gay-archive"
 
 # Cloudflare Worker URL for anonymous votes (see votes-worker/worker.js).
 # Leave empty to hide the vote buttons entirely.
-VOTES_URL = ""
+VOTES_URL = "https://avant-gay-votes.sonoflasg.workers.dev"
 
 # Folders/files that are repo plumbing, not archive notes.
 EXCLUDE_DIRS = {".obsidian", ".github", ".git", "scripts", "website", "site", "node_modules"}
