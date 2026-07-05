@@ -1,0 +1,36 @@
+name: Add context / material
+description: Submit a link, correction, story, or additional context for an entry in the archive. No coding needed.
+title: "[entry name] your addition"
+labels: [contribution]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for adding to the archive. Keep the entry name in the title (e.g. `[Drifella] launch date correction`).
+        A maintainer will review and fold accepted material into the archive — you'll be credited as a contributor.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What are you submitting?
+      options:
+        - Additional context / story
+        - Link to a tweet, thread, or article
+        - Correction
+        - Images / media
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: material
+    attributes:
+      label: The material
+      description: Paste links, write the context, or describe the correction. First-hand accounts welcome — say when it happened if you can.
+    validations:
+      required: true
+  - type: input
+    id: credit
+    attributes:
+      label: How should you be credited?
+      placeholder: "@yourhandle (or 'anonymous')"
+    validations:
+      required: false

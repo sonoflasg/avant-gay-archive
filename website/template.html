@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AVANT GAY — a living archive</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<style>
+  :root {
+    --bg: #0b0b10;
+    --ink: #e8e6e3;
+    --dim: #6b6a75;
+    --accent: #ff4fa3;
+    --accent2: #7bdcff;
+    --panel: rgba(18, 17, 26, 0.82);
+    --hair: rgba(255,255,255,0.09);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; overflow: hidden; background: var(--bg); color: var(--ink);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  canvas { display: block; cursor: grab; }
+  canvas:active { cursor: grabbing; }
+
+  /* ---------- header ---------- */
+  #hdr {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 10;
+    display: flex; align-items: baseline; gap: 14px;
+    padding: 16px 22px; pointer-events: none;
+  }
+  #hdr h1 { font-size: 17px; letter-spacing: 0.28em; font-weight: 700; }
+  #hdr h1 em { color: var(--accent); font-style: normal; }
+  #hdr span { font-size: 11px; color: var(--dim); letter-spacing: 0.08em; }
+  #hdr a { color: var(--accent2); text-decoration: none; pointer-events: auto; }
+  #hdr a:hover { text-decoration: underline; }
+
+  /* ---------- search ---------- */
+  #search {
+    position: fixed; top: 14px; right: 22px; z-index: 12;
+    background: var(--panel); border: 1px solid var(--hair); border-radius: 20px;
+    color: var(--ink); padding: 8px 16px; font-size: 12.5px; width: 210px;
+    outline: none; backdrop-filter: blur(12px);
+  }
+  #search::placeholder { color: var(--dim); }
+  #search:focus { border-color: var(--accent); }
+
+  /* ---------- keyword sidebar ---------- */
+  #keys {
+    position: fixed; left: 0; top: 60px; bottom: 0; width: 216px; z-index: 10;
+    padding: 10px 0 24px 16px; overflow-y: auto;
+    scrollbar-width: thin; scrollbar-color: #333 transparent;
+    mask-image: linear-gradient(to bottom, transparent, black 14px, black calc(100% - 14px), transparent);
+  }
+  #keys h2 { font-size: 10px; letter-spacing: 0.24em; color: var(--dim);
+    text-transform: uppercase; margin: 0 0 10px 6px; }
+  .key {
+    display: flex; align-items: center; gap: 8px; width: 100%;
+    background: none; border: none; color: var(--ink); text-align: left;
+    padding: 5px 8px; font-size: 12.5px; cursor: pointer; border-radius: 6px;
+    font-family: inherit;
+  }
+  .key:hover { background: rgba(255,255,255,0.06); }
+  .key.active { background: rgba(255, 79, 163, 0.14); color: var(--accent); }
+  .key .n { color: var(--dim); font-size: 10.5px; min-width: 20px; }
+  .key .bar { height: 3px; background: var(--accent); opacity: 0.55; border-radius: 2px; }
+
+  /* ---------- detail panel ---------- */
+  #panel {
+    position: fixed; top: 0; right: 0; bottom: 0; width: 400px; max-width: 92vw; z-index: 20;
+    background: var(--panel); backdrop-filter: blur(18px);
+    border-left: 1px solid var(--hair);
+    transform: translateX(105%); transition: transform 0.32s cubic-bezier(.2,.8,.2,1);
+    display: flex; flex-direction: column;
+  }
+  #panel.open { transform: translateX(0); }
+  #panel header { padding: 26px 28px 14px; border-bottom: 1px solid var(--hair); }
+  #panel .ptype { font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; margin-bottom: 8px; }
+  #panel h2 { font-size: 22px; font-weight: 700; line-height: 1.2; }
+  #panel .meta { margin-top: 8px; font-size: 11.5px; color: var(--dim); }
+  #panel .body { padding: 20px 28px; overflow-y: auto; flex: 1;
+    font-size: 13.5px; line-height: 1.65; color: #cfcdd6; white-space: pre-wrap;
+    scrollbar-width: thin; scrollbar-color: #333 transparent; }
+  #panel .body a { color: var(--accent2); }
+  #panel .stubmsg { color: var(--dim); font-style: italic; }
+  #panel .conn { padding: 0 28px 8px; }
+  #panel .conn h3 { font-size: 10px; letter-spacing: 0.22em; color: var(--dim);
+    text-transform: uppercase; margin-bottom: 8px; }
+  .tag {
+    display: inline-block; margin: 0 6px 6px 0; padding: 3px 10px;
+    border: 1px solid var(--hair); border-radius: 12px; font-size: 11.5px;
+    color: #b9b7c2; cursor: pointer; background: none; font-family: inherit;
+  }
+  .tag:hover { border-color: var(--accent); color: var(--accent); }
+  #panel footer { padding: 16px 28px 24px; border-top: 1px solid var(--hair);
+    display: flex; gap: 10px; align-items: center; }
+  #srcBtn {
+    display: inline-block; padding: 10px 20px; border-radius: 22px;
+    background: var(--accent); color: #14040c; font-size: 12.5px; font-weight: 700;
+    letter-spacing: 0.06em; text-decoration: none;
+  }
+  #srcBtn.disabled { background: #2a2933; color: var(--dim); pointer-events: none; }
+  #contribBtn {
+    display: inline-block; padding: 9px 18px; border-radius: 22px;
+    border: 1px solid var(--hair); color: #b9b7c2; font-size: 12.5px;
+    letter-spacing: 0.04em; text-decoration: none;
+  }
+  #contribBtn:hover { border-color: var(--accent2); color: var(--accent2); }
+  #closeBtn {
+    position: absolute; top: 18px; right: 18px; background: none; border: none;
+    color: var(--dim); font-size: 20px; cursor: pointer; line-height: 1;
+  }
+  #closeBtn:hover { color: var(--ink); }
+
+  /* ---------- legend ---------- */
+  #legend {
+    position: fixed; bottom: 16px; left: 16px; z-index: 10;
+    display: flex; gap: 14px; flex-wrap: wrap; font-size: 10.5px; color: var(--dim);
+  }
+  #legend span { display: flex; align-items: center; gap: 5px; }
+  #legend i { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+
+  #hint { position: fixed; bottom: 16px; right: 22px; z-index: 10;
+    font-size: 10.5px; color: var(--dim); letter-spacing: 0.05em; }
+  #hint a { color: var(--accent2); text-decoration: none; }
+  #hint a:hover { text-decoration: underline; }
+
+  @media (max-width: 720px) {
+    #keys { display: none; }
+    #search { width: 150px; }
+  }
+</style>
+</head>
+<body>
+
+<div id="hdr">
+  <h1>AVANT <em>GAY</em></h1>
+  <span>a living archive of the scene on Solana · <a id="hdrRepo" href="#" target="_blank" rel="noopener">contribute ↗</a></span>
+</div>
+<input id="search" type="text" placeholder="search the archive…" autocomplete="off">
+<nav id="keys"><h2>Keywords</h2><div id="keyList"></div></nav>
+
+<aside id="panel">
+  <button id="closeBtn" title="close">×</button>
+  <header>
+    <div class="ptype" id="pType"></div>
+    <h2 id="pTitle"></h2>
+    <div class="meta" id="pMeta"></div>
+  </header>
+  <div class="body" id="pBody"></div>
+  <div class="conn"><h3>Connected</h3><div id="pConn"></div></div>
+  <footer>
+    <a id="srcBtn" href="#" target="_blank" rel="noopener">Open source ↗</a>
+    <a id="contribBtn" href="#" target="_blank" rel="noopener">Add context ✚</a>
+  </footer>
+</aside>
+
+<div id="legend"></div>
+<div id="hint">drag to explore · scroll to zoom · click a node · <a id="hintRepo" href="#" target="_blank" rel="noopener">submit material ✚</a></div>
+<canvas id="c"></canvas>
+
+<script>
+const DATA = __GRAPH_DATA__;
+const REPO = "__REPO__";
+const REPO_URL = "https://github.com/" + REPO;
+
+const COLORS = {
+  concept:    "#ff4fa3",
+  artist:     "#7bdcff",
+  collection: "#ffd166",
+  article:    "#b39dff",
+  platform:   "#6ee7a0",
+  reference:  "#f4845f",
+  phantom:    "#57565f",
+};
+const TYPE_LABEL = {
+  concept: "concept / lore", artist: "artist", collection: "collection",
+  article: "article / thread", platform: "platform", reference: "imagery reference",
+  phantom: "mentioned — no note yet",
+};
+
+function contribUrl(node) {
+  const base = REPO_URL + "/issues/new?template=contribute.yml";
+  return node ? base + "&title=" + encodeURIComponent("[" + node.id + "] ") : base;
+}
+document.getElementById("hdrRepo").href = REPO_URL;
+document.getElementById("hintRepo").href = contribUrl(null);
+
+const canvas = document.getElementById("c");
+const ctx = canvas.getContext("2d");
+let W, H, dpr = window.devicePixelRatio || 1;
+function resize() {
+  W = window.innerWidth; H = window.innerHeight;
+  canvas.width = W * dpr; canvas.height = H * dpr;
+  canvas.style.width = W + "px"; canvas.style.height = H + "px";
+}
+resize(); window.addEventListener("resize", () => { resize(); tick(); });
+
+const nodes = DATA.nodes;
+const links = DATA.links.map(l => ({...l}));
+const byId = new Map(nodes.map(n => [n.id, n]));
+nodes.forEach(n => { n.r = 3 + Math.sqrt(n.degree || 0) * 2.1; });
+
+// neighbor map
+const nbrs = new Map(nodes.map(n => [n.id, new Set()]));
+links.forEach(l => { nbrs.get(l.source)?.add(l.target); nbrs.get(l.target)?.add(l.source); });
+
+let selected = null, hovered = null, focusSet = null;
+
+const sim = d3.forceSimulation(nodes)
+  .force("link", d3.forceLink(links).id(d => d.id).distance(d => 46).strength(0.25))
+  .force("charge", d3.forceManyBody().strength(d => -60 - d.degree * 4))
+  .force("center", d3.forceCenter(0, 0))
+  .force("collide", d3.forceCollide(d => d.r + 3))
+  .on("tick", tick);
+
+let transform = d3.zoomIdentity.translate(W / 2 + 40, H / 2).scale(0.85);
+const zoom = d3.zoom().scaleExtent([0.12, 6]).on("zoom", e => { transform = e.transform; tick(); });
+d3.select(canvas).call(zoom).call(zoom.transform, transform);
+
+function tick() {
+  ctx.save();
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.scale(dpr, dpr);
+  ctx.translate(transform.x, transform.y);
+  ctx.scale(transform.k, transform.k);
+
+  const active = selected || hovered;
+  const hi = focusSet || (active ? new Set([active.id, ...nbrs.get(active.id)]) : null);
+
+  // links
+  for (const l of links) {
+    const dimmed = hi && !(hi.has(l.source.id) && hi.has(l.target.id));
+    ctx.strokeStyle = dimmed ? "rgba(120,120,140,0.05)" : "rgba(170,168,190,0.22)";
+    ctx.lineWidth = dimmed ? 0.5 : 0.8;
+    ctx.beginPath();
+    ctx.moveTo(l.source.x, l.source.y);
+    ctx.lineTo(l.target.x, l.target.y);
+    ctx.stroke();
+  }
+  // nodes
+  for (const n of nodes) {
+    const dimmed = hi && !hi.has(n.id);
+    const col = COLORS[n.type] || COLORS.phantom;
+    ctx.globalAlpha = dimmed ? 0.13 : 1;
+    ctx.beginPath();
+    ctx.arc(n.x, n.y, n.r, 0, 2 * Math.PI);
+    ctx.fillStyle = col;
+    ctx.fill();
+    if (n === selected) {
+      ctx.strokeStyle = "#fff"; ctx.lineWidth = 1.6 / transform.k;
+      ctx.beginPath(); ctx.arc(n.x, n.y, n.r + 3 / transform.k, 0, 2 * Math.PI); ctx.stroke();
+    }
+    ctx.globalAlpha = 1;
+  }
+  // labels
+  const showAll = transform.k > 1.5;
+  ctx.textAlign = "center"; ctx.textBaseline = "top";
+  for (const n of nodes) {
+    const dimmed = hi && !hi.has(n.id);
+    if (dimmed) continue;
+    const big = n.degree >= 12;
+    if (!showAll && !big && n !== hovered && n !== selected && !(hi && hi.has(n.id))) continue;
+    const fs = Math.max(9, Math.min(15, 8 + n.degree * 0.25)) / Math.sqrt(transform.k);
+    ctx.font = (big ? "700 " : "") + fs + "px Helvetica, Arial, sans-serif";
+    ctx.fillStyle = big ? "rgba(240,238,245,0.95)" : "rgba(200,198,212,0.8)";
+    ctx.fillText(n.id, n.x, n.y + n.r + 3);
+  }
+  ctx.restore();
+}
+
+function pick(mx, my) {
+  const [x, y] = transform.invert([mx, my]);
+  let best = null, bd = Infinity;
+  for (const n of nodes) {
+    const d = Math.hypot(n.x - x, n.y - y);
+    if (d < Math.max(n.r + 4, 8) && d < bd) { best = n; bd = d; }
+  }
+  return best;
+}
+
+// drag nodes vs pan: d3.zoom handles pan; use drag filter
+d3.select(canvas).call(
+  d3.drag()
+    .container(canvas)
+    .subject(e => pick(e.x, e.y))
+    .on("start", e => { if (!e.active) sim.alphaTarget(0.25).restart(); e.subject.fx = e.subject.x; e.subject.fy = e.subject.y; })
+    .on("drag", e => {
+      const [x, y] = transform.invert([e.x, e.y]);
+      e.subject.fx = x; e.subject.fy = y;
+    })
+    .on("end", e => { if (!e.active) sim.alphaTarget(0); e.subject.fx = null; e.subject.fy = null; })
+);
+
+canvas.addEventListener("mousemove", e => {
+  const n = pick(e.clientX, e.clientY);
+  if (n !== hovered) { hovered = n; canvas.style.cursor = n ? "pointer" : "grab"; tick(); }
+});
+canvas.addEventListener("click", e => {
+  const n = pick(e.clientX, e.clientY);
+  if (n) select(n); else deselect();
+});
+
+// ---------- panel ----------
+const panel = document.getElementById("panel");
+function select(n, fromKey) {
+  selected = n; focusSet = null;
+  if (!fromKey) document.querySelectorAll(".key.active").forEach(k => k.classList.remove("active"));
+  const col = COLORS[n.type] || COLORS.phantom;
+  document.getElementById("pType").textContent = TYPE_LABEL[n.type] || n.type;
+  document.getElementById("pType").style.color = col;
+  document.getElementById("pTitle").textContent = n.id;
+  const meta = [];
+  if (n.author) meta.push("by " + n.author.replace(/\[\[|\]\]/g, ""));
+  if (n.date) meta.push(n.date);
+  meta.push(n.backlinks + " backlinks");
+  document.getElementById("pMeta").textContent = meta.join("  ·  ");
+  const body = document.getElementById("pBody");
+  if (n.summary && n.summary.trim().length > 5) {
+    body.textContent = n.summary
+      .replace(/\[\[([^\]|]+)(\|[^\]]+)?\]\]/g, "$1")
+      .replace(/\*\*([^*]+)\*\*/g, "$1")
+      .replace(/\*([^*\n]+)\*/g, "$1")
+      .replace(/^#{1,6}\s*/gm, "")
+      .replace(/^\s*-\s+/gm, "· ");
+  } else {
+    body.innerHTML = '<span class="stubmsg">' + (n.type === "phantom"
+      ? "This entity is referenced across the archive but doesn’t have its own entry yet. Know the story? Use “Add context” below."
+      : "Entry exists but hasn’t been written yet. Know the story? Use “Add context” below.") + "</span>";
+  }
+  const conn = document.getElementById("pConn");
+  conn.innerHTML = "";
+  [...(nbrs.get(n.id) || [])]
+    .map(id => byId.get(id)).filter(Boolean)
+    .sort((a, b) => b.degree - a.degree).slice(0, 14)
+    .forEach(m => {
+      const b = document.createElement("button");
+      b.className = "tag"; b.textContent = m.id;
+      b.onclick = () => { select(m); centerOn(m); };
+      conn.appendChild(b);
+    });
+  const src = document.getElementById("srcBtn");
+  if (n.source) { src.href = n.source; src.classList.remove("disabled"); src.textContent = "Open source ↗"; }
+  else { src.href = "#"; src.classList.add("disabled"); src.textContent = "No source link"; }
+  document.getElementById("contribBtn").href = contribUrl(n);
+  panel.classList.add("open");
+  tick();
+}
+function deselect() {
+  selected = null; focusSet = null;
+  panel.classList.remove("open");
+  document.querySelectorAll(".key.active").forEach(k => k.classList.remove("active"));
+  tick();
+}
+document.getElementById("closeBtn").onclick = deselect;
+
+function centerOn(n) {
+  const t = d3.zoomIdentity.translate(W / 2 - 90, H / 2).scale(Math.max(transform.k, 1.4))
+    .translate(-n.x, -n.y);
+  d3.select(canvas).transition().duration(600).call(zoom.transform, t);
+}
+
+// ---------- keyword sidebar ----------
+const keyList = document.getElementById("keyList");
+const ranked = [...nodes].sort((a, b) => b.degree - a.degree).slice(0, 30);
+const maxDeg = ranked[0]?.degree || 1;
+ranked.forEach(n => {
+  const b = document.createElement("button");
+  b.className = "key";
+  b.innerHTML = '<span class="n">' + n.degree + '</span><span>' + n.id +
+    '</span><span class="bar" style="width:' + Math.max(4, (n.degree / maxDeg) * 46) + 'px"></span>';
+  b.onclick = () => {
+    document.querySelectorAll(".key.active").forEach(k => k.classList.remove("active"));
+    b.classList.add("active");
+    select(n, true); centerOn(n);
+  };
+  keyList.appendChild(b);
+});
+
+// ---------- search ----------
+document.getElementById("search").addEventListener("input", e => {
+  const q = e.target.value.trim().toLowerCase();
+  if (!q) { focusSet = null; tick(); return; }
+  focusSet = new Set(nodes.filter(n =>
+    n.id.toLowerCase().includes(q) || (n.summary || "").toLowerCase().includes(q)
+  ).map(n => n.id));
+  tick();
+});
+document.getElementById("search").addEventListener("keydown", e => {
+  if (e.key === "Enter" && focusSet && focusSet.size) {
+    const n = byId.get([...focusSet].sort((a, b) => byId.get(b).degree - byId.get(a).degree)[0]);
+    if (n) { select(n); centerOn(n); }
+  }
+});
+
+// ---------- legend ----------
+const legend = document.getElementById("legend");
+Object.entries(TYPE_LABEL).forEach(([t, label]) => {
+  const s = document.createElement("span");
+  s.innerHTML = '<i style="background:' + COLORS[t] + '"></i>' + label;
+  legend.appendChild(s);
+});
+</script>
+</body>
+</html>

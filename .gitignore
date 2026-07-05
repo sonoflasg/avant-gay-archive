@@ -1,0 +1,10 @@
+# built site (CI builds it)
+site/
+
+# OS noise
+.DS_Store
+
+# Obsidian workspace state (keep settings shareable, drop per-machine state)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache

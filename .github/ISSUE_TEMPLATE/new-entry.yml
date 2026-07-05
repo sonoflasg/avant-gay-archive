@@ -1,0 +1,47 @@
+name: Propose a new entry
+description: Suggest an artist, collection, event, or concept that's missing from the archive.
+title: "New entry: "
+labels: [new-entry]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Name of the entry
+      placeholder: e.g. an artist, collection, meme, event, or concept
+    validations:
+      required: true
+  - type: dropdown
+    id: type
+    attributes:
+      label: Type
+      options:
+        - Artist
+        - Collection
+        - Concept / lore
+        - Article / thread
+        - Platform
+        - Event
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: story
+    attributes:
+      label: What's the story?
+      description: What is it, why does it matter to the scene, and how does it connect to existing entries?
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: Links to tweets, threads, articles, mints — anything that documents it.
+    validations:
+      required: false
+  - type: input
+    id: credit
+    attributes:
+      label: How should you be credited?
+      placeholder: "@yourhandle (or 'anonymous')"
+    validations:
+      required: false
