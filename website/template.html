@@ -249,7 +249,16 @@ const sim = d3.forceSimulation(nodes)
   .on("tick", tick);
 
 let transform = d3.zoomIdentity.translate(W / 2 + 40, H / 2).scale(0.85);
-const zoom = d3.zoom().scaleExtent([0.12, 6]).on("zoom", e => { transform = e.transform; tick(); });
+const zoom = d3.zoom().scaleExtent([0.12, 6])
+  // Let a press on a node go to node dragging; empty space pans, wheel always zooms.
+  .filter(e => {
+    if (e.type === "wheel") return true;
+    if (e.button) return false;
+    const pt = e.touches ? e.touches[0] : e;
+    const r = canvas.getBoundingClientRect();
+    return !pick(pt.clientX - r.left, pt.clientY - r.top);
+  })
+  .on("zoom", e => { transform = e.transform; tick(); });
 d3.select(canvas).call(zoom).call(zoom.transform, transform);
 
 function tick() {
@@ -320,7 +329,8 @@ d3.select(canvas).call(
     .subject(e => pick(e.x, e.y))
     .on("start", e => { if (!e.active) sim.alphaTarget(0.25).restart(); e.subject.fx = e.subject.x; e.subject.fy = e.subject.y; })
     .on("drag", e => {
-      const [x, y] = transform.invert([e.x, e.y]);
+      // e.x/e.y are offset from the subject's simulation coords; use the real pointer instead.
+      const [x, y] = transform.invert(d3.pointer(e.sourceEvent.touches ? e.sourceEvent.touches[0] : e.sourceEvent, canvas));
       e.subject.fx = x; e.subject.fy = y;
     })
     .on("end", e => { if (!e.active) sim.alphaTarget(0); e.subject.fx = null; e.subject.fy = null; })
