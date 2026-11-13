@@ -2,8 +2,11 @@ Source: https://grok.com/share/bGVnYWN5LWNvcHk_65e5f8ed-9b36-4220-baae-f97c66028
 
 Author: Grok
 Date: 02/05/2026
+Status: needs-sources
 
 ---
+
+This entry is a Grok draft and still needs primary sources.
 
 **Evil Biscuit ([[Drifella]] series — especially [[Drifella 2]] & III) is basically the defining artist for the [[trait-maxxing]] aesthetic in the [[Avant Gay]] / Gay NFT scene.** [[Drifella 2 ]]is widely called one of the most influential collections outright, and the whole series takes PFP tooling ([[HashLips]] compiler) and pushes it into chaotic, reference-maxxed, painterly collage territory.
 
@@ -26,3 +29,15 @@ Look for:
 If you're going through the collection ([[Tensor]]), prioritize what hits you viscerally or makes you zoom in obsessively. In this crew, owning a fire Drifella signals you get the art-first, scene-first ethos — way more than floor-price chasing. It's the spiritual sibling to Tojiba's Horses: conceptual, community-core, and all about pushing generative limits in fun/weird ways.
 
 Drifella 2 remains the consensus classic, but III takes it further into room-scale complexity. Pick what feels like *your* maxxed-out digital collage. The Avant Gay crowd will clock the good ones instantly. 🐉
+
+### Interview in the Automat paper
+
+[[Evil Biscuit]] was interviewed by Giannis Sourdis for the Automat paper (interview, 6 Aug 2026).
+
+The paper’s public References section records that this interview was used for: The development of [[Drifella]] and [[Drifella 2]]; [[MiFella]]’s influence and the [[Hashlips]] production line; low-cost distribution and token-denominated minting; exchange with [[Parker Ito]]; [[Constant Fella]] and the Drifella eggs; [[Card NFT]] and [[Card NFT 2]]; later collaborations including [[Heavy Liquid Graphic]] and [[111k]]; and his own ambivalence toward the [[Avant Gay]] label.
+
+This note records only what is published there. It is not a transcript, and it does not add private correspondence.
+
+Compiled by SonOfLasG from the paper’s References.
+
+Sources: [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/#references)

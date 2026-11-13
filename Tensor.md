@@ -2,8 +2,11 @@ Source: https://grok.com/share/bGVnYWN5LWNvcHk_e92792e0-60a0-4883-b70e-61f2aee32
 
 Author: Grok
 Date: 03/05/2026
+Status: needs-sources
 
 ---
+
+This entry is a Grok draft and still needs primary sources.
 
 **Tensor** (tensor.trade) is the leading NFT marketplace on [[Solana]] and the primary trading hub for the vast majority of [[Avant Gay]] / Gay NFT collections. It’s where most of the scene’s liquidity, volume, and daily activity happens.
 

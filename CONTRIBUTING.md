@@ -22,9 +22,12 @@ The repo is an Obsidian vault: every entry is a markdown file, folders indicate 
    Source: <link to the tweet/thread/article/mint>
    Author: [[Who made or said it]]
    Date: DD/MM/YYYY
+   Status: needs-sources   # optional
 
    The account itself, linking related entries with [[wikilinks]].
    ```
+
+`Status: needs-sources` flags a draft that is already in the vault but still lacks primary sources (for example early Grok-generated notes). Do not delete those notes; mark them so they can be sourced later. Compiled entries should name their sources in the body (use a normal markdown URL in a Sources section for bibliographic citations; only `[[wikilink]]` a source when the note actually discusses that work or person). Credit the compiler in the Author line as plain text (usually `SonOfLasG`) — the Author/Source/Date/Status fields are metadata, not graph edges.
 
 3. Open a pull request. The site rebuilds automatically when it's merged.
 

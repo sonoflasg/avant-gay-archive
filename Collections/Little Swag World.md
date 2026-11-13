@@ -2,8 +2,11 @@ Source: https://grok.com/share/bGVnYWN5LWNvcHk_c176c85a-c505-4c2b-9fcb-1bee6d325
 
 Author: Grok
 Date: 03/05/2026
+Status: needs-sources
 
 ---
+
+This entry is a Grok draft and still needs primary sources.
 
 **Little Swag World** by [[Supermetal Bosch]] (supermetalx) is one of the standout, fan-favorite collections in the [[Avant Gay ]]scene. Launched on [[Solana]] ([[Tensor]]/[[Magic Eden]]), it’s known for its **swaggy, AI-generated, 3D-rendered characters** with a playful, maximalist, internet-kitsch energy.
 
@@ -19,4 +22,6 @@ Date: 03/05/2026
 
 It’s a perfect example of the scene’s diversity: Bosch uses modern tools to create something joyful and character-driven that still feels raw and scene-native.
 
-[[Blood Splatter]] [[Dratini]] [[Pokémon]]  [[Jester]] [[Shadow Fella]] [[Joker]] [[Spiky DJ Ref]]  [[Call of Duty Ref]] [[Bullets ref]]  [[Niqab ref]] [[Milady]] [[Gun ref]] [[NY ref]] [[Alien Frens ref]]  [[Noise Music ref]] [[Anime ref]] [[Mujahideen ref]] [[Al-Qaeda ref]]  [[Resistance ref]] [[Death ref]] [[Literature ref]] [[Despair ref]]  [[Propaganda ref]] [[Bored Ape ref]] [[CryptoPunks ref]] [[Cartoons ref]] [[Film ref]] [[High Fashion ref]] [[Crucifix ref]] [[Memes ref]]  [[Branding ref]] [[Painterliness ref]] 
+[[Blood Splatter]] [[Dratini]] [[Pokémon]]  [[Jester]] [[Shadow Fella]] [[Joker]] [[Spiky DJ Ref]]  [[Call of Duty Ref]] [[Bullets ref]]  [[Niqab ref]] [[Milady]] [[Gun ref]] [[NY ref]] [[Alien Frens ref]]  [[Noise Music ref]] [[Anime ref]] [[Mujahideen ref]] [[Al-Qaeda ref]]  [[Resistance ref]] [[Death ref]] [[Literature ref]] [[Despair ref]]  [[Propaganda ref]] [[Bored Ape ref]] [[CryptoPunks ref]] [[Cartoons ref]] [[Film ref]] [[High Fashion ref]] [[Crucifix ref]] [[Memes ref]]  [[Branding ref]] [[Painterliness ref]]
+
+Sources: [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/#apx-b)

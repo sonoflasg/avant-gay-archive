@@ -2,8 +2,11 @@ Source: https://grok.com/share/bGVnYWN5LWNvcHk_aa286c8b-35d9-4763-8d57-ec2b70120
 
 Author: Grok
 Date: 03/05/2026
+Status: needs-sources
 
 ---
+
+This entry is a Grok draft and still needs primary sources.
 
 **Jared Madere** is a contemporary American artist, curator, and key architect of the [[Avant Gay]] / Solana NFT scene. Born in 1986, he lives and works between New York and other locations, with a practice spanning large-scale installations, sculpture, opera, digital art, and community-building.
 
@@ -36,3 +39,15 @@ Madere trained his own AI models for the project, aligning with his interest in 
 Madere’s overall practice bridges traditional contemporary art (institutional shows) with the raw, community-driven energy of the Solana Avant Gay movement. *Tents* is a great example of him applying AI and NFT formats to his psychedelic, boundary-pushing sensibility.
 
 Tents: https://launchmynft.io/sol/4890
+
+### Interview in the Automat paper
+
+[[Jared Madere]] was interviewed by Giannis Sourdis for the Automat paper (interview, 3 Aug 2026).
+
+The paper’s public References section records that this interview was used for: [[Yeche Lange]] and [[vvv.so]]; the overlap between contemporary-art and crypto-native contexts; [[Drifella]] and [[Drifella 2]]; moving this work into physical exhibitions; and where he locates [[Avant Gay]] historically.
+
+This note records only what is published there. It is not a transcript, and it does not add private correspondence.
+
+Compiled by SonOfLasG from the paper’s References.
+
+Sources: [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/#references)

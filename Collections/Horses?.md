@@ -2,8 +2,11 @@ Source: https://grok.com/share/bGVnYWN5LWNvcHk_c138fbf6-c436-4b27-b0fe-bbab3e077
 
 Author: Grok
 Date: 02/05/2026
+Status: needs-sources
 
 ---
+
+This entry is a Grok draft and still needs primary sources.
 
 **Horses?** (sometimes stylized as *Horses*) is a notable early collection in Solana’s [[Avant Gay]] (Gay NFT / Avant NFT) scene, created by [[Tojiba Brand Manager]](part of the [[Tojiba]] CPU Corp collective). It is frequently praised as one of the standout projects that helped define the movement’s playful, absurd, and internet-kitsch aesthetic.
 
@@ -23,4 +26,6 @@ Later derivatives/homages (e.g., [[Horses?2]] by Parker Ito) further embed it in
 
 Cross-link with [[Tojiba Brand Manager]], [[Parker Ito]], [[Drifella]], [[Trait Maxxing]], and [[Avant Gay]]. This one captures the fun, absurd side of the movement’s early inspirations.
 
-[[Blood Splatter]] [[Dratini]] [[Pokémon]] [[Milady]] [[Gun ref]] [[NY ref]] [[Resistance ref]] [[Death ref]] [[Literature ref]]  [[Propaganda ref]]  [[Cartoons ref]] [[Film ref]] [[High Fashion ref]] [[Crucifix ref]] [[Memes ref]]  [[Branding ref]] [[Painterliness ref]] [[Cubist collage ref]] [[Surrealist automatism ref]] 
+[[Blood Splatter]] [[Dratini]] [[Pokémon]] [[Milady]] [[Gun ref]] [[NY ref]] [[Resistance ref]] [[Death ref]] [[Literature ref]]  [[Propaganda ref]]  [[Cartoons ref]] [[Film ref]] [[High Fashion ref]] [[Crucifix ref]] [[Memes ref]]  [[Branding ref]] [[Painterliness ref]] [[Cubist collage ref]] [[Surrealist automatism ref]]
+
+Sources: [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/#proj-horses)

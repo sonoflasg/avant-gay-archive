@@ -2,8 +2,11 @@ Source: https://grok.com/share/bGVnYWN5LWNvcHk_97c693ff-9780-4860-a684-55a5c0ee4
 
 Author: Grok
 Date: 03/05/2026
+Status: needs-sources
 
 ---
+
+This entry is a Grok draft and still needs primary sources.
 
 **Heavy Liquid Graphic** (2025) is the **first collaborative NFT project** between [[Parker Ito]] (CreamyDreamy)** and [[Evil Biscuit]] (bis__cut). It’s a Halloween-themed collection (999 editions) that fuses their distinct styles into something darkly humorous, nostalgic, and supernatural.
 
@@ -24,4 +27,6 @@ In the broader Avant Gay pantheon, it’s a strong example of how the scene evol
 
 For deeper insight, check the excellent **Le Random interview** “Parker Ito and Evil Biscuit on Possessed Spirits” — they discuss their process, influences, and the darkly humorous nostalgia/supernatural vibe in detail.
 
-[[Blood Splatter]] [[Dratini]] [[Pokémon]] [[Twin Towers]] [[Jester]] [[Shadow Fella]] [[Joker]] [[Spiky DJ Ref]] [[Earl Ref]] [[Call of Duty Ref]] [[Bullets ref]] [[Postdemon ref]] [[Niqab ref]] [[Milady]] [[Gun ref]] [[NY ref]] [[Alien Frens ref]] [[Merzbow ref]] [[Noise Music ref]] [[Anime ref]] [[Mujahideen ref]] [[Al-Qaeda ref]] [[Viennese Actionist ref ]] [[Resistance ref]] [[Death ref]] [[Literature ref]] [[Kami-Yaburi ref]] [[Japanese Gutai group ref]] [[Despair ref]] [[Vito Acconci ref]] [[Rambo III ref]] [[Propaganda ref]] [[Bored Ape ref]] [[CryptoPunks ref]] [[Cartoons ref]] [[Film ref]] [[High Fashion ref]] [[Crucifix ref]] [[Memes ref]] [[Pulsedemon ref]] [[Branding ref]] [[Painterliness ref]] [[Cubist collage ref]] [[Surrealist automatism ref]] 
+[[Blood Splatter]] [[Dratini]] [[Pokémon]] [[Twin Towers]] [[Jester]] [[Shadow Fella]] [[Joker]] [[Spiky DJ Ref]] [[Earl Ref]] [[Call of Duty Ref]] [[Bullets ref]] [[Postdemon ref]] [[Niqab ref]] [[Milady]] [[Gun ref]] [[NY ref]] [[Alien Frens ref]] [[Merzbow ref]] [[Noise Music ref]] [[Anime ref]] [[Mujahideen ref]] [[Al-Qaeda ref]] [[Viennese Actionist ref ]] [[Resistance ref]] [[Death ref]] [[Literature ref]] [[Kami-Yaburi ref]] [[Japanese Gutai group ref]] [[Despair ref]] [[Vito Acconci ref]] [[Rambo III ref]] [[Propaganda ref]] [[Bored Ape ref]] [[CryptoPunks ref]] [[Cartoons ref]] [[Film ref]] [[High Fashion ref]] [[Crucifix ref]] [[Memes ref]] [[Pulsedemon ref]] [[Branding ref]] [[Painterliness ref]] [[Cubist collage ref]] [[Surrealist automatism ref]]
+
+Sources: [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/#proj-heavy-liquid-graphic)

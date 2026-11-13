@@ -1,6 +1,6 @@
 Source: https://x.com/Sonoflasg/status/1967509090550394906
 
-Author: [[SonOfLasG]]
+Author: SonOfLasG
 Date: 15/09/2025
 
 ---

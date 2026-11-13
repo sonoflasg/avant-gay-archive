@@ -8,3 +8,6 @@ site/
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
 .obsidian/cache
+
+# local preview screenshots (not part of the vault)
+_preview/

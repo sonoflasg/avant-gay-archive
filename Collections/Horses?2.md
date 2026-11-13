@@ -2,8 +2,11 @@ Source: https://grok.com/share/bGVnYWN5LWNvcHk_8064c873-7a5f-4891-877c-c4bc40b75
 
 Author: Grok
 Date: 03/05/2026
+Status: needs-sources
 
 ---
+
+This entry is a Grok draft and still needs primary sources.
 
 Horses?2 by [[Parker Ito]] (CreamyDreamy) is a lively, rapid-fire **homage/derivative** of [[Tojiba]] [[Tojiba Brand Manager]]’s original *Horses?* (Regular Looking Horses). Released on Solana (via [[vvv.so]], it’s a smaller, high-energy drop (around 777 editions) that quickly sold out and earned strong secondary demand in the Avant Gay scene.
 
@@ -27,4 +30,6 @@ If you’re browsing the collection, look for horses where the traits create mem
 
 **Horses?2** perfectly embodies the scene’s playful, self-referential spirit: derivative in the best way, turning admiration into new art. It’s a fun, high-clout entry for anyone deep in Avant Gay.
 
-[[Blood Splatter]] [[Pokémon]] [[Milady]] [[Gun ref]] [[NY ref]] [[Resistance ref]] [[Death ref]] [[Literature ref]]  [[Propaganda ref]]  [[Cartoons ref]] [[Film ref]] [[High Fashion ref]] [[Crucifix ref]] [[Memes ref]]  [[Branding ref]] [[Painterliness ref]] [[Cubist collage ref]] [[Surrealist automatism ref]] 
+[[Blood Splatter]] [[Pokémon]] [[Milady]] [[Gun ref]] [[NY ref]] [[Resistance ref]] [[Death ref]] [[Literature ref]]  [[Propaganda ref]]  [[Cartoons ref]] [[Film ref]] [[High Fashion ref]] [[Crucifix ref]] [[Memes ref]]  [[Branding ref]] [[Painterliness ref]] [[Cubist collage ref]] [[Surrealist automatism ref]]
+
+Sources: [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/#proj-horses-2)

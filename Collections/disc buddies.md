@@ -2,8 +2,11 @@ Source: https://grok.com/share/bGVnYWN5LWNvcHk_2dc22f6e-06c3-4f78-9758-564acd86a
 
 Author: Grok
 Date: 03/05/2026
+Status: needs-sources
 
 ---
+
+This entry is a Grok draft and still needs primary sources.
 
 **Disc Buddies** (by [[Tojiba CPU Corp]] / Brand Manager) is one of the **core early collections** from the [[Tojiba]] universe on [[Solana]]. Launched in 2022 with **5,000 unique procedurally generated images**, it’s described as “Software for Toji, Friend for you.”
 

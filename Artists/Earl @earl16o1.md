@@ -2,8 +2,11 @@ Source: https://grok.com/share/bGVnYWN5LWNvcHk_7cf2079f-dac7-435a-b759-0673e85fa
 
 Author: Grok
 Date: 03/05/2026
+Status: needs-sources
 
 ---
+
+This entry is a Grok draft and still needs primary sources.
 
 **Earl** (@earl16o1) is a trader, painter, and writer who is a beloved **insider figure and cultural chronicler** of the [[Avant Gay]] scene. He embodies the intersection of trading, art, and lore that defines much of the community’s vibe.
 

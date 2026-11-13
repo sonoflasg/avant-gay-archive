@@ -2,8 +2,11 @@ Source: https://grok.com/share/bGVnYWN5LWNvcHk_81fca7dd-3d4d-40f3-b467-ade2b8610
 
 Author: Grok
 Date: 03/05/2026
+Status: needs-sources
 
 ---
+
+This entry is a Grok draft and still needs primary sources.
 
 **HashLips** (or HashLips Art Engine) is the **open-source generative art tool** that powers a huge portion of the [[Avant Gay]] / Gay NFT scene (and broader NFT generative art). It’s the go-to compiler for creating layered, trait-based collections on Solana and elsewhere.
 

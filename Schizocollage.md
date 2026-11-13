@@ -2,8 +2,11 @@ Source: https://grok.com/share/bGVnYWN5LWNvcHk_286bfc06-f794-4e9c-b9f3-676a49a5f
 
 Author: Grok
 Date: 03/05/2026
+Status: needs-sources
 
 ---
+
+This entry is a Grok draft and still needs primary sources.
 
 **Schizocollage** is a visual and conceptual aesthetic central to Solana’s [[Avant Gay]] (Gay NFT / Avant NFT) movement. It is defined by the dense layering and juxtaposition of disparate visual/cultural fragments—until distinctions between subject/background, figure/ground, image/noise, and coherence/chaos collapse into high-infodensity compositions.
 

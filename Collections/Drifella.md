@@ -2,8 +2,11 @@ Source: https://grok.com/share/bGVnYWN5LWNvcHk_f2330759-a529-4afe-86e5-14f7436ee
 
 Author: Grok
 Date: 02/05/2026
+Status: needs-sources
 
 ---
+
+This entry is a Grok draft and still needs primary sources.
 
 **Drifella** (full series: *Drifella*, *Drifella 2*, *Drifella III*, etc.) is a landmark generative NFT collection/series by the pseudonymous artist [[Evil Biscuit]]. It is widely regarded as one of the most influential projects in [[Solana]]’s **Avant Gay** (Gay NFT / Avant NFT) movement, frequently cited as *the* collection that crystallized the scene’s defining aesthetics. Worth noting Drifella originally dropped on [[Ethereum]] with Drifella 2 and III going on to drop on Solana.
 
@@ -26,4 +29,6 @@ Derivatives, homages, and collaborations (e.g., with Parker Ito on [[Heavy Liqui
 
 Cross-link with [[Trait Maxxing]], [[Schizocollage]], [[Evil Biscuit]], [[Mifella]], [[Parker Ito]], and [[Drilady]]. This is core canon for the visual style of the movement you’re documenting.
 
-[[Blood Splatter]] [[Dratini]] [[Pokémon]] [[Twin Towers]] [[Jester]] [[Shadow Fella]] [[Joker]] [[Spiky DJ Ref]] [[Earl Ref]] [[Call of Duty Ref]] [[Bullets ref]] [[Postdemon ref]] [[Niqab ref]] [[Milady]] [[Gun ref]] [[NY ref]] [[Alien Frens ref]] [[Merzbow ref]] [[Noise Music ref]] [[Anime ref]] [[Mujahideen ref]] [[Al-Qaeda ref]] [[Viennese Actionist ref ]] [[Resistance ref]] [[Death ref]] [[Literature ref]] [[Kami-Yaburi ref]] [[Japanese Gutai group ref]] [[Despair ref]] [[Vito Acconci ref]] [[Rambo III ref]] [[Propaganda ref]] [[Bored Ape ref]] [[CryptoPunks ref]] [[Cartoons ref]] [[Film ref]] [[High Fashion ref]] [[Crucifix ref]] [[Memes ref]] [[Pulsedemon ref]] [[Branding ref]] [[Painterliness ref]] [[Cubist collage ref]] [[Surrealist automatism ref]] 
+[[Blood Splatter]] [[Dratini]] [[Pokémon]] [[Twin Towers]] [[Jester]] [[Shadow Fella]] [[Joker]] [[Spiky DJ Ref]] [[Earl Ref]] [[Call of Duty Ref]] [[Bullets ref]] [[Postdemon ref]] [[Niqab ref]] [[Milady]] [[Gun ref]] [[NY ref]] [[Alien Frens ref]] [[Merzbow ref]] [[Noise Music ref]] [[Anime ref]] [[Mujahideen ref]] [[Al-Qaeda ref]] [[Viennese Actionist ref ]] [[Resistance ref]] [[Death ref]] [[Literature ref]] [[Kami-Yaburi ref]] [[Japanese Gutai group ref]] [[Despair ref]] [[Vito Acconci ref]] [[Rambo III ref]] [[Propaganda ref]] [[Bored Ape ref]] [[CryptoPunks ref]] [[Cartoons ref]] [[Film ref]] [[High Fashion ref]] [[Crucifix ref]] [[Memes ref]] [[Pulsedemon ref]] [[Branding ref]] [[Painterliness ref]] [[Cubist collage ref]] [[Surrealist automatism ref]]
+
+Sources: [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/#proj-drifella)

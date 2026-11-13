@@ -2,8 +2,11 @@ Source: https://grok.com/share/bGVnYWN5LWNvcHk_e56084d3-e74e-4c08-8928-6c0d2af33
 
 Author: Grok
 Date: 02/05/2026
+Status: needs-sources
 
 ---
+
+This entry is a Grok draft and still needs primary sources.
 
 **Trait Maxxing** (also styled **traitmaxxing**) is a signature aesthetic and generative technique in [[Solana]]’s **Avant Gay** (or Gay NFT / Avant NFT) scene. It involves drastically expanding the number of visual traits/layers in PFP-style NFTs—often into the hundreds or thousands—and algorithmically compiling them into hyper-dense, overloaded collages.
 

@@ -26,3 +26,17 @@ Most Significant Work [[LFVAD2K24]] (Lady Fella Vibe Angel Degen 2K24), the coll
 ([[WICKZ]]), stands out as their most prominent and community-recognized project so far. It embodies the peak of the Fella/vibe angel aesthetic in the Solana degen/NFT space.Luhhfella's significance comes more from cultural influence and scene-building (Fellakunst as a loose movement) than a single massive blue-chip collection. Their work is respected in avant-garde NFT circles for its raw, algorithmic, and anti-hierarchical approach. written by @matto__matto 
 
 Check their X (@luhhfella) or Instagram for the latest drops, exhibition stills, and previews. The scene is very online and meme-driven, so activity there gives the best real-time view.
+
+### Interview in the Automat paper
+
+[[Luhhfella]] was interviewed by Giannis Sourdis for the Automat paper (written interview, October 2026).
+
+The paper’s public References section records that this interview was used for: Entry into the Fella / [[Cuckcore]] network; [[Drifella]] and [[MiFella]]; [[Chucks]] and $CUCK; [[LFVAD2K24]] and [[WICKZ]]; metadata and market-native collection design; painting and custom AI-assisted production; and the Fella as a recurring subject, including a later reading of the Cuckberg as only a partial map of scene lore.
+
+This note records only what is published there. It is not a transcript, and it does not add private correspondence.
+
+Compiled by SonOfLasG from the paper’s References.
+
+On 12 Nov 2026, 12:41pm AEDT, luhhfella publicly claimed the [[DRILUHH]] Collection Block inside [[111k]], writing that he had made “1111 DRILUHHs” as part of the collection: https://x.com/luhhfella/status/2120693421476385024
+
+Sources: [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/#references)

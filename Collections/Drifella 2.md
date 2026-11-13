@@ -2,8 +2,11 @@ Source: https://grok.com/share/bGVnYWN5LWNvcHk_f3b51e50-ef38-40bc-9579-1c4fc58d0
 
 Author: Grok
 Date: 02/05/2026
+Status: needs-sources
 
 ---
+
+This entry is a Grok draft and still needs primary sources.
 
 Drifella 2 by [[Evil Biscuit]] is widely regarded as **one of the most influential (if not *the* most influential) collections in the [[Avant Gay]] / Gay NFT scene on Solana**. It epitomizes the movement’s core aesthetic: extreme [[trait-maxxing]] — hyper-layered, chaotic, reference-stuffed digital collages that push generative PFP tools (like [[HashLips]]) to their limits, turning them into painterly, grotesque, whimsical, and often absurd “[[schizocollage]]” works.
 
@@ -22,6 +25,6 @@ Expect heavy layering: base silhouette + myriad whimsical/grotesque accessories,
 
 In short, **Drifella 2 is the spiritual centerpiece of the Avant Gay aesthetic**: raw, maximalist, punk rebellion against boring NFTs, using generative tools for something closer to digital painting/collage provocation. If you’re going through it, look for the ones that feel like overloaded, living memes or outsider masterpieces. It pairs perfectly with the other scene pillars like [[Tojiba]]’s [[Horses?]] or [[Little Swag World]].
 
-[[Blood Splatter]] [[Dratini]] [[Pokémon]] [[Twin Towers]] [[Jester]] [[Shadow Fella]] [[Joker]] [[Spiky DJ Ref]] [[Earl Ref]] [[Call of Duty Ref]] [[Bullets ref]] [[Postdemon ref]] [[Niqab ref]] [[Milady]] [[Gun ref]] [[NY ref]] [[Alien Frens ref]] [[Merzbow ref]] [[Noise Music ref]] [[Anime ref]] [[Mujahideen ref]] [[Al-Qaeda ref]] [[Viennese Actionist ref ]] [[Resistance ref]] [[Death ref]] [[Literature ref]] [[Kami-Yaburi ref]] [[Japanese Gutai group ref]] [[Despair ref]] [[Vito Acconci ref]] [[Rambo III ref]] [[Propaganda ref]] [[Bored Ape ref]] [[CryptoPunks ref]] [[Cartoons ref]] [[Film ref]] [[High Fashion ref]] [[Crucifix ref]] [[Memes ref]] [[Pulsedemon ref]] [[Branding ref]] [[Painterliness ref]] [[Cubist collage ref]] [[Surrealist automatism ref]] 
+[[Blood Splatter]] [[Dratini]] [[Pokémon]] [[Twin Towers]] [[Jester]] [[Shadow Fella]] [[Joker]] [[Spiky DJ Ref]] [[Earl Ref]] [[Call of Duty Ref]] [[Bullets ref]] [[Postdemon ref]] [[Niqab ref]] [[Milady]] [[Gun ref]] [[NY ref]] [[Alien Frens ref]] [[Merzbow ref]] [[Noise Music ref]] [[Anime ref]] [[Mujahideen ref]] [[Al-Qaeda ref]] [[Viennese Actionist ref ]] [[Resistance ref]] [[Death ref]] [[Literature ref]] [[Kami-Yaburi ref]] [[Japanese Gutai group ref]] [[Despair ref]] [[Vito Acconci ref]] [[Rambo III ref]] [[Propaganda ref]] [[Bored Ape ref]] [[CryptoPunks ref]] [[Cartoons ref]] [[Film ref]] [[High Fashion ref]] [[Crucifix ref]] [[Memes ref]] [[Pulsedemon ref]] [[Branding ref]] [[Painterliness ref]] [[Cubist collage ref]] [[Surrealist automatism ref]]
 
-
+Sources: [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/#proj-drifella-2)

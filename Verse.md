@@ -2,8 +2,11 @@ Source: https://grok.com/share/bGVnYWN5LWNvcHk_64bf6473-66b5-4877-80c9-36e36c31c
 
 Author: Grok
 Date: 03/05/2026
+Status: needs-sources
 
 ---
+
+This entry is a Grok draft and still needs primary sources.
 
 **Verse (verse.works)** is a **curated NFT platform** focused on high-quality digital art and exhibitions, where many standout [[Avant Gay]] / [[Parker Ito]] projects have launched (including The [[Pilgrim’s Living Room Crucifixion]]; Mona Lisa Hyper-Gamble, among others).
 

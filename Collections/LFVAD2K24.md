@@ -9,3 +9,5 @@ You can find more on their profiles:
 
 - Instagram: [luhhfella](https://www.instagram.com/luhhfella/)
 - X/Twitter: @luhhfella and @worldisrug
+
+Sources: [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/#proj-lfvad2k24)

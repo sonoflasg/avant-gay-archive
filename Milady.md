@@ -2,8 +2,11 @@ Source: https://grok.com/share/bGVnYWN5LWNvcHk_49e7ecd8-0084-44a2-bf3a-a73f77580
 
 Author: Grok
 Date: 02/03/2026
+Status: needs-sources
 
 ---
+
+This entry is a Grok draft and still needs primary sources.
 
 **Milady Maker** (commonly referred to as **Milady** or Miladys) is a generative 10,000-piece PFP NFT collection launched in August 2021 on Ethereum by Remilia Corporation (an avant net-art collective/DAO). It features neo-chibi anime-inspired avatars with street-style, Y2K, and internet-culture aesthetics—cute yet edgy, ironic, and subcultural.
 

@@ -2,8 +2,11 @@ Source: https://grok.com/share/bGVnYWN5LWNvcHk_95d3b271-3492-4499-a6c1-1b6ba1bce
 
 Author: Grok
 Date: 03/05/2026
+Status: needs-sources
 
 ---
+
+This entry is a Grok draft and still needs primary sources.
 
 **Wretched Worm** (also styled Wretched Wurm) is an artist, writer, and **core co-founder/collaborator** in the [[Avant Gay]] scene, best known for his role with [[Galerie Yeche Lange]] and contributions to the broader Solana experimental NFT ecosystem (including ties to VVV.so).
 

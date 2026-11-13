@@ -2,8 +2,11 @@ Source: https://grok.com/share/bGVnYWN5LWNvcHk_d6c47e5e-7c9b-4d4d-b1cc-94c143999
 
 Author: Grok
 Date: 03/05/2026
+Status: needs-sources
 
 ---
+
+This entry is a Grok draft and still needs primary sources.
 
 **The Pilgrim’s Living Room Crucifixion; Mona Lisa Hyper-Gamble** (2025) is one of [[Parker Ito]]’s (CreamyDreamy) most personal and ambitious NFT projects to date. Released on [[Verse]] (with [[SOLOS]] presentation), it’s a series of **222 digital works** that function as a single, shape-shifting, flickering “stream of consciousness” body rather than standalone pieces.
 
@@ -31,4 +34,6 @@ https://verse.works/parker-ito
 
 [[Ethereum]]
 
-[[Blood Splatter]] [[Dratini]] [[Pokémon]] [[Jester]]  [[Milady]] [[Gun ref]] [[NY ref]] [[Resistance ref]] [[Death ref]] [[Literature ref]][[Despair ref]]   [[Propaganda ref]] [[Bored Ape ref]] [[CryptoPunks ref]] [[Cartoons ref]] [[High Fashion ref]] [[Crucifix ref]] [[Memes ref]]  [[Painterliness ref]] 
+[[Blood Splatter]] [[Dratini]] [[Pokémon]] [[Jester]]  [[Milady]] [[Gun ref]] [[NY ref]] [[Resistance ref]] [[Death ref]] [[Literature ref]][[Despair ref]]   [[Propaganda ref]] [[Bored Ape ref]] [[CryptoPunks ref]] [[Cartoons ref]] [[High Fashion ref]] [[Crucifix ref]] [[Memes ref]]  [[Painterliness ref]]
+
+Sources: [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/#proj-pilgrim)

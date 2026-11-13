@@ -1,9 +1,12 @@
 Source: https://grok.com/share/bGVnYWN5LWNvcHk_15c00221-3863-4329-abe1-d39ed084d350
 
-Author:Grok
+Author: Grok
 Date: 03/05/2026
+Status: needs-sources
 
 ---
+
+This entry is a Grok draft and still needs primary sources.
 
 **Cigawrette Packs** is an experimental literature/[[PFP]]/utility project (9,999 editions) in the broader NFT space, with strong ties and appeal in the [[Avant Gay]] scene due to its irreverent, literary, and pack-like collectible format.
 
@@ -20,4 +23,6 @@ If you’re going through it, expect a mix of visual packs and written/literary 
 
 it's on [[Ethereum]]
 
- [[Milady]] [[Resistance ref]] [[Death ref]] [[Literature ref]]  [[Despair ref]]  [[Propaganda ref]] [[Bored Ape ref]] [[CryptoPunks ref]] [[Cartoons ref]] [[Film ref]]  [[Branding ref]] [[Painterliness ref]] [[Cubist collage ref]] [[Surrealist automatism ref]] 
+ [[Milady]] [[Resistance ref]] [[Death ref]] [[Literature ref]]  [[Despair ref]]  [[Propaganda ref]] [[Bored Ape ref]] [[CryptoPunks ref]] [[Cartoons ref]] [[Film ref]]  [[Branding ref]] [[Painterliness ref]] [[Cubist collage ref]] [[Surrealist automatism ref]]
+
+Sources: [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/#proj-cigawrette-packs)

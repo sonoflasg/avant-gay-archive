@@ -2,8 +2,11 @@ Source: https://grok.com/share/bGVnYWN5LWNvcHk_d17cd7da-96d8-4662-a884-6ff60c057
 
 Author: Grok
 Date: 02/05/2026
+Status: needs-sources
 
 ---
+
+This entry is a Grok draft and still needs primary sources.
 
 **EFAN (Ethereum Fine Art Network)** is a loosely defined, informal scene (not a formal organization, DAO, marketplace, or project with an official website/Discord) referring to the polished, fine-art-oriented segment of the early NFT/crypto-art ecosystem on Ethereum.
 

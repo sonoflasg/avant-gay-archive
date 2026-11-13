@@ -2,8 +2,11 @@ Source: https://grok.com/share/bGVnYWN5LWNvcHk_71141ccb-fb46-408c-a805-8b3067327
 
 Author: Grok
 Date: 03/05/2026
+Status: needs-sources
 
 ---
+
+This entry is a Grok draft and still needs primary sources.
 
 **"Chair"** is the ultimate punchline and endpoint in the [[Mifella]] / [[Cuckcore]] lore within the [[Avant Gay]] scene — a minimalist, absurd NFT collection representing the complete **dissolution/death** of Mifella.
 
@@ -25,3 +28,5 @@ Cuckcore (cuckcore.de) is the subset of Mifella derivatives that lean into disto
 In short, **Chair** is Mifella’s final form: nothing left but the furniture after the character’s spectacular, meme-fueled demise. It’s both a joke and a conceptual full-circle moment in Avant Gay lore.
 
 If you want links to the Chair collection, more on Cuckfella, or the next summary, let me know! 🪑
+
+Sources: [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/#proj-chair-nft)

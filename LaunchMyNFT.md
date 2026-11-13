@@ -45,3 +45,5 @@ Overall, it's a solid tool if you're a creator wanting to experiment with NFTs q
 bitrue.com
 
 You can check it out directly at [launchmynft.io](https://www.launchmynft.io/), browse live collections, or try creating one. Let me know if you want help with specifics like how to launch a collection!
+
+Sources: [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/#proj-launchmynft)

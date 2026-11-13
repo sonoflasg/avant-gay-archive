@@ -2,8 +2,11 @@ Source: https://grok.com/share/bGVnYWN5LWNvcHk_ad640063-dd72-4159-ae44-f44b525e5
 
 Author: Grok
 Date: 02/05/2026
+Status: needs-sources
 
 ---
+
+This entry is a Grok draft and still needs primary sources.
 
 **Dratini** (in [[Avant Gay]] context) refers to the [[Pokémon]] creature (a serpentine, dragon-type "Mirage Pokémon" from the *Pokémon* franchise) repurposed as a central lore element and visual motif in the **Drifella** series by [[Evil Biscuit]] and the broader Solana Avant Gay ecosystem.
 

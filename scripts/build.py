@@ -23,7 +23,7 @@ REPO = "SonOfLasG/avant-gay-archive"
 VOTES_URL = "https://avant-gay-votes.sonoflasg.workers.dev"
 
 # Folders/files that are repo plumbing, not archive notes.
-EXCLUDE_DIRS = {".obsidian", ".github", ".git", "scripts", "website", "site", "node_modules"}
+EXCLUDE_DIRS = {".obsidian", ".github", ".git", "scripts", "website", "site", "node_modules", "_preview"}
 EXCLUDE_FILES = {"README.md", "CONTRIBUTING.md", "LICENSE.md"}
 
 WIKILINK = re.compile(r"\[\[([^\]|#]+)(?:#[^\]|]*)?(?:\|([^\]]+))?\]\]")
@@ -33,6 +33,7 @@ IMG_EXTS = {".png", ".jpg", ".jpeg", ".gif", ".webp"}
 SOURCE = re.compile(r"^Source:\s*(\S+)", re.M | re.I)
 AUTHOR = re.compile(r"^Author:\s*(.+)$", re.M | re.I)
 DATE = re.compile(r"^Date:\s*(.+)$", re.M | re.I)
+STATUS = re.compile(r"^Status:\s*(.+)$", re.M | re.I)
 
 TYPE_BY_FOLDER = {
     "Artists": "artist",
@@ -40,6 +41,9 @@ TYPE_BY_FOLDER = {
     "ArticlesNthreads": "article",
     "Imagery Reference Character": "reference",
     "VVV": "platform",
+    "Platforms": "platform",
+    "People": "person",
+    "Events": "event",
 }
 
 
@@ -109,17 +113,20 @@ def build_graph():
         src = SOURCE.search(text)
         author = AUTHOR.search(text)
         date = DATE.search(text)
-        clean = re.sub(r"^(Source|Author|Date):.*$", "", body, flags=re.M | re.I)
+        status = STATUS.search(text)
+        clean = re.sub(r"^(Source|Author|Date|Status):.*$", "", body, flags=re.M | re.I)
         clean = re.sub(r"\n{3,}", "\n\n", clean).strip().strip("-").strip()
         notes[canon(name)] = {
             "images": resolve_images(text),
             "id": name,
             "type": TYPE_BY_FOLDER.get(folder, "concept"),
             "folder": folder,
-            "summary": clean[:900],
+            # Full note text: longer compiled entries need to be readable in the panel.
+            "summary": clean[:20000],
             "source": src.group(1) if src else None,
             "author": author.group(1).strip() if author else None,
             "date": date.group(1).strip() if date else None,
+            "status": status.group(1).strip() if status else None,
             "stub": len(clean) < 20,
             "outlinks": [],
         }
@@ -128,7 +135,9 @@ def build_graph():
     for p in md_files:
         name = p.stem
         text = p.read_text(encoding="utf-8", errors="replace")
-        for m in WIKILINK.finditer(text):
+        # Metadata fields are attribution, not graph edges.
+        link_text = re.sub(r"^(Source|Author|Date|Status):.*$", "", text, flags=re.M | re.I)
+        for m in WIKILINK.finditer(link_text):
             target = m.group(1).strip()
             ct = canon(target)
             if ct == canon(name):
@@ -137,7 +146,7 @@ def build_graph():
                 notes[ct] = {
                     "id": target, "type": "phantom", "folder": "",
                     "summary": "", "source": None, "author": None,
-                    "date": None, "stub": True, "outlinks": [], "images": [],
+                    "date": None, "status": None, "stub": True, "outlinks": [], "images": [],
                 }
             links.append({"source": name, "target": notes[ct]["id"]})
             notes[canon(name)]["outlinks"].append(notes[ct]["id"])

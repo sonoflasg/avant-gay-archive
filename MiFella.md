@@ -1,9 +1,12 @@
 Source: https://grok.com/share/bGVnYWN5LWNvcHk_c665386b-9374-463b-af13-fe910f3c4de1
 
-Author:Grok
+Author: Grok
 Date: 03/05/2026
+Status: needs-sources
 
 ---
+
+This entry is a Grok draft and still needs primary sources.
 
 **Mifella** (and its evolutions/derivatives) is one of the **foundational projects** that helped spark and define the [[Avant Gay]] / Gay NFT scene on Solana. Launched as an experimental, tongue-in-cheek derivative/response to Ethereum’s [[Milady]] Maker (Remilia Corp, 2021), it acted as a bridge that transplanted Milady’s cult-like, edgy, ironic energy onto Solana while pushing it into raw, aesthetic experimentation.
 
@@ -25,3 +28,15 @@ Articles by [[SonOfLasG]] on MiFella [[overlay]] traits https://x.com/Sonoflasg/
 [[All Roads Lead to MiFella]] https://x.com/Sonoflasg/status/1967509090550394906?s=20
 
 [[Blood Splatter]]
+
+### Interview in the Automat paper
+
+[[MiFella]] was interviewed by Giannis Sourdis for the Automat paper (written interview, August 2026).
+
+The paper’s public References section records that this interview was used for: [[MiFella]]’s origins in [[Milady]] derivative culture; its collaborative, post-authorial structure; the project as collection, character, and public persona at once; the emergence of [[Cuckcore]] and [[Drifella]] from shared assets and informal group spaces; and how [[MiFella 2]] was coordinated, including [[Quadrillions]]’s role and a shared Drive of assets.
+
+This note records only what is published there. It is not a transcript, and it does not add private correspondence.
+
+Compiled by SonOfLasG from the paper’s References.
+
+Sources: [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/#proj-mifella)

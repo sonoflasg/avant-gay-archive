@@ -202,11 +202,14 @@ const COLORS = {
   article:    "#b39dff",
   platform:   "#6ee7a0",
   reference:  "#f4845f",
+  person:     "#f0a6ca",
+  event:      "#e6c07b",
   phantom:    "#57565f",
 };
 const TYPE_LABEL = {
   concept: "concept / lore", artist: "artist", collection: "collection",
   article: "article / thread", platform: "platform", reference: "imagery reference",
+  person: "person", event: "event / exhibition",
   phantom: "mentioned — no note yet",
 };
 
@@ -344,6 +347,7 @@ function select(n, fromKey) {
   const meta = [];
   if (n.author) meta.push("by " + n.author.replace(/\[\[|\]\]/g, ""));
   if (n.date) meta.push(n.date);
+  if (n.status) meta.push(String(n.status).replace(/-/g, " "));
   meta.push(n.backlinks + " backlinks");
   document.getElementById("pMeta").textContent = meta.join("  ·  ");
   const imgs = document.getElementById("pImgs");

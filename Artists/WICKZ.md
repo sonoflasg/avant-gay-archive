@@ -4,3 +4,5 @@ x.com
 
 - The account bio references "BORN TO TRENCH / WORLD IS RUG" and meme/crypto culture elements. It has a modest but niche following in the Solana community.
 - This person (associated with the handle) has released multiple NFT collections on Solana, including [[WICKZ the collection]], [[LFVAD2K24]], and Chucks. They collaborate or get mentioned alongside other small Solana creators (e.g. [[luhhfella]]). @supermetalx
+
+Sources: [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/#proj-wickz)

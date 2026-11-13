@@ -2,8 +2,11 @@ Source: https://grok.com/share/bGVnYWN5LWNvcHk_bd715919-0f84-4057-a5eb-a113fe284
 
 Author: Grok
 Date: 02/05/2026
+Status: needs-sources
 
 ---
+
+This entry is a Grok draft and still needs primary sources.
 
 **Bitcoin Puppets** is a prominent Bitcoin Ordinals NFT collection of 10,001 unique hand-drawn profile picture (PFP) puppets. It was created in MS Paint by the pseudonymous artist known as The Puppeteer / Le Puppeteer Fou / Monsieur Lasogette. Launched in January 2024 on the Bitcoin blockchain via inscriptions, it quickly became a cultural phenomenon in the Ordinals space and adjacent crypto-art scenes.
 

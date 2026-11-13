@@ -2,8 +2,11 @@ Source: https://grok.com/share/bGVnYWN5LWNvcHk_0910171e-b737-4c52-9d1c-c6f0a63cb
 
 Author: Grok
 Date: 02/05/2026
+Status: needs-sources
 
 ---
+
+This entry is a Grok draft and still needs primary sources.
 
 **Pokémon in the Avant Gay / Gay NFT Scene**
 

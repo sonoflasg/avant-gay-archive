@@ -2,8 +2,11 @@ Source: https://grok.com/share/bGVnYWN5LWNvcHk_5d861937-4366-4f83-8100-f64544a95
 
 Author: Grok
 Date: 03/05/2026
+Status: needs-sources
 
 ---
+
+This entry is a Grok draft and still needs primary sources.
 
 **VVV.so** is the **go-to NFT launchpad** for the [[Avant Gay]] / Gay NFT scene on Solana — often called the “DIY minting garage” where the community deploys raw, experimental collections. Launched in early 2025, it’s a permissionless, highly customizable platform built specifically for artists who want full control over their drops without relying on bigger marketplaces.
 
@@ -28,3 +31,5 @@ It has hosted many of the scene’s defining and recent drops:
 - Others frequently seen: UNX (Grotto Labs), SUMMON SOMETHING series, NetBash, and a steady stream of smaller experimental drops from scene artists like [[Jim Spindle]], [[Time]], [[Gremlins 2 Official]], etc.
 
 In short, **VVV.so** is the infrastructure backbone of the current Avant Gay wave — artist-owned, scene-first, and the place where the next Drifella, Horses, or Heavy Liquid Graphic-level project is likely to mint. It’s where the punk rebellion actually ships.
+
+Sources: [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/#proj-vvv)

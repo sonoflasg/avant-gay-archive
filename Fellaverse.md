@@ -2,8 +2,11 @@ Source: https://grok.com/share/bGVnYWN5LWNvcHk_13773bd0-0c38-4ab7-ad81-1f90a22fb
 
 Author: Grok
 Date: 03/05/2026
+Status: needs-sources
 
 ---
+
+This entry is a Grok draft and still needs primary sources.
 
 **Fellaverse** (or Fellaworld) is the interconnected **lore universe** and family of projects centered on [[Mifella]] and its derivatives in the Avant Gay scene. It’s the chaotic, self-referential, meme-fueled ecosystem that includes Mifella, [[Drifella]], [[Cuckfella]], [[JoFella]], [[chair]], and more.
 
