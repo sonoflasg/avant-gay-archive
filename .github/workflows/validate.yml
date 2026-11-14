@@ -1,0 +1,30 @@
+name: Validate contribution
+
+# Read-only check for pull requests. It never deploys, writes, labels or comments.
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate changed entries
+        env:
+          VALIDATE_BASE: origin/${{ github.base_ref || 'main' }}
+          PR_BODY: ${{ github.event.pull_request.body }}
+        run: python3 -B scripts/validate.py
+      - name: Scan whole vault (warnings only)
+        run: python3 -B scripts/validate.py --all
+      - name: Site still builds
+        run: python3 scripts/build.py

@@ -24,7 +24,7 @@ VOTES_URL = "https://avant-gay-votes.sonoflasg.workers.dev"
 
 # Folders/files that are repo plumbing, not archive notes.
 EXCLUDE_DIRS = {".obsidian", ".github", ".git", "scripts", "website", "site", "node_modules", "_preview"}
-EXCLUDE_FILES = {"README.md", "CONTRIBUTING.md", "LICENSE.md"}
+EXCLUDE_FILES = {"README.md", "CONTRIBUTING.md", "LICENSE.md", "AGENTS.md", "REVIEW.md"}
 
 WIKILINK = re.compile(r"\[\[([^\]|#]+)(?:#[^\]|]*)?(?:\|([^\]]+))?\]\]")
 EMBED = re.compile(r"!\[\[[^\]]+\]\]")
