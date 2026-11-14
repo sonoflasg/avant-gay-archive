@@ -1,0 +1,63 @@
+name: "Perspective / contest a claim"
+description: Dispute a claim or add a different account. The existing claim stays; yours is added beside it, attributed.
+title: "[entry name] perspective: "
+labels: [submission, perspective]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The archive keeps competing accounts side by side. Nothing is deleted: your account is added under a `### Perspectives` section with who says it, when, and the source. Rules: [AGENTS.md](https://github.com/sonoflasg/avant-gay-archive/blob/main/AGENTS.md).
+  - type: input
+    id: entry
+    attributes:
+      label: Existing entry
+      placeholder: e.g. Drifella III
+    validations:
+      required: true
+  - type: textarea
+    id: claim
+    attributes:
+      label: Claim you are contesting (quote it)
+    validations:
+      required: true
+  - type: textarea
+    id: perspective
+    attributes:
+      label: The other account
+      description: "Who says it (you, or a named public source), when, and what they say. Neutral wording."
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: "Public URL(s) where this account is stated. A first-hand account should point to a public post or written statement."
+    validations:
+      required: true
+  - type: dropdown
+    id: ai
+    attributes:
+      label: Did you use an LLM or agent?
+      options:
+        - "No"
+        - "Yes, and a human checked every claim against its source"
+        - "Yes, not fully checked by a human"
+    validations:
+      required: true
+  - type: input
+    id: ai_which
+    attributes:
+      label: If yes, which one?
+      placeholder: "e.g. the model or agent name"
+  - type: input
+    id: credit
+    attributes:
+      label: How should you be credited?
+      placeholder: "@yourhandle (or anonymous)"
+  - type: checkboxes
+    id: rules
+    attributes:
+      label: Rules
+      options:
+        - label: "Only public sources: no DMs or private chats without everyone's consent, no wallet addresses, keys or seed phrases, no real names of pseudonymous people, no unverified allegations, no shilling."
+          required: true

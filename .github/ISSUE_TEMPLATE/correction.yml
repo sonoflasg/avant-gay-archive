@@ -1,0 +1,62 @@
+name: "Correction of a factual error"
+description: Fix a plain factual error (date, number, title, broken link) in an existing entry, with a source showing the error.
+title: "[entry name] correction: "
+labels: [submission, correction]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Corrections need a public source that shows the error. If people genuinely disagree about the point, use **Perspective** instead. Accepted corrections are logged in the entry's `### Revisions` section. Rules: [AGENTS.md](https://github.com/sonoflasg/avant-gay-archive/blob/main/AGENTS.md).
+  - type: input
+    id: entry
+    attributes:
+      label: Existing entry
+      placeholder: e.g. Drifella III
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: Current text (quote it)
+    validations:
+      required: true
+  - type: textarea
+    id: proposed
+    attributes:
+      label: Corrected text
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: "Public URL(s) showing the error, and what each one shows."
+    validations:
+      required: true
+  - type: dropdown
+    id: ai
+    attributes:
+      label: Did you use an LLM or agent?
+      options:
+        - "No"
+        - "Yes, and a human checked every claim against its source"
+        - "Yes, not fully checked by a human"
+    validations:
+      required: true
+  - type: input
+    id: ai_which
+    attributes:
+      label: If yes, which one?
+      placeholder: "e.g. the model or agent name"
+  - type: input
+    id: credit
+    attributes:
+      label: How should you be credited?
+      placeholder: "@yourhandle (or anonymous)"
+  - type: checkboxes
+    id: rules
+    attributes:
+      label: Rules
+      options:
+        - label: "Only public sources: no DMs or private chats without everyone's consent, no wallet addresses, keys or seed phrases, no real names of pseudonymous people, no unverified allegations, no shilling."
+          required: true

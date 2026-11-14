@@ -1,36 +1,57 @@
-name: Add context / material
-description: Submit a link, correction, story, or additional context for an entry in the archive. No coding needed.
-title: "[entry name] your addition"
-labels: [contribution]
+name: "Addition to an existing entry"
+description: Add sourced facts, links or context to an entry that already exists. Nothing existing is changed.
+title: "[entry name] addition: "
+labels: [submission, addition]
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for adding to the archive. Keep the entry name in the title (e.g. `[Drifella] launch date correction`).
-        A maintainer will review and fold accepted material into the archive — you'll be credited as a contributor.
-  - type: dropdown
-    id: kind
+        Keep the entry name in the title, e.g. `[Drifella] addition: Scatter mint page`. To fix something wrong, use **Correction**. To dispute a claim, use **Perspective**. Rules: [AGENTS.md](https://github.com/sonoflasg/avant-gay-archive/blob/main/AGENTS.md).
+  - type: input
+    id: entry
     attributes:
-      label: What are you submitting?
-      options:
-        - Additional context / story
-        - Link to a tweet, thread, or article
-        - Correction
-        - Images / media
-        - Other
+      label: Existing entry
+      placeholder: e.g. Drifella III
     validations:
       required: true
   - type: textarea
     id: material
     attributes:
-      label: The material
-      description: Paste links, write the context, or describe the correction. First-hand accounts welcome — say when it happened if you can.
+      label: What to add
+      description: "The text you propose (attributed, neutral), or the material and what it shows. First-hand accounts are welcome; say they are first-hand."
     validations:
       required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: One public URL per line. X posts as https://x.com/handle/status/id with the date and time in Melbourne time (AEDT/AEST).
+    validations:
+      required: true
+  - type: dropdown
+    id: ai
+    attributes:
+      label: Did you use an LLM or agent?
+      options:
+        - "No"
+        - "Yes, and a human checked every claim against its source"
+        - "Yes, not fully checked by a human"
+    validations:
+      required: true
+  - type: input
+    id: ai_which
+    attributes:
+      label: If yes, which one?
+      placeholder: "e.g. the model or agent name"
   - type: input
     id: credit
     attributes:
       label: How should you be credited?
-      placeholder: "@yourhandle (or 'anonymous')"
-    validations:
-      required: false
+      placeholder: "@yourhandle (or anonymous)"
+  - type: checkboxes
+    id: rules
+    attributes:
+      label: Rules
+      options:
+        - label: "Only public sources: no DMs or private chats without everyone's consent, no wallet addresses, keys or seed phrases, no real names of pseudonymous people, no unverified allegations, no shilling."
+          required: true

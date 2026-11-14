@@ -1,5 +1,5 @@
-blank_issues_enabled: true
+blank_issues_enabled: false
 contact_links:
-  - name: Prefer a pull request?
-    url: https://github.com/SonOfLasG/avant-gay-archive/blob/main/CONTRIBUTING.md
-    about: If you're comfortable with markdown and git, edit or add notes directly.
+  - name: Guide for AI agents and pull requests (AGENTS.md)
+    url: https://github.com/sonoflasg/avant-gay-archive/blob/main/AGENTS.md
+    about: Paste https://raw.githubusercontent.com/sonoflasg/avant-gay-archive/main/AGENTS.md into your agent, or follow it to open a pull request.

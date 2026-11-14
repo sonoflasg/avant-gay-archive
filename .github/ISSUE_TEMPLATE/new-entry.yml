@@ -1,47 +1,64 @@
-name: Propose a new entry
-description: Suggest an artist, collection, event, or concept that's missing from the archive.
+name: "New entry"
+description: Propose a missing artist, person, collection, event, article/thread, platform or concept.
 title: "New entry: "
-labels: [new-entry]
+labels: [submission, new-entry]
 body:
+  - type: markdown
+    attributes:
+      value: |
+        Check the archive first. If the entry exists, use **Addition**, **Correction** or **Perspective** instead. Rules: [AGENTS.md](https://github.com/sonoflasg/avant-gay-archive/blob/main/AGENTS.md).
   - type: input
     id: name
     attributes:
-      label: Name of the entry
-      placeholder: e.g. an artist, collection, meme, event, or concept
+      label: Entry name
+      placeholder: the name the scene uses
     validations:
       required: true
   - type: dropdown
     id: type
     attributes:
       label: Type
-      options:
-        - Artist
-        - Collection
-        - Concept / lore
-        - Article / thread
-        - Platform
-        - Event
-        - Other
+      options: [Artist, Person, Collection, Event / exhibition, Article / thread, Platform, Concept / lore]
     validations:
       required: true
   - type: textarea
-    id: story
+    id: draft
     attributes:
-      label: What's the story?
-      description: What is it, why does it matter to the scene, and how does it connect to existing entries?
+      label: Draft entry
+      description: "What it is and how it connects to existing entries ([[wikilinks]] welcome). Attribute claims (X says...). Mark your own inferences."
     validations:
       required: true
   - type: textarea
     id: sources
     attributes:
       label: Sources
-      description: Links to tweets, threads, articles, mints — anything that documents it.
+      description: One public URL per line. X posts as https://x.com/handle/status/id with the date and time in Melbourne time (AEDT/AEST).
     validations:
-      required: false
+      required: true
+  - type: dropdown
+    id: ai
+    attributes:
+      label: Did you use an LLM or agent?
+      options:
+        - "No"
+        - "Yes, and a human checked every claim against its source"
+        - "Yes, not fully checked by a human"
+    validations:
+      required: true
+  - type: input
+    id: ai_which
+    attributes:
+      label: If yes, which one?
+      placeholder: "e.g. the model or agent name"
   - type: input
     id: credit
     attributes:
       label: How should you be credited?
-      placeholder: "@yourhandle (or 'anonymous')"
-    validations:
-      required: false
+      placeholder: "@yourhandle (or anonymous)"
+  - type: checkboxes
+    id: rules
+    attributes:
+      label: Rules
+      options:
+        - label: "Only public sources: no DMs or private chats without everyone's consent, no wallet addresses, keys or seed phrases, no real names of pseudonymous people, no unverified allegations, no shilling."
+          required: true

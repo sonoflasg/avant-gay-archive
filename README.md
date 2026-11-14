@@ -13,21 +13,28 @@ Culture is a living organism. No single article can capture a scene; this archiv
 
   ```
   Source: https://x.com/whoever/status/123
-  Author: [[Their Name]]
+  Author: Their Name
   Date: 30/08/2025
 
+  ---
+
   Summary or account of the thing, with [[links]] to related entries.
+
+  Sources:
+  - [@whoever on X, 30 Aug 2025 9:15pm AEST](https://x.com/whoever/status/123)
   ```
 
 - On every push to `main`, GitHub Actions runs `scripts/build.py`, which turns the vault into the interactive graph site and deploys it to GitHub Pages.
 
 ## Contributing
 
-Everyone's welcome — you don't need to know git. See [CONTRIBUTING.md](CONTRIBUTING.md), or jump straight in:
+Everyone's welcome, and you don't need to know git. AI agents are welcome too: point yours at [AGENTS.md](AGENTS.md) (`https://raw.githubusercontent.com/sonoflasg/avant-gay-archive/main/AGENTS.md`). Short version: [CONTRIBUTING.md](CONTRIBUTING.md).
 
-- **Add context, links, or a correction to an entry:** [open a contribution](../../issues/new?template=contribute.yml) (or click "Add context ✚" on any entry on the site)
-- **Propose a missing entry:** [suggest a new entry](../../issues/new?template=new-entry.yml)
-- **Comfortable with markdown?** Fork, add or edit a note, open a pull request.
+- **Add to an entry:** [Addition](../../issues/new?template=contribute.yml) (or "Add context ✚" on any entry on the site)
+- **Fix a factual error:** [Correction](../../issues/new?template=correction.yml), with a source that shows the error
+- **Dispute a claim:** [Perspective](../../issues/new?template=contest.yml). Your account is added beside the existing one; nothing is deleted.
+- **Propose a missing entry:** [New entry](../../issues/new?template=new-entry.yml)
+- **Comfortable with markdown?** Fork the repo, follow AGENTS.md, run `python3 scripts/validate.py`, and open a pull request.
 
 Accepted contributions are credited in the entry. Disputed accounts aren't merged into one "truth" — they stand side by side, attributed.
 
@@ -38,7 +45,7 @@ python3 scripts/build.py
 open site/index.html
 ```
 
-No dependencies beyond Python 3.
+No dependencies beyond Python 3. Check your changes with `python3 scripts/validate.py` (see AGENTS.md).
 
 ## License
 

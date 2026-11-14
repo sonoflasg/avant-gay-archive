@@ -1,46 +1,47 @@
 # Contributing to the archive
 
-This archive belongs to the scene. Whether you were there for the fracture or arrived last week, your material is welcome. There are two paths, depending on your comfort level.
+This archive belongs to the scene. Your material is welcome whether you were there from the start or arrived last week. Using an AI agent is fine: point it at **[AGENTS.md](AGENTS.md)** (raw: `https://raw.githubusercontent.com/sonoflasg/avant-gay-archive/main/AGENTS.md`), which holds the full rules and templates. This page is the short version.
 
-## Path 1 — no git required
+## Four kinds of contribution
 
-Open an issue and a maintainer will fold your material into the archive:
+1. **New entry:** something missing from the archive.
+2. **Addition:** new sourced facts or context for an existing entry. Nothing existing is changed.
+3. **Correction:** a plain factual error, fixed with a source that shows the error. It is logged in the entry's `### Revisions` section.
+4. **Perspective / contest:** a different account of something. The existing claim is never deleted. Yours is added beside it under `### Perspectives`, attributed (who, when, source).
 
-- [Add context / material / a correction to an existing entry](../../issues/new?template=contribute.yml)
-- [Propose a new entry](../../issues/new?template=new-entry.yml)
+## Two ways to send it
 
-You'll be credited however you ask to be (handle or anonymous).
+- **No git:** open the matching [issue form](../../issues/new/choose) (New entry, Addition, Correction, Perspective). A maintainer folds accepted material into the archive.
+- **Pull request:** fork the repo, add or edit notes as described in [AGENTS.md](AGENTS.md), run `python3 scripts/validate.py`, and open a PR using the template. A read-only check runs the same validator on every PR.
 
-## Path 2 — pull requests
+Submissions are reviewed in periodic batches ([REVIEW.md](REVIEW.md)). Nothing is merged without the archive owner's approval. Every contribution is credited to the handle you give, or to "anonymous".
 
-The repo is an Obsidian vault: every entry is a markdown file, folders indicate type (`Artists/`, `Collections/`, `ArticlesNthreads/`, etc.).
+## Entry shape
 
-1. Fork the repo, add or edit a note.
-2. Follow the entry shape:
+```
+Source: <main public URL>
+Author: <plain text, e.g. your handle>
+Date: DD/MM/YYYY
+Status: needs-sources     # optional: needs-sources | contested
 
-   ```
-   Source: <link to the tweet/thread/article/mint>
-   Author: [[Who made or said it]]
-   Date: DD/MM/YYYY
-   Status: needs-sources   # optional
+---
 
-   The account itself, linking related entries with [[wikilinks]].
-   ```
+The account, linking related entries with [[wikilinks]].
 
-`Status: needs-sources` flags a draft that is already in the vault but still lacks primary sources (for example early Grok-generated notes). Do not delete those notes; mark them so they can be sourced later. Compiled entries should name their sources in the body (use a normal markdown URL in a Sources section for bibliographic citations; only `[[wikilink]]` a source when the note actually discusses that work or person). Credit the compiler in the Author line as plain text (usually `SonOfLasG`) — the Author/Source/Date/Status fields are metadata, not graph edges.
+Sources:
+- [Author, “Title,” publication, date](https://…)
+```
 
-3. Open a pull request. The site rebuilds automatically when it's merged.
-
-Tips: link generously — the graph is the point. New entries with zero `[[links]]` float disconnected. Check the site's grey "phantom" nodes for entries the archive already wants: they're referenced but unwritten.
+The header lines are metadata, not graph edges, so don't put `[[wikilinks]]` in them. `Status: needs-sources` flags a draft that still lacks primary sources. Never delete those notes; source them. Grey "phantom" nodes on the site are entries the archive already wants.
 
 ## Editorial principles
 
-1. **Sources over vibes.** Claims should link to primary material (tweets, mints, articles) wherever possible.
-2. **Perspectives stand side by side.** Contested history doesn't get merged into one account. Competing versions co-exist in the same note (or linked notes), each attributed. The graph can hold disagreement; a single narrative can't.
-3. **Attribution always.** Every contribution is credited — in the note's Author/Contributors line and in the git history.
-4. **Consent for private material.** DMs and private conversations only go in with the consent of the people in them.
-5. **People over beef.** Documenting feuds that shaped the scene: yes. Using the archive to prosecute them: no.
+1. **Sources over vibes.** Every claim links to public material. X posts are cited by URL, with the date and time in Melbourne time (AEDT/AEST).
+2. **Perspectives stand side by side.** Contested history isn't merged into one account. Each version is attributed.
+3. **Attribution always.** Contributors are credited in the entry and in git history. Disclose AI assistance in your PR or issue.
+4. **Consent for private material.** DMs and private chats only go in with the consent of the people in them. Never include wallet addresses, keys or seed phrases. Never include real names of pseudonymous people.
+5. **People over beef.** Documenting feuds that shaped the scene: yes, through public, attributed statements. Using the archive to prosecute them, or to push allegations or shill: no.
 
 ## Maintainers
 
-Maintainers review issues and PRs, and merge accepted material. Active, trusted contributors will be invited as maintainers over time — stewardship is meant to be shared.
+Maintainers triage issues and PRs ([REVIEW.md](REVIEW.md)). Active, trusted contributors will be invited as maintainers over time. Stewardship is meant to be shared.
