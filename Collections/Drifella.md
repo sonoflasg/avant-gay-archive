@@ -31,4 +31,8 @@ Cross-link with [[Trait Maxxing]], [[Schizocollage]], [[Evil Biscuit]], [[Mifell
 
 [[Blood Splatter]] [[Dratini]] [[Pokémon]] [[Twin Towers]] [[Jester]] [[Shadow Fella]] [[Joker]] [[Spiky DJ Ref]] [[Earl Ref]] [[Call of Duty Ref]] [[Bullets ref]] [[Postdemon ref]] [[Niqab ref]] [[Milady]] [[Gun ref]] [[NY ref]] [[Alien Frens ref]] [[Merzbow ref]] [[Noise Music ref]] [[Anime ref]] [[Mujahideen ref]] [[Al-Qaeda ref]] [[Viennese Actionist ref ]] [[Resistance ref]] [[Death ref]] [[Literature ref]] [[Kami-Yaburi ref]] [[Japanese Gutai group ref]] [[Despair ref]] [[Vito Acconci ref]] [[Rambo III ref]] [[Propaganda ref]] [[Bored Ape ref]] [[CryptoPunks ref]] [[Cartoons ref]] [[Film ref]] [[High Fashion ref]] [[Crucifix ref]] [[Memes ref]] [[Pulsedemon ref]] [[Branding ref]] [[Painterliness ref]] [[Cubist collage ref]] [[Surrealist automatism ref]]
 
+### Perspectives (added 14/11/2026)
+
+- **According to [[Patrician]] (@SAlgotrader), 11 Nov 2026, 3:25am AEDT:** “i guess my main contribution to DriFella was to parody Fang's rhetoric.” https://x.com/SAlgotrader/status/2120191034168881416 This is his own account of his role. *Inference:* “Fang” here is [[Charlotte Fang]] of [[Remilia]], whose writing on MiFella and Drifella the Automat paper cites. Patrician does not say which works or texts he means.
+
 Sources: [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/#proj-drifella)

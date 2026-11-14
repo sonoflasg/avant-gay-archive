@@ -39,6 +39,13 @@ The later name has one account across sources. GardenParty85 says it came from �
 
 See also [[Remilia]], [[Supermetal Bosch]], [[Spiky DJ]], [[Avant Gay]].
 
+### Perspectives: is the “Gay” era over?
+
+- **According to [[Patrician]] (@SAlgotrader), 11 Nov 2026, 3:39am AEDT:** [[111k]] is “perhaps the strongest sign that the era of Gay is over and we're already in the late Slash period.” https://x.com/SAlgotrader/status/2120194701500551246
+- **Patrician, 11 Nov 2026, 3:59am AEDT:** “The era of Gay died as soon as people got too sincere and serious, slashed to pieces on different platforms and factions. Instead of one winning solana, solana died. Only in the depths of it being So Over can it truly flip to So Back.” https://x.com/SAlgotrader/status/2120199749999395031
+- **Patrician, 10 Nov 2026, 7:57am AEDT:** he will “continue to release gay experiments” on Tezos and sees “potential for a gay renaissance there under the right conditions.” https://x.com/SAlgotrader/status/2119897076225999134
+- The Automat paper, published days earlier, treats Avant/Gay as a continuing, documented scene and describes a return to Ethereum after the Solana years. “Slash period” appears here only as Patrician’s term. This archive does not adopt it as a period name.
+
 Sources:
 - [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/)
 - [GardenParty85, “Notes from the Avant NFT Underground,” Right Click Save, 3 Nov 2025](https://www.rightclicksave.com/article/notes-from-the-avant-nft-underground-avant-gay-solana)
