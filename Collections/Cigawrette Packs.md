@@ -1,28 +1,27 @@
-Source: https://grok.com/share/bGVnYWN5LWNvcHk_15c00221-3863-4329-abe1-d39ed084d350
-
-Author: Grok
-Date: 03/05/2026
-Status: needs-sources
+Source: https://opensea.io/collection/cigawrettepacks
+Author: SonOfLasG
+Date: 14/11/2026
 
 ---
 
-This entry is a Grok draft and still needs primary sources.
+*Cigawrette Packs* is an experimental literature and object-format NFT collection by Pappachaga, released in September 2022 on [[Ethereum]]. The Automat paper registers 9,998 minted works. The earlier draft said 9,999 editions.
 
-**Cigawrette Packs** is an experimental literature/[[PFP]]/utility project (9,999 editions) in the broader NFT space, with strong ties and appeal in the [[Avant Gay]] scene due to its irreverent, literary, and pack-like collectible format.
+*Rewritten 14/11/2026 from public sources. It replaces a May 2026 Grok draft (flagged needs-sources) that described packs “containing” literary content to be opened. The sources describe the warning label itself as the space for writing.*
 
-### Concept
-- Positioned between PFP and utility: Each “pack” is like a digital cigarette pack containing literary/experimental content, art, or interactive elements.
-- Emphasizes storytelling, absurdity, and the ritual of “opening” packs — fitting the scene’s love of lore, memes, and playful consumption.
+### What it is
 
-It has a gritty, smoker’s-lounge, countercultural vibe that resonates with the punk/transgressive side of Avant Gay (similar to how [[Cuckcore]] or [[Fellaverse]] embraces messiness and irony).
+- **GardenParty85 ([[Notes from the Avant NFT Underground]]):** “Each anthropomorphic pack is considered by its maker, Pappachaga, to be a literary project, providing a blank warning label to be filled with custom text via a free online image generator” (cigbot.lol). “More than 90 brands of fictional cigarettes exist in this ever-expanding universe that blends visual art with alternate reality gaming.”
+- **The Automat paper:** the project’s description reads, “Warning labels are canvas. Use them as you wish.” The labels carry aphorisms, brand language, jokes and fragments of theory, such as “born to post, forced to render.” [[lowbie]] first read it as poetry and compares each pack to a postcard. [[Venus de Gaia]] identifies Pappachaga as the sole creator.
 
-### Scene Relevance
-While not one of the absolute core generative heavyweights like Drifella or Horses, it’s appreciated for its experimental edge and how it blends narrative with collectibles — a common thread in the movement.
+### Where it sits
 
-If you’re going through it, expect a mix of visual packs and written/literary surprises inside.
+The Automat paper says the collection “should be treated less as Avant/Gay proper than as part of the earlier Avant NFT and Remilia-adjacent first wave” (see [[Avant NFT]], [[Milady]]). GardenParty85 presents it among Avant NFT projects that rely on “storytelling and universe-building.” The earlier draft placed it in the [[Avant Gay]] scene more broadly, alongside [[Cuckcore]] and [[Fellaverse]].
 
-it's on [[Ethereum]]
+### Reference tags (vault)
 
- [[Milady]] [[Resistance ref]] [[Death ref]] [[Literature ref]]  [[Despair ref]]  [[Propaganda ref]] [[Bored Ape ref]] [[CryptoPunks ref]] [[Cartoons ref]] [[Film ref]]  [[Branding ref]] [[Painterliness ref]] [[Cubist collage ref]] [[Surrealist automatism ref]]
+[[Milady]] [[Resistance ref]] [[Death ref]] [[Literature ref]]  [[Despair ref]]  [[Propaganda ref]] [[Bored Ape ref]] [[CryptoPunks ref]] [[Cartoons ref]] [[Film ref]]  [[Branding ref]] [[Painterliness ref]] [[Cubist collage ref]] [[Surrealist automatism ref]]
 
-Sources: [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/#proj-cigawrette-packs)
+Sources:
+- [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/#proj-cigawrette-packs)
+- [GardenParty85, “Notes from the Avant NFT Underground,” Right Click Save, 3 Nov 2025](https://www.rightclicksave.com/article/notes-from-the-avant-nft-underground-avant-gay-solana)
+- [Cigawrette Packs on OpenSea](https://opensea.io/collection/cigawrettepacks)

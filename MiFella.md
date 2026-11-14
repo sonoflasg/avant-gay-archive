@@ -40,3 +40,29 @@ This note records only what is published there. It is not a transcript, and it d
 Compiled by SonOfLasG from the paper’s References.
 
 Sources: [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/#proj-mifella)
+
+### Who made MiFella: accounts side by side (added 14/11/2026)
+
+Published sources describe MiFella’s authorship differently. This archive records them without choosing between them.
+
+- **The Automat paper (9 Nov 2026):** “The original collection was created by a small group of collaborators and was intentionally designed so that MiFella could operate simultaneously as collection, artist identity, fictional character, social-media persona, and collaborative project.” It credits the collection to “MiFella / @MMifella.”
+- **GardenParty85 (Right Click Save, 3 Nov 2025):** “Although Mifella is a single account, there are many Mifella artists and anyone can claim Mifella and launch a Mifella collection.” Images are credited to “Mifella Artists.”
+- **Peter Bauman (Le Random, 9 Oct 2025):** in passing, “the painting of artists like Earl and Spiky DJ, creator of Mifella.” See [[Spiky DJ]].
+- **Giannis Sourdis on X (12 Nov 2026, 8:30pm AEDT):** “Evil Biscuit created Drifella as a response to Mifella (created by @MMifella as a response to Milady).” https://x.com/Greekdx/status/2120811343913566386
+
+Anonymous claims elsewhere that link the MiFella account to particular people are not repeated here.
+
+### Date and chain, side by side
+
+- GardenParty85 dates *Mifella* to 2022, and Brian Droitcour (Right Click Save, 4 May 2026) writes of “Mifella (2022).”
+- The Automat paper’s project register gives “MiFella / @MMifella, early 2023. Solana. 2,446 works.”
+- Bauman reports scene lore told to him by [[Patrician]]: MiFella “was struggling to mint out on Solana as the first of its kind on this new chain.” The community joked that it would mint out only once the artist died, which led to the crucifella figure in [[Constant Fella|The Constant Fella]].
+
+### How critics place it
+
+- Dean Kissick ([[The Vulgar Image]], Spike, Summer 2025) puts “MiFella’s abject ‘cuckcore’ aesthetic” at the heart of the “avant” or “gay NFT” movement.
+- Droitcour ([[Two Trends in NFT Art]]) calls it “an appropriation of MiladyMaker’s neo-chibi style but with boys instead of girls.”
+- lowbie ([[THERE IS NO HISTORY]]) quotes the collection description, “Mifella is about Milady.”
+- GardenParty85 ([[Notes from the Avant NFT Underground]]) calls it “an exercise in experimental aesthetics” and traces the lore: born, died, fused with a dead Pokémon into Drifella, dissolved into a chair.
+
+Further sources: [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/); [GardenParty85, Right Click Save, 3 Nov 2025](https://www.rightclicksave.com/article/notes-from-the-avant-nft-underground-avant-gay-solana); [Peter Bauman, “Drifella III: Room for Complexity,” Le Random, 9 Oct 2025](https://www.lerandom.art/editorial/drifella-iii-room-for-complexity); [Brian Droitcour, “Artmaxxing,” Right Click Save, 4 May 2026](https://www.rightclicksave.com/article/artmaxxing-the-new-bad-image-exhibition-brian-droitcour); [Dean Kissick, “The Vulgar Image,” Spike](https://www.spikeartmagazine.com/articles/vulgarity-the-vulgar-image); [Brian Droitcour, “Two Trends in NFT Art,” 9 May 2026](https://bianjie.systems/two-trends-in-nft-art); [lowbie, “THERE IS NO HISTORY,” 23 Aug 2025](https://www.vvv.so/texts/there-is-no-history)
