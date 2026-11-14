@@ -12,4 +12,7 @@ This note records only what is published there. It is not a transcript, and it d
 
 Compiled by SonOfLasG from the paper’s References.
 
+Peter Bauman (Monk Antony) is editor in chief of [[Le Random]]. His Le Random essays and interviews are cited in [[Drifella III]], [[Heavy Liquid Graphic]], [[Card NFT 2]], [[vvv.so]], [[111k]] and [[One of Us Is Real and It's Not You]].
+
 Sources: [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/#references)
+- [Le Random author page (Peter Bauman, “Monk Antony,” Editor in Chief)](https://www.lerandom.art/)

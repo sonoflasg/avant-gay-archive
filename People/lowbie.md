@@ -12,4 +12,7 @@ This note records only what is published there. It is not a transcript, and it d
 
 Compiled by SonOfLasG from the paper’s References.
 
+Published writing in this archive: [[THERE IS NO HISTORY]] (vvv.so, 23 Aug 2025). Le Random’s Dec 2025 bio says he hosts the weekly interview series WORLD RECEIVER for VVV.so.
+
 Sources: [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/#references)
+- [Le Random, “Mika Ben Amar, Brennan Wojtyla, …,” 12 Dec 2025 (contributor bios)](https://www.lerandom.art/editorial/mika-ben-amar-brennan-wojtyla-on)

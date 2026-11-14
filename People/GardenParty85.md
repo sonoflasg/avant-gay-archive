@@ -12,4 +12,6 @@ This note records only what is published there. It is not a transcript, and it d
 
 Compiled by SonOfLasG from the paper’s References.
 
+Published writing in this archive: [[Notes from the Avant NFT Underground]] (Right Click Save, 3 Nov 2025), one of the earliest participant histories of the scene.
+
 Sources: [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/#references)
