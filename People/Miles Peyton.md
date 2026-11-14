@@ -6,7 +6,7 @@ Date: 14/11/2026
 
 [[Miles Peyton]] was interviewed by Giannis Sourdis for the Automat paper (interview, 2 Sep 2026).
 
-The paper’s public References section records that this interview was used for: A background in digital art and computation as material; involvement with [[Yeche Lange]] and the development of [[vvv.so]]; VVV’s evolution from bespoke Yeche minting tools; and dissatisfaction with earlier launchpad limits such as those of [[LaunchMyNFT]].
+The paper’s public References section records that this interview was used for: A background in digital art and computation as material; involvement with [[Galerie Yeche Lange|Yeche Lange]] and the development of [[vvv.so]]; VVV’s evolution from bespoke Yeche minting tools; and dissatisfaction with earlier launchpad limits such as those of [[LaunchMyNFT]].
 
 This note records only what is published there. It is not a transcript, and it does not add private correspondence.
 

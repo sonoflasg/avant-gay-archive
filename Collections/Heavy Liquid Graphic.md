@@ -1,32 +1,31 @@
-Source: https://grok.com/share/bGVnYWN5LWNvcHk_97c693ff-9780-4860-a684-55a5c0ee4c51
-
-Author: Grok
-Date: 03/05/2026
-Status: needs-sources
+Source: https://www.lerandom.art/editorial/parker-ito-and-evil-biscuit-on-possessed-spirits
+Author: SonOfLasG
+Date: 14/11/2026
 
 ---
 
-This entry is a Grok draft and still needs primary sources.
+*Heavy Liquid Graphic* (styled HEAVY LIQUID GRAPHIC) is a 999-work collection by [[Parker Ito]] and [[Evil Biscuit]], released on 31 October 2025 on [[Solana]] through [[vvv.so]]. Le Random describes it as the pair’s “first collaborative NFT project,” “a Halloween-themed collection merging horror aesthetics, digital collage and playful fear.”
 
-**Heavy Liquid Graphic** (2025) is the **first collaborative NFT project** between [[Parker Ito]] (CreamyDreamy)** and [[Evil Biscuit]] (bis__cut). It’s a Halloween-themed collection (999 editions) that fuses their distinct styles into something darkly humorous, nostalgic, and supernatural.
+*Rewritten 14/11/2026 from public sources. It replaces a May 2026 Grok draft (flagged needs-sources). That draft’s main facts (first collaboration, 999 works, each artist curating half, Halloween, VVV) are confirmed below. Its unsourced description of negative space and “the actual darkness of the screen” has been dropped.*
 
-### Concept and Aesthetic
-- Horror meets [[schizocollage]]: Vintage photos, GAN-warped overlays, digital collage, horror aesthetics, silhouettes, iridescent pixel grates, and playful fear. It leans into negative space, voids, and absences more than pure density, creating tension between flatness and depth — figures/shadows emerging from darkness while surface elements cling on.
-- The title evokes liquid, melting, or possessed imagery — a spooky, fluid blend of the two artists’ approaches (Parker’s post-internet/painterly sensibility + Biscuit’s chaotic, reference-maxxed [[trait-maxxing]] trait layers).
-- It stands out in the Avant Gay scene for balancing the movement’s maximalist energy with more atmospheric, screen-aware effects (pulling viewers into the “actual darkness of the screen”).
+### How it was made (Le Random interview, 31 Oct 2025)
 
-### Process and Collaboration
-- Each artist curated/outputted roughly half the collection independently, then pieced it together.
-- Biscuit noted the involved curation process (multiple gens, JSON restructuring) made him happier with the final outputs.
-- Parker has spoken about being honored by the collab (he was a big fan of [[Drifella 2]]) and how it fits his exploration of the Solana scene’s tools and energy.
+- **Starting point.** Biscuit’s idea was to run [[Drifella]] and [[Drilady]] images through a GAN that turned them into jagged outlines, “so it was almost like the overlays were the starting point.” Ito: “Gay NFT is so tied to the use of overlays; this is what makes it formally distinct from a lot of other NFTs.”
+- **Curation.** “The total collection is 999. We each outputted and curated one half, independent of the other” (Ito). Biscuit generated multiple builds and pieced together the outputs he liked through their JSON, using [[Hashlips]] to keep the files clean.
+- **Sources.** Biscuit bought vintage photographs, polaroids and textures on eBay, including a nineteenth-century post-mortem portrait, and used Etch A Sketch-style pixel line drawings on black. Ito pulled material from Pinterest. Both name influences: Phil Hale, Justin Mortimer, Petra Cortright’s *999flower* (2022) and Milady Aura.
+- **Timing.** Biscuit wanted a Halloween release. Ito made most of his half in the week before, while in the Dominican Republic.
+- **Context.** Ito says [[Drifella 2]] “was one of the first NFT projects I saw that really spoke to me.” His earlier collaborations were exhibitions with the duo Body by Body, as the group “Aventa Garden,” a play on avant-garde.
 
-### Scene Context
-This project highlights the collaborative, cross-pollinating nature of the [[Avant Gay]] crew. It bridges Parker’s fine-art credibility and Biscuit’s defining traitmaxxing influence, while staying true to the scene’s raw, referential, anti-clean ethos. Released on VVV.so, it’s praised for twisting schizocollage into something moodier and Halloween-appropriate — perfect seasonal entry in a movement that loves absurdity, nostalgia, and internet sediment.
+### Other readings
 
-In the broader Avant Gay pantheon, it’s a strong example of how the scene evolves: not just solo maximalism ([[Drifella]]) or restrained composition ([[Horses?]]), but playful fusion and thematic experimentation.
+The Automat paper reads the project as joining Ito’s Post-Internet approach to Photoshop and circulation with Biscuit’s overlay-driven [[trait-maxxing]]. It also says the project grew out of image-to-image outline techniques Biscuit developed in [[Drifella III]].
 
-For deeper insight, check the excellent **Le Random interview** “Parker Ito and Evil Biscuit on Possessed Spirits” — they discuss their process, influences, and the darkly humorous nostalgia/supernatural vibe in detail.
+See also [[Avant Gay]], [[Schizocollage]], [[Le Random]].
+
+### Reference tags (vault)
 
 [[Blood Splatter]] [[Dratini]] [[Pokémon]] [[Twin Towers]] [[Jester]] [[Shadow Fella]] [[Joker]] [[Spiky DJ Ref]] [[Earl Ref]] [[Call of Duty Ref]] [[Bullets ref]] [[Postdemon ref]] [[Niqab ref]] [[Milady]] [[Gun ref]] [[NY ref]] [[Alien Frens ref]] [[Merzbow ref]] [[Noise Music ref]] [[Anime ref]] [[Mujahideen ref]] [[Al-Qaeda ref]] [[Viennese Actionist ref ]] [[Resistance ref]] [[Death ref]] [[Literature ref]] [[Kami-Yaburi ref]] [[Japanese Gutai group ref]] [[Despair ref]] [[Vito Acconci ref]] [[Rambo III ref]] [[Propaganda ref]] [[Bored Ape ref]] [[CryptoPunks ref]] [[Cartoons ref]] [[Film ref]] [[High Fashion ref]] [[Crucifix ref]] [[Memes ref]] [[Pulsedemon ref]] [[Branding ref]] [[Painterliness ref]] [[Cubist collage ref]] [[Surrealist automatism ref]]
 
-Sources: [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/#proj-heavy-liquid-graphic)
+Sources:
+- [Peter Bauman, “Parker Ito and Evil Biscuit on Possessed Spirits,” Le Random, 31 Oct 2025](https://www.lerandom.art/editorial/parker-ito-and-evil-biscuit-on-possessed-spirits)
+- [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/#proj-heavy-liquid-graphic)

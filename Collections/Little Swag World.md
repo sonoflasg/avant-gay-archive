@@ -24,4 +24,17 @@ It’s a perfect example of the scene’s diversity: Bosch uses modern tools to 
 
 [[Blood Splatter]] [[Dratini]] [[Pokémon]]  [[Jester]] [[Shadow Fella]] [[Joker]] [[Spiky DJ Ref]]  [[Call of Duty Ref]] [[Bullets ref]]  [[Niqab ref]] [[Milady]] [[Gun ref]] [[NY ref]] [[Alien Frens ref]]  [[Noise Music ref]] [[Anime ref]] [[Mujahideen ref]] [[Al-Qaeda ref]]  [[Resistance ref]] [[Death ref]] [[Literature ref]] [[Despair ref]]  [[Propaganda ref]] [[Bored Ape ref]] [[CryptoPunks ref]] [[Cartoons ref]] [[Film ref]] [[High Fashion ref]] [[Crucifix ref]] [[Memes ref]]  [[Branding ref]] [[Painterliness ref]]
 
+### Sourced points (added 14/11/2026)
+
+- **Date and size.** The Automat paper registers it as “Supermetal Bosch / Little Swag World, January 15, 2024. Solana. 3,333 works.” GardenParty85 dates it 2024. A caption in Brian Droitcour’s Le Random essay reads “#1219, 2023.” *Inference:* that is probably a creation date, not the mint.
+- **Method.** GardenParty85: “built using a combination of photoshopped assets and Stable Diffusion.” Droitcour: Bosch “began with mood-board collages of fashion fragments, then instructed the model to smooth them into holistic figures.” GardenParty85 has mapped its references on X, including Rick Owens, Margiela, Vivienne Westwood, George Condo’s album art for Kanye West, a Murakami-studio plush and a Dratini hat.
+- **Its place in the scene, side by side.**
+  - Jared Madere (Le Random ep. 28, 10 Oct 2025): “When the Solana scene really kicked off with Little Swag World.” Le Random, Aug 2026: Yeche “transitioned from ETH to Solana when Super Metal Bosch put out Little Swag World.”
+  - Droitcour ([[Seams and Synthesis]]): Mons and Little Swag World “sit adjacent to (but not inside) the avant-NFT milieu” and “are not trait-based.”
+- **Exhibited.** In [[One of Us Is Real and It's Not You]] at [[Galerie Yeche Lange]], 2025 (Droitcour).
+
+The marketplace details ([[Tensor]], [[Magic Eden]]) and the reception claims above still come from the earlier Grok draft.
+
+Further sources: [Brian Droitcour, “Seams and Synthesis,” Le Random, 2 Feb 2026](https://www.lerandom.art/editorial/seams-and-synthesis-schizocollage-and-ai-aesthetics); [GardenParty85, Right Click Save, 3 Nov 2025](https://www.rightclicksave.com/article/notes-from-the-avant-nft-underground-avant-gay-solana); [Le Random ep. 28](https://www.lerandom.art/episodes/jared-madere-on-yeche-lange-vvv-and-the-solana-avant-scenes-impact); [Le Random, 10 Aug 2026](https://www.lerandom.art/editorial/jared-madere-and-fairybaby-on-vvv-and-the-world-as-material)
+
 Sources: [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/#apx-b)

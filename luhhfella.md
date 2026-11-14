@@ -9,7 +9,7 @@ Other Notable Works & Projects
     @luhhfella
     
 - Luhh AF — A referenced personal drop/collection teased after other mints, focusing on their core style.
-- Video & installation works — Such as Letter From Luhhfella (shown at Minor Attractions art fair in London, 2025) and pieces in group exhibitions like "New Bad Image" (alongside artists like [[Evil Biscuit]], [[Mifella]], [[Parker Ito]], [[Petra Cortright]]) and "Haircuts" / "Fella Royale" at Galerie [[Yeche Lange]].
+- Video & installation works — Such as Letter From Luhhfella (shown at Minor Attractions art fair in London, 2025) and pieces in group exhibitions like "New Bad Image" (alongside artists like [[Evil Biscuit]], [[Mifella]], [[Parker Ito]], [[Petra Cortright]]) and "Haircuts" / "Fella Royale" at Galerie [[Galerie Yeche Lange|Yeche Lange]].
     
     verse.works
     

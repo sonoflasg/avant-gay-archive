@@ -1,24 +1,24 @@
-Source: https://grok.com/share/bGVnYWN5LWNvcHk_7cf2079f-dac7-435a-b759-0673e85facfb
-
-Author: Grok
-Date: 03/05/2026
-Status: needs-sources
+Source: https://www.rightclicksave.com/article/notes-from-the-avant-nft-underground-avant-gay-solana
+Author: SonOfLasG
+Date: 14/11/2026
 
 ---
 
-This entry is a Grok draft and still needs primary sources.
+Earl (X: @earl16o1) is a painter and writer in the [[Avant Gay]] scene whose work takes trading as its subject.
 
-**Earl** (@earl16o1) is a trader, painter, and writer who is a beloved **insider figure and cultural chronicler** of the [[Avant Gay]] scene. He embodies the intersection of trading, art, and lore that defines much of the community’s vibe.
+*Rewritten 14/11/2026 from public sources. It replaces a May 2026 Grok draft (flagged needs-sources).*
 
-### What He Does
-- **Candle Chart Paintings**: Creates oil paintings of red/green crypto charts that capture market emotion tied to historical/financial/geopolitical events. These have become iconic — many NFT collections in the scene use his chart artworks as traits.
-- [[Trader Fiction]]: Writes narrative “trader fiction” on Substack (traderfiction.substack.com) blending art, trading, crypto, history, and literature. His stories often reference [[Mifella]], [[Drifella]], [[Tojiba]], and other scene lore in a fictionalized, immersive way.
+- **Candle-chart paintings.** GardenParty85: Earl produces “oil paintings of red and green candle charts that express market movement and the emotion tied to historical financial and geopolitical events,” and “several NFT collections use images of Earl’s paintings as traits.” Peter Bauman says [[Drifella III]] draws “from the painting of artists like Earl and Spiky DJ.”
+- **[[Trader Fiction]].** Earl writes “trader fiction” on Substack that combines “interests and experience in art, trading, crypto, history, and literature” (quoted by GardenParty85). The series refers to [[MiFella]], [[Drifella]], [[Tojiba]] and related projects.
+- **The Jofella Saga.** [[lowbie]] ([[THERE IS NO HISTORY]], 23 Aug 2025) describes “an epic, 13 chapter fan-fiction based on the NFTs,” “almost 200 pages long” as a PDF. It follows a trader with Dratini companions and draws on the Tojiba world.
+- **Exhibitions.** Earl was one of the seven artists in [[Haircuts]], the first show at [[Galerie Yeche Lange]]’s New York space (17 May–14 Jul 2024). Artnet’s 11 Apr 2024 column credits work by earl16o1 among Yeche’s artists.
 
-### Role in the Scene
-Earl is the “glue” guy — a trader who documents and mythologizes the community from the inside. His work adds emotional and narrative depth to the raw, chaotic aesthetics of the movement. He’s not just a collector or artist but a storyteller who helps turn market volatility and scene drama into art and fiction.
+The earlier draft also linked Earl to [[Card NFT]]. The sources used here do not document that connection.
 
-He’s frequently name-dropped in scene roundups as one of the essential voices that make the Avant Gay world feel alive and interconnected.
-
-[[Galerie Yeche Lange]]
-[[Card NFT]]
-[[Drifella III]]
+Sources:
+- [GardenParty85, “Notes from the Avant NFT Underground,” Right Click Save, 3 Nov 2025](https://www.rightclicksave.com/article/notes-from-the-avant-nft-underground-avant-gay-solana)
+- [lowbie, “THERE IS NO HISTORY,” vvv.so, 23 Aug 2025](https://www.vvv.so/texts/there-is-no-history)
+- [Trader Fiction on Substack](https://substack.com/@traderfiction)
+- [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/)
+- [Peter Bauman, “Drifella III: Room for Complexity,” Le Random, 9 Oct 2025](https://www.lerandom.art/editorial/drifella-iii-room-for-complexity)
+- [Annie Armstrong, Wet Paint, Artnet News, 11 Apr 2024](https://news.artnet.com/market/andrew-norman-wilson-jared-madere-avant-nft-2467799)
