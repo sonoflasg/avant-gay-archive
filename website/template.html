@@ -106,7 +106,9 @@
   }
   .tag:hover { border-color: var(--accent); color: var(--accent); }
   #panel footer { padding: 16px 28px 24px; border-top: 1px solid var(--hair);
-    display: flex; gap: 10px; align-items: center; }
+    display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  #srcBtn, #contribBtn { white-space: nowrap; }
+  #contribAlts { flex-basis: 100%; order: 9; display: flex; gap: 14px; font-size: 11.5px; color: var(--dim); }
   #srcBtn {
     display: inline-block; padding: 10px 20px; border-radius: 22px;
     background: var(--accent); color: #14040c; font-size: 12.5px; font-weight: 700;
@@ -119,6 +121,8 @@
     letter-spacing: 0.04em; text-decoration: none;
   }
   #contribBtn:hover { border-color: var(--accent2); color: var(--accent2); }
+  .contribAlt { color: var(--dim); font-size: 11.5px; letter-spacing: 0.04em; text-decoration: none; }
+  .contribAlt:hover { color: var(--accent2); }
   #pVotes { display: flex; gap: 8px; margin-left: auto; }
   #pVotes.hidden { display: none; }
   .vbtn {
@@ -177,6 +181,10 @@
   <footer>
     <a id="srcBtn" href="#" target="_blank" rel="noopener">Open source ↗</a>
     <a id="contribBtn" href="#" target="_blank" rel="noopener">Add context ✚</a>
+    <div id="contribAlts">
+      <a id="correctBtn" class="contribAlt" href="#" target="_blank" rel="noopener" title="Fix a factual error, with a source">correct an error ↗</a>
+      <a id="contestBtn" class="contribAlt" href="#" target="_blank" rel="noopener" title="Add a different account beside the existing one">contest a claim ↗</a>
+    </div>
     <div id="pVotes" class="hidden">
       <button class="vbtn" id="vUp" title="this matters">👍 <span>0</span></button>
       <button class="vbtn" id="vDown" title="disputed / overrated">👎 <span>0</span></button>
@@ -213,11 +221,16 @@ const TYPE_LABEL = {
   phantom: "mentioned — no note yet",
 };
 
-function contribUrl(node) {
-  const base = REPO_URL + "/issues/new?template=contribute.yml";
-  return node ? base + "&title=" + encodeURIComponent("[" + node.id + "] ") : base;
+// Contribution paths (see AGENTS.md): new entry, addition, correction, perspective/contest.
+const GUIDE_URL = REPO_URL + "/blob/main/AGENTS.md";
+const FORMS = { addition: "contribute.yml", correction: "correction.yml", perspective: "contest.yml", "new-entry": "new-entry.yml" };
+function contribUrl(node, kind) {
+  if (!node) return REPO_URL + "/issues/new/choose";
+  const k = kind || (node.type === "phantom" ? "new-entry" : "addition");
+  const title = k === "new-entry" ? "New entry: " + node.id : "[" + node.id + "] " + k + ": ";
+  return REPO_URL + "/issues/new?template=" + FORMS[k] + "&title=" + encodeURIComponent(title);
 }
-document.getElementById("hdrRepo").href = REPO_URL;
+document.getElementById("hdrRepo").href = GUIDE_URL;
 document.getElementById("hintRepo").href = contribUrl(null);
 
 const canvas = document.getElementById("c");
@@ -383,7 +396,7 @@ function select(n, fromKey) {
       .replace(/^\s*-\s+/gm, "· ");
   } else {
     body.innerHTML = '<span class="stubmsg">' + (n.type === "phantom"
-      ? "This entity is referenced across the archive but doesn’t have its own entry yet. Know the story? Use “Add context” below."
+      ? "This entity is referenced across the archive but doesn’t have its own entry yet. Know the story? Use “Write this entry” below."
       : "Entry exists but hasn’t been written yet. Know the story? Use “Add context” below.") + "</span>";
   }
   const conn = document.getElementById("pConn");
@@ -400,7 +413,14 @@ function select(n, fromKey) {
   const src = document.getElementById("srcBtn");
   if (n.source) { src.href = n.source; src.classList.remove("disabled"); src.textContent = "Open source ↗"; }
   else { src.href = "#"; src.classList.add("disabled"); src.textContent = "No source link"; }
-  document.getElementById("contribBtn").href = contribUrl(n);
+  const cb = document.getElementById("contribBtn");
+  cb.href = contribUrl(n);
+  cb.textContent = n.type === "phantom" ? "Write this entry ✚" : "Add context ✚";
+  for (const [id, k] of [["correctBtn", "correction"], ["contestBtn", "perspective"]]) {
+    const a = document.getElementById(id);
+    a.href = contribUrl(n, k);
+    a.style.display = n.type === "phantom" ? "none" : "";
+  }
   renderVotes(n);
   panel.classList.add("open");
   tick();
