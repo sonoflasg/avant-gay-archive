@@ -25,7 +25,8 @@ sys.dont_write_bytecode = True
 import build  # noqa: E402
 
 DATE_RE = re.compile(r"^\d{2}/\d{2}/\d{4}$")
-META_RE = re.compile(r"^(Source|Author|Date|Status):", re.I)
+META_RE = re.compile(r"^(Source|Author|Date|Status|X):", re.I)
+X_FIELD = re.compile(r"^@[A-Za-z0-9_]{1,15}$")
 STATUS_OK = ("needs-sources", "contested")
 URL_RE = re.compile(r"https?://[^\s)\]>\"']+")
 SOURCES_HEAD = re.compile(r"^(#+\s*)?(\*\*)?(Further\s+)?Sources?\b", re.I)
@@ -129,6 +130,8 @@ def check_entry_shape(rep, f, text, new):
         rep.warn(f, f"Date '{meta['date']}' is not DD/MM/YYYY (fine only if the source gives no exact date)")
     if "author" in meta and "[[" in meta["author"]:
         rep.warn(f, "Author is metadata, not a graph edge: write plain text (e.g. SonOfLasG), not a [[wikilink]]")
+    if "x" in meta and not X_FIELD.match(meta["x"]):
+        rep.err(f, f"X field '{meta['x']}' must be a single handle like '@handle' (the account's own public X handle)")
     if "status" in meta and not meta["status"].lower().startswith(STATUS_OK):
         rep.err(f, f"Status '{meta['status']}' must be one of: {', '.join(STATUS_OK)} (or omit the line)")
     if not any(l.strip() == "---" for l in lines[:14]):
@@ -290,6 +293,13 @@ def main():
             changed = [(k + 1, new_lines[k]) for t, _, _, b1, b2 in sm.get_opcodes() if t in ("replace", "insert") for k in range(b1, b2)]
         scan_privacy(rep, path, changed, strict=True)
         check_x_links(rep, path, changed)
+        if old is not None and changed and all(META_RE.match(l) for _, l in changed):
+            # metadata-only edit (e.g. adding an X: handle): check the field, not the whole legacy entry
+            meta, _ = split_header(text)
+            if "x" in meta and not X_FIELD.match(meta["x"]):
+                rep.err(path, f"X field '{meta['x']}' must be a single handle like '@handle'")
+            check_removals(rep, path, old, text)
+            continue
         check_entry_shape(rep, path, text, new=old is None)
         if old is not None:
             check_removals(rep, path, old, text)

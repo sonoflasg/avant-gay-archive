@@ -23,6 +23,7 @@ Source: <main public URL>
 Author: <plain text, e.g. your handle>
 Date: DD/MM/YYYY
 Status: needs-sources     # optional: needs-sources | contested
+X: @handle                # optional: a persona's own confirmed X handle
 
 ---
 
@@ -32,7 +33,7 @@ Sources:
 - [Author, “Title,” publication, date](https://…)
 ```
 
-The header lines are metadata, not graph edges, so don't put `[[wikilinks]]` in them. `Status: needs-sources` flags a draft that still lacks primary sources. Never delete those notes; source them. Grey "phantom" nodes on the site are entries the archive already wants.
+`X:` holds a person's, collective's or platform's own public X handle, and only one a source confirms. The site shows that account's profile picture from a local copy. The header lines are metadata, not graph edges, so don't put `[[wikilinks]]` in them. `Status: needs-sources` flags a draft that still lacks primary sources. Never delete those notes; source them. Grey "phantom" nodes on the site are entries the archive already wants.
 
 ## Editorial principles
 
