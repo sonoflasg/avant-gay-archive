@@ -660,8 +660,15 @@ document.getElementById("search").addEventListener("input", e => {
 });
 document.getElementById("search").addEventListener("keydown", e => {
   if (e.key === "Enter" && focusSet && focusSet.size) {
-    // prefer matches the current category filter shows, then the best-connected
-    const rank = id => (shown(byId.get(id)) ? 1e6 : 0) + byId.get(id).degree;
+    // an exact (case-insensitive) name match always wins; then matches the current
+    // category filter shows; then names starting with the query; then name matches
+    // over summary-only matches; ties go to the best-connected
+    const q = e.target.value.trim().toLowerCase();
+    const rank = id => {
+      const n = byId.get(id), name = id.toLowerCase();
+      return (name === q ? 1e9 : 0) + (shown(n) ? 1e7 : 0) +
+        (name.startsWith(q) ? 1e5 : name.includes(q) ? 1e4 : 0) + n.degree;
+    };
     const n = byId.get([...focusSet].sort((a, b) => rank(b) - rank(a))[0]);
     if (n) { select(n); centerOn(n); }
   }
