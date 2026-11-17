@@ -4,6 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AVANT GAY — a living archive</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="alternate icon" href="favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
 <style>
   :root {
@@ -41,6 +45,13 @@
     outline: none; backdrop-filter: blur(12px);
   }
   #search::placeholder { color: var(--dim); }
+  #resetView {
+    position: fixed; top: 14px; right: 244px; z-index: 12;
+    background: var(--panel); border: 1px solid var(--hair); border-radius: 20px;
+    color: var(--dim); padding: 8px 14px; font-size: 12px; font-family: inherit;
+    cursor: pointer; backdrop-filter: blur(12px); letter-spacing: 0.03em;
+  }
+  #resetView:hover, #resetView:focus-visible { color: var(--ink); border-color: var(--accent2); outline: none; }
   #search:focus { border-color: var(--accent); }
 
   /* ---------- keyword sidebar ---------- */
@@ -151,8 +162,22 @@
     position: fixed; bottom: 16px; left: 16px; z-index: 10;
     display: flex; gap: 14px; flex-wrap: wrap; font-size: 10.5px; color: var(--dim);
   }
-  #legend span { display: flex; align-items: center; gap: 5px; }
+  #legend button {
+    display: flex; align-items: center; gap: 5px; background: none; border: 1px solid transparent;
+    color: var(--dim); font: inherit; font-size: 10.5px; padding: 3px 7px; margin: -3px -3px;
+    border-radius: 12px; cursor: pointer;
+  }
+  #legend button:hover { color: var(--ink); }
+  #legend button:focus-visible { outline: none; border-color: var(--accent2); color: var(--ink); }
+  #legend button[aria-pressed="true"] { color: var(--ink); border-color: rgba(255,255,255,0.28); background: rgba(255,255,255,0.06); }
+  #legend.filtering button[aria-pressed="false"]:not(.lg-all) { opacity: 0.45; }
   #legend i { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+  #legend .lg-faces i { background: conic-gradient(#f0a6ca, #7bdcff, #ffd166, #6ee7a0, #f0a6ca); }
+  #legend .lg-faces { color: var(--ink); border-color: rgba(255, 79, 163, 0.55); padding: 3px 9px; margin-right: 4px; }
+  #legend .lg-faces:hover { border-color: var(--accent); }
+  #legend .lg-faces[aria-pressed="true"] { border-color: var(--accent); background: rgba(255, 79, 163, 0.14); }
+  #legend .lg-all { display: none; color: var(--accent2); }
+  #legend.filtering .lg-all { display: flex; }
 
   #hint { position: fixed; bottom: 16px; right: 22px; z-index: 10;
     font-size: 10.5px; color: var(--dim); letter-spacing: 0.05em; }
@@ -162,6 +187,7 @@
   @media (max-width: 720px) {
     #keys { display: none; }
     #search { width: 150px; }
+    #resetView { right: 184px; }
   }
 </style>
 </head>
@@ -172,6 +198,7 @@
   <span>a living archive of the scene on Solana · <a id="hdrRepo" href="#" target="_blank" rel="noopener">contribute ↗</a></span>
 </div>
 <input id="search" type="text" placeholder="search the archive…" autocomplete="off">
+<button id="resetView" type="button" title="Reset zoom and pan, close the open entry (filters stay)">reset view</button>
 <nav id="keys"><h2>Keywords</h2><div id="keyList"></div></nav>
 
 <aside id="panel">
@@ -200,7 +227,7 @@
 </aside>
 
 <div id="lightbox"><img alt=""></div>
-<div id="legend"></div>
+<div id="legend" role="toolbar" aria-label="Filter by category"></div>
 <div id="hint">drag to explore · scroll to zoom · click a node · <a id="hintRepo" href="#" target="_blank" rel="noopener">submit material ✚</a></div>
 <canvas id="c"></canvas>
 
@@ -282,6 +309,36 @@ links.forEach(l => { nbrs.get(l.source)?.add(l.target); nbrs.get(l.target)?.add(
 
 let selected = null, hovered = null, focusSet = null;
 
+// ---------- category filter (legend) ----------
+// filter = null shows everything; otherwise a Set of node types, or the special "faces" view.
+let filter = null;
+const FACES = "faces";
+function shown(n) {
+  if (n === selected) return true;
+  if (!filter) return true;
+  if (filter.has(FACES)) return !!n.pfp;
+  return filter.has(n.type);
+}
+// In the faces view, pictures are drawn at a legible minimum size (drawing only; layout unchanged).
+function drawR(n) {
+  if (filter && filter.has(FACES) && n.pfp) return Math.max(n.r, 10 / transform.k);
+  return n.r;
+}
+
+// ---------- labels ----------
+// Size-priority labels with a simple screen-space collision check.
+const LABEL_MIN_PX = 9;  // a node earns a label once its on-screen radius reaches this (cf. PFP_MIN_PX)
+const LABEL_FONT = "Helvetica, Arial, sans-serif";
+const byDegree = [...nodes].sort((a, b) => b.degree - a.degree);
+function labelWidth(n, px, bold) {
+  const key = bold ? "_wb" : "_w";
+  if (n[key] === undefined) {
+    ctx.font = (bold ? "700 " : "") + "10px " + LABEL_FONT;
+    n[key] = ctx.measureText(n.id).width / 10;
+  }
+  return n[key] * px;
+}
+
 const sim = d3.forceSimulation(nodes)
   .force("link", d3.forceLink(links).id(d => d.id).distance(d => 46).strength(0.25))
   .force("charge", d3.forceManyBody().strength(d => -60 - d.degree * 4))
@@ -309,13 +366,15 @@ function tick() {
   ctx.translate(transform.x, transform.y);
   ctx.scale(transform.k, transform.k);
 
+  const k = transform.k;
   const active = selected || hovered;
   const hi = focusSet || (active ? new Set([active.id, ...nbrs.get(active.id)]) : null);
 
   // links
   for (const l of links) {
-    const dimmed = hi && !(hi.has(l.source.id) && hi.has(l.target.id));
-    ctx.strokeStyle = dimmed ? "rgba(120,120,140,0.05)" : "rgba(170,168,190,0.22)";
+    const hidden = !(shown(l.source) && shown(l.target));
+    const dimmed = hidden || (hi && !(hi.has(l.source.id) && hi.has(l.target.id)));
+    ctx.strokeStyle = hidden ? "rgba(120,120,140,0.025)" : dimmed ? "rgba(120,120,140,0.05)" : "rgba(170,168,190,0.22)";
     ctx.lineWidth = dimmed ? 0.5 : 0.8;
     ctx.beginPath();
     ctx.moveTo(l.source.x, l.source.y);
@@ -324,43 +383,74 @@ function tick() {
   }
   // nodes
   for (const n of nodes) {
-    const dimmed = hi && !hi.has(n.id);
+    const vis = shown(n);
+    const dimmed = !vis || (hi && !hi.has(n.id));
     const col = COLORS[n.type] || COLORS.phantom;
-    ctx.globalAlpha = dimmed ? 0.13 : 1;
-    if (n.pfpImg && n.r * transform.k >= PFP_MIN_PX) {
+    const r = drawR(n);
+    ctx.globalAlpha = !vis ? 0.05 : dimmed ? 0.13 : 1;
+    if (n.pfpImg && r * k >= PFP_MIN_PX) {
       // circular picture with a ring in the category colour; ring thickens on hover/selection
       const on = n === hovered || n === selected;
-      const ring = (on ? 3 : 1.6) / transform.k;
-      ctx.drawImage(n.pfpImg, n.x - n.r, n.y - n.r, 2 * n.r, 2 * n.r);
+      const ring = (on ? 3 : 1.6) / k;
+      ctx.drawImage(n.pfpImg, n.x - r, n.y - r, 2 * r, 2 * r);
       ctx.strokeStyle = col; ctx.lineWidth = ring;
       if (on) { ctx.shadowColor = col; ctx.shadowBlur = 10; }
-      ctx.beginPath(); ctx.arc(n.x, n.y, n.r - ring / 2, 0, 2 * Math.PI); ctx.stroke();
+      ctx.beginPath(); ctx.arc(n.x, n.y, r - ring / 2, 0, 2 * Math.PI); ctx.stroke();
       ctx.shadowBlur = 0;
     } else {
       ctx.beginPath();
-      ctx.arc(n.x, n.y, n.r, 0, 2 * Math.PI);
+      ctx.arc(n.x, n.y, r, 0, 2 * Math.PI);
       ctx.fillStyle = col;
       ctx.fill();
-      if (n === hovered && n.pfpImg) { ctx.strokeStyle = "rgba(255,255,255,0.7)"; ctx.lineWidth = 1.2 / transform.k; ctx.stroke(); }
+      if (n === hovered && n.pfpImg) { ctx.strokeStyle = "rgba(255,255,255,0.7)"; ctx.lineWidth = 1.2 / k; ctx.stroke(); }
     }
     if (n === selected) {
-      ctx.strokeStyle = "#fff"; ctx.lineWidth = 1.6 / transform.k;
-      ctx.beginPath(); ctx.arc(n.x, n.y, n.r + 3 / transform.k, 0, 2 * Math.PI); ctx.stroke();
+      ctx.strokeStyle = "#fff"; ctx.lineWidth = 1.6 / k;
+      ctx.beginPath(); ctx.arc(n.x, n.y, r + 3 / k, 0, 2 * Math.PI); ctx.stroke();
     }
     ctx.globalAlpha = 1;
   }
-  // labels
-  const showAll = transform.k > 1.5;
+  ctx.restore();
+
+  // labels, drawn in screen space so collision boxes are in pixels
+  ctx.save();
+  ctx.scale(dpr, dpr);
   ctx.textAlign = "center"; ctx.textBaseline = "top";
-  for (const n of nodes) {
-    const dimmed = hi && !hi.has(n.id);
-    if (dimmed) continue;
+  const placed = [];
+  const fits = b => {
+    for (const p of placed) if (b.x0 < p.x1 && b.x1 > p.x0 && b.y0 < p.y1 && b.y1 > p.y0) return false;
+    return true;
+  };
+  const forced = new Set();
+  if (selected) forced.add(selected);
+  if (hovered) forced.add(hovered);
+  // order: forced first, then the active node's neighbours / search hits, then everything by size
+  const order = [...forced];
+  if (hi) for (const n of byDegree) if (hi.has(n.id) && !forced.has(n)) order.push(n);
+  for (const n of byDegree) if (!forced.has(n) && !(hi && hi.has(n.id))) order.push(n);
+  for (const n of order) {
+    const isForced = forced.has(n);
+    if (!isForced) {
+      if (!shown(n)) continue;
+      if (hi && !hi.has(n.id)) continue;
+      const related = hi && hi.has(n.id);
+      if (!related && drawR(n) * k < LABEL_MIN_PX) continue;
+    }
     const big = n.degree >= 12;
-    if (!showAll && !big && n !== hovered && n !== selected && !(hi && hi.has(n.id))) continue;
-    const fs = Math.max(9, Math.min(15, 8 + n.degree * 0.25)) / Math.sqrt(transform.k);
-    ctx.font = (big ? "700 " : "") + fs + "px Helvetica, Arial, sans-serif";
-    ctx.fillStyle = big ? "rgba(240,238,245,0.95)" : "rgba(200,198,212,0.8)";
-    ctx.fillText(n.id, n.x, n.y + n.r + 3);
+    const px = Math.max(9, Math.min(18, (8 + n.degree * 0.25) * Math.sqrt(k)));
+    const [sx, sy] = transform.apply([n.x, n.y]);
+    const y = sy + drawR(n) * k + 3;
+    if (sx < -200 || sx > W + 200 || y < -40 || y > H + 40) continue;
+    const w = labelWidth(n, px, big);
+    const box = { x0: sx - w / 2 - 2, x1: sx + w / 2 + 2, y0: y - 1, y1: y + px + 1 };
+    if (!isForced && !fits(box)) continue;
+    placed.push(box);
+    ctx.font = (big || isForced ? "700 " : "") + px + "px " + LABEL_FONT;
+    if (isForced) {  // keep the selected/hovered label readable on top of the graph
+      ctx.lineWidth = 3; ctx.strokeStyle = "rgba(11,11,16,0.85)"; ctx.strokeText(n.id, sx, y);
+    }
+    ctx.fillStyle = isForced || big ? "rgba(240,238,245,0.95)" : "rgba(200,198,212,0.8)";
+    ctx.fillText(n.id, sx, y);
   }
   ctx.restore();
 }
@@ -369,8 +459,9 @@ function pick(mx, my) {
   const [x, y] = transform.invert([mx, my]);
   let best = null, bd = Infinity;
   for (const n of nodes) {
+    if (!shown(n)) continue;
     const d = Math.hypot(n.x - x, n.y - y);
-    if (d < Math.max(n.r + 4, 8) && d < bd) { best = n; bd = d; }
+    if (d < Math.max(drawR(n) + 4, 8) && d < bd) { best = n; bd = d; }
   }
   return best;
 }
@@ -569,17 +660,59 @@ document.getElementById("search").addEventListener("input", e => {
 });
 document.getElementById("search").addEventListener("keydown", e => {
   if (e.key === "Enter" && focusSet && focusSet.size) {
-    const n = byId.get([...focusSet].sort((a, b) => byId.get(b).degree - byId.get(a).degree)[0]);
+    // prefer matches the current category filter shows, then the best-connected
+    const rank = id => (shown(byId.get(id)) ? 1e6 : 0) + byId.get(id).degree;
+    const n = byId.get([...focusSet].sort((a, b) => rank(b) - rank(a))[0]);
     if (n) { select(n); centerOn(n); }
   }
 });
 
-// ---------- legend ----------
+// ---------- legend: category filters ----------
+// Click a category to show only it; click more to add them; click an active one to remove it.
+// "faces" shows persona nodes that have an X profile picture. "show all" resets.
 const legend = document.getElementById("legend");
+const legendBtns = new Map();
+function setFilter(f) {
+  filter = f && f.size ? f : null;
+  legend.classList.toggle("filtering", !!filter);
+  legendBtns.forEach((b, key) => b.setAttribute("aria-pressed", String(!!filter && filter.has(key))));
+  if (hovered && !shown(hovered)) hovered = null;
+  tick();
+}
+function legendButton(key, html, cls, title) {
+  const b = document.createElement("button");
+  b.type = "button"; b.className = cls || ""; b.innerHTML = html; b.title = title;
+  b.setAttribute("aria-pressed", "false");
+  legend.appendChild(b);
+  if (key) legendBtns.set(key, b);
+  return b;
+}
+const facesCount = nodes.filter(n => n.pfp).length;
+legendButton(FACES, '<i></i>faces (' + facesCount + ')', "lg-faces", "Show only people and accounts with an X profile picture")
+  .onclick = () => setFilter(filter && filter.has(FACES) ? null : new Set([FACES]));
 Object.entries(TYPE_LABEL).forEach(([t, label]) => {
-  const s = document.createElement("span");
-  s.innerHTML = '<i style="background:' + COLORS[t] + '"></i>' + label;
-  legend.appendChild(s);
+  legendButton(t, '<i style="background:' + COLORS[t] + '"></i>' + label, "", "Show " + label + " (click again to remove)")
+    .onclick = () => {
+      if (!filter || filter.has(FACES)) return setFilter(new Set([t]));
+      const f = new Set(filter);
+      f.has(t) ? f.delete(t) : f.add(t);
+      setFilter(f);
+    };
+});
+legendButton(null, "× show all", "lg-all", "Clear the category filter").onclick = () => setFilter(null);
+
+// ---------- reset view ----------
+const DEFAULT_VIEW = () => d3.zoomIdentity.translate(W / 2 + 40, H / 2).scale(0.85);
+function resetView() {
+  if (selected) deselect();
+  d3.select(canvas).transition().duration(500).call(zoom.transform, DEFAULT_VIEW());
+}
+document.getElementById("resetView").onclick = resetView;
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape" && document.activeElement?.id !== "search") {
+    if (document.getElementById("lightbox").classList.contains("open")) return;
+    if (selected) deselect(); else if (filter) setFilter(null);
+  }
 });
 </script>
 </body>
