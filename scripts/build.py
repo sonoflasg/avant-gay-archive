@@ -34,6 +34,19 @@ SOURCE = re.compile(r"^Source:\s*(\S+)", re.M | re.I)
 AUTHOR = re.compile(r"^Author:\s*(.+)$", re.M | re.I)
 DATE = re.compile(r"^Date:\s*(.+)$", re.M | re.I)
 STATUS = re.compile(r"^Status:\s*(.+)$", re.M | re.I)
+XHANDLE = re.compile(r"^X:\s*@?([A-Za-z0-9_]{1,15})\s*$", re.M)
+# Metadata lines: attribution, not graph edges and not summary text.
+META_LINE = re.compile(r"^(Source|Author|Date|Status|X):.*$", re.M | re.I)
+PFP_DIR = ROOT / "website" / "pfp"
+
+
+def pfp_index():
+    """handle (lowercase) -> manifest item with a local image."""
+    mf = PFP_DIR / "manifest.json"
+    if not mf.exists():
+        return {}
+    items = json.loads(mf.read_text(encoding="utf-8")).get("items", [])
+    return {i["handle"].lower(): i for i in items if i.get("image") and (PFP_DIR.parent / i["image"]).exists()}
 
 TYPE_BY_FOLDER = {
     "Artists": "artist",
@@ -100,6 +113,13 @@ def build_graph():
             urls.append(copied[src])
         return urls
 
+    pfps = pfp_index()
+    if pfps:
+        dest = OUT.parent / "pfp"
+        dest.mkdir(parents=True, exist_ok=True)
+        for item in pfps.values():
+            shutil.copy2(PFP_DIR.parent / item["image"], dest / Path(item["image"]).name)
+
     for p in md_files:
         name = p.stem
         rel = p.relative_to(ROOT)
@@ -114,7 +134,10 @@ def build_graph():
         author = AUTHOR.search(text)
         date = DATE.search(text)
         status = STATUS.search(text)
-        clean = re.sub(r"^(Source|Author|Date|Status):.*$", "", body, flags=re.M | re.I)
+        xh = XHANDLE.search(text)
+        handle = xh.group(1) if xh else None
+        pfp = pfps.get(handle.lower()) if handle else None
+        clean = META_LINE.sub("", body)
         clean = re.sub(r"\n{3,}", "\n\n", clean).strip().strip("-").strip()
         notes[canon(name)] = {
             "images": resolve_images(text),
@@ -128,6 +151,9 @@ def build_graph():
             "date": date.group(1).strip() if date else None,
             "status": status.group(1).strip() if status else None,
             "stub": len(clean) < 20,
+            "xHandle": handle,
+            "pfp": pfp["image"] if pfp else None,
+            "pfpCaptured": pfp["captured"].split(" ")[0] if pfp else None,
             "outlinks": [],
         }
 
@@ -136,7 +162,7 @@ def build_graph():
         name = p.stem
         text = p.read_text(encoding="utf-8", errors="replace")
         # Metadata fields are attribution, not graph edges.
-        link_text = re.sub(r"^(Source|Author|Date|Status):.*$", "", text, flags=re.M | re.I)
+        link_text = META_LINE.sub("", text)
         for m in WIKILINK.finditer(link_text):
             target = m.group(1).strip()
             ct = canon(target)
@@ -147,6 +173,7 @@ def build_graph():
                     "id": target, "type": "phantom", "folder": "",
                     "summary": "", "source": None, "author": None,
                     "date": None, "status": None, "stub": True, "outlinks": [], "images": [],
+                    "xHandle": None, "pfp": None, "pfpCaptured": None,
                 }
             links.append({"source": name, "target": notes[ct]["id"]})
             notes[canon(name)]["outlinks"].append(notes[ct]["id"])
