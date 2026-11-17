@@ -1,6 +1,7 @@
 Source: https://www.lerandom.art/editorial/jared-madere-and-fairybaby-on-vvv-and-the-world-as-material
 Author: SonOfLasG
 Date: 14/11/2026
+X: @vvvdotso
 
 ---
 

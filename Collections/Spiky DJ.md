@@ -1,6 +1,7 @@
 Source: https://automat.art/research/avant-gay/#proj-spiky-dj
 Author: SonOfLasG
 Date: 14/11/2026
+X: @spiky_dj_
 
 ---
 

@@ -1,6 +1,7 @@
 Source: https://x.com/YOJIMBO_KING/status/1462222817773113344
 Author: SonOfLasG
 Date: 14/11/2026
+X: @YOJIMBO_KING
 
 ---
 

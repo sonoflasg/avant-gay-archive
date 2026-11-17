@@ -1,3 +1,4 @@
+X: @worldisrug
 @WICKZ (or more precisely, the active X/Twitter account @worldisrug, often referred to in context as Wickz/WICKZ) is a [[Solana]] NFT creator and artist in the smaller/indie Solana NFT scene. [[Avant Gay]]
 
 x.com

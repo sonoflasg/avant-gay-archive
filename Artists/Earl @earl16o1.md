@@ -1,6 +1,7 @@
 Source: https://www.rightclicksave.com/article/notes-from-the-avant-nft-underground-avant-gay-solana
 Author: SonOfLasG
 Date: 14/11/2026
+X: @earl16o1
 
 ---
 

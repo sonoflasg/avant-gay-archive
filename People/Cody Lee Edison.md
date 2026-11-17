@@ -1,6 +1,7 @@
 Source: https://automat.art/research/avant-gay/#references
 Author: SonOfLasG
 Date: 14/11/2026
+X: @C0DYEDIS0N
 
 ---
 

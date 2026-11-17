@@ -1,6 +1,7 @@
 Source: https://x.com/bis__cut/status/2119807490967663028
 Author: SonOfLasG
 Date: 14/11/2026
+X: @turtletimezone
 
 ---
 

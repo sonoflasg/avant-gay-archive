@@ -1,6 +1,7 @@
 Source: https://x.com/Greekdx/status/2119766740930334977
 Author: SonOfLasG
 Date: 14/11/2026
+X: @Greekdx
 
 ---
 

@@ -1,6 +1,7 @@
 Source: https://automat.art/
 Author: SonOfLasG
 Date: 14/11/2026
+X: @Automatdotart
 
 ---
 

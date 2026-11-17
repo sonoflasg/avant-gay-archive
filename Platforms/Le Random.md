@@ -1,6 +1,7 @@
 Source: https://www.lerandom.art/subjects/avant-gay
 Author: SonOfLasG
 Date: 14/11/2026
+X: @lerandomart
 
 ---
 

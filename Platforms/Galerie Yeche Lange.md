@@ -1,6 +1,7 @@
 Source: https://automat.art/research/avant-gay/#apx-b
 Author: SonOfLasG
 Date: 14/11/2026
+X: @Yeche_Lange
 
 ---
 

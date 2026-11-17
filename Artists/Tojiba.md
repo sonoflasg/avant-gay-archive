@@ -1,6 +1,7 @@
 Source: https://automat.art/research/avant-gay/#proj-tojiba
 Author: SonOfLasG
 Date: 14/11/2026
+X: @tojibaceo
 
 ---
 

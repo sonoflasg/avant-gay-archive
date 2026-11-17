@@ -1,6 +1,7 @@
 Source: https://x.com/SAlgotrader
 Author: SonOfLasG
 Date: 14/11/2026
+X: @SAlgotrader
 
 ---
 

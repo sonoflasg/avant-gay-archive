@@ -1,3 +1,4 @@
+X: @luhhfella
 Luhhfella (@luhhfella) is a key figure in the "Fella" / rugcore / [[cuckcore]] /  [[Avant Gay]] NFT scene on Solana. This niche blends [[AI-generated]]/hybrid digital art, meme culture, painting influences, and subversive, lowbrow/post-internet aesthetics.
 
 artfacts.net
