@@ -204,6 +204,10 @@ def main():
     html = html.replace("__VOTES_URL__", VOTES_URL)
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(html, encoding="utf-8")
+    # site icons (favicon.svg, favicon.ico, favicon-32.png, apple-touch-icon.png)
+    for icon in (ROOT / "website" / "icons").glob("*"):
+        if icon.is_file():
+            shutil.copy2(icon, OUT.parent / icon.name)
     print(f"built site/index.html — {len(data['nodes'])} nodes, {len(data['links'])} links")
 
 
