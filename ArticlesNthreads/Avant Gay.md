@@ -5,6 +5,8 @@ Date: 30/08/2025
 
 ---
 
+Essay by [[SonOfLasG]].
+
 The name itself seems to have emerged half jokingly.
 
 “𝑐𝑎𝑙𝑙𝑖𝑛𝑔 𝑡ℎ𝑖𝑛𝑔𝑠 ‘𝑎𝑣𝑎𝑛𝑡’ ℎ𝑎𝑠 𝑎𝑙𝑤𝑎𝑦𝑠 𝑏𝑒𝑒𝑛 𝑝𝑟𝑒𝑡𝑡𝑦 𝑔𝑎𝑦 𝑛𝑔𝑙” 

@@ -5,6 +5,8 @@ Date: 30/08/2025
 
 ---
 
+Essay by [[SonOfLasG]].
+
 Back in the day I collected heavily on http://exchange.art. Raw curiosity pulling me in, a desire to get my hands dirty, and a love for a scene that felt more accessible than the [[EFAN]] (Ethereum Fine Art Network). I’ve long admired artists like @notjohnlestudio and @solanapoet, who gave Solana’s early art culture its pulse. 
 
 But recently I tumble into something stranger... less polished, harder to name. The door was a @verse_works interview with [[Parker Ito]] where he spoke about what some now call [[Avant Gay]] NFTs. That conversation cracked something open. Consider me iridium pilled

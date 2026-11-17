@@ -145,6 +145,8 @@ def check_entry_shape(rep, f, text, new):
     if not has_sources:
         if status.startswith("needs-sources"):
             rep.warn(f, "no Sources section with a URL (allowed while Status: needs-sources)")
+        elif not new and URL_RE.match(meta.get("source", "")):
+            rep.warn(f, "legacy entry without a Sources section (its Source: header has a URL); consider adding one")
         else:
             rep.err(f, "needs a 'Sources:' section with at least one public URL, or 'Status: needs-sources'")
     if "[[" not in "\n".join(l for l in lines if not META_RE.match(l)):
@@ -270,7 +272,11 @@ def main():
             st, path = parts[0], parts[-1]
             if st.startswith("D"):
                 if is_entry(parts[1]):
-                    rep.err(parts[1], "deletes an entry; entries are not deleted (mark Status: needs-sources or add a Revisions note instead)")
+                    stem = Path(parts[1]).stem.lower()
+                    if any(Path(r.split("\t")[-1]).stem.lower() == stem and not r.startswith("D") for r in diff):
+                        rep.warn(parts[1], "entry moved to another folder (same name, so links still resolve)")
+                    else:
+                        rep.err(parts[1], "deletes an entry; entries are not deleted (mark Status: needs-sources or add a Revisions note instead)")
                 continue
             if is_entry(path):
                 old = None
