@@ -13,4 +13,11 @@ Compiled by SonOfLasG from the paper’s public account, without merging it into
 
 [[Avant Gay]] · [[trait-maxxing]] · [[Cuckcore]]
 
+### In the press (added 17/11/2026)
+
+- **Dean Kissick, Spike, 8 Jun 2022:** recalls "an episode of Contain about NFTs" in which "the founders of the Tojiba CPU Corp project spoke about" mass PFP series. It is an early art-press mention.
+- **Bankless (Metaversal), 15 Feb 2024** ([[The Rise of Avant-Garde NFTs]]): "Launched in early 2022, Tojiba CPU Corp exemplified the essence of the first avant-garde NFT wave on Solana." It describes Toji 100, a Discord "simulating life working in a factory," the coin Ijot, and [[disc buddies]].
+
 Sources: [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/#proj-tojiba)
+- [Dean Kissick, “The Downward Spiral: Taste, Figures, Images,” Spike, 8 Jun 2022](https://www.spikeartmagazine.com/articles/the-downward-spiral-taste-figures-images)
+- [William M. Peaster, “The Rise of Avant-Garde NFTs,” Metaversal (Bankless), 15 Feb 2024](https://metaversal.banklesshq.com/p/the-rise-of-avant-garde-nfts)

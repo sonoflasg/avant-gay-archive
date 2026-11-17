@@ -22,4 +22,11 @@ Two scarce configurations are named there: Full Metal Bunny (30 works) and Beaut
 
 See also [[Parker Ito]], [[Drifella 2]], and [[111k]].
 
+### In the press (added 17/11/2026)
+
+- **Outland, 12 Nov 2025:** "Ito's Drilady revolves around fractured cartoon portraits of a Rule 34 Lola Bunny that bucks the sexlessness of PFP culture and laces it with art-historical Easter eggs."
+- **Right Click Save, 12 Oct 2026:** Ito says Drilady "is probably my favorite NFT collection that I've made" and "riffed on Drifella by Evil Biscuit; it's derivatives of derivatives of derivatives." Source: [[Parker Ito on the Dumb Truth of Contemporary Art]]
+
 Sources: [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/)
+- [Outland, “Context Creator,” 12 Nov 2025](https://outlandart.substack.com/p/context-creator)
+- [Alex Estorick, “Parker Ito on the Dumb Truth of Contemporary Art,” Right Click Save, 12 Oct 2026](https://www.rightclicksave.com/article/parker-ito-on-the-dumb-truth-of-contemporary-art)

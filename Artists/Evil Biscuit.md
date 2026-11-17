@@ -41,4 +41,21 @@ This note records only what is published there. It is not a transcript, and it d
 
 Compiled by SonOfLasG from the paper’s References.
 
+### In the press (added 17/11/2026)
+
+- **Brian Droitcour, Outland, Dec 2025 and Feb 2026** ([[After the Art World]]): Biscuit is "an artist without an art-world background who produces conceptually ambitious work by pushing collectible logic to its limits"; "for artists like Evil Biscuit, the art world is no longer the primary horizon of value."
+- **Brian Droitcour, Right Click Save, 4 May 2026** ([[Artmaxxing The New Bad Image]]): in his new series Biscuit "constructs collages that use reproductions of paintings as backdrops for animated sprites."
+- **Brian Droitcour, Right Click Save forum, Aug 2026:** names Biscuit among artists "parodying [the trading card] and/or messing with its formal structure."
+- **Jared Madere, Archetype, 14 May 2024** ([[In Conversation With Jared Madere (Archetype)]]): "DriFellas represent some of the most radical image-making I've seen in the last 15 to 20 years."
+- **Dennis Koch, Bitcoin Magazine, 18 Aug 2026** ([[The Pack Is the Painting]]): "Near the center of the scene sits Biscuit. His Drifella collections are widely cited as its defining works." Includes an interview about cards and [[Card NFT 2]].
+- **Spike #87, Spring 2026:** Spike sold "Evil Biscuit, »Spike TCG«, 2026," "91 acetone-washed, reprinted, holofoil trading cards, designed on the occasion of" the issue.
+- More short items in [[Press coverage]].
+
 Sources: [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/#references)
+- [Brian Droitcour, “After the Art World, Part 1,” Outland, 23 Dec 2025](https://outlandart.substack.com/p/after-the-art-world-part-1)
+- [Brian Droitcour, “After the Art World, Part 2,” Outland, 3 Feb 2026](https://outlandart.substack.com/p/after-the-art-world-part-2)
+- [Brian Droitcour, “Artmaxxing | The New Bad Image,” Right Click Save, 4 May 2026](https://www.rightclicksave.com/article/artmaxxing-the-new-bad-image-exhibition-brian-droitcour)
+- [Brian Droitcour, “Trading Card Aesthetics,” Right Click Save forum, Aug 2026](https://www.rightclicksave.com/post/44/trading-card-aesthetics)
+- [Katie Chiou, “IN CONVERSATION WITH: Jared Madere,” Archetype, 14 May 2024](https://www.archetype.fund/media/in-conversation-with-jared-madere)
+- [Dennis Koch, “The Pack Is the Painting,” Bitcoin Magazine, 18 Aug 2026](https://bitcoinmagazine.com/culture/the-pack-is-the-painting-evil-biscuit-and-the-schizocollage-movement-come-to-hong-kong)
+- [Spike, “Evil Biscuit, »Spike TCG«, 2026” (shop page)](https://spikeartmagazine.com/shop/evil-biscuit-spike-trading-cards-2026)

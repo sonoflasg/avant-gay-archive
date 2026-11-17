@@ -27,5 +27,12 @@ See also [[Little Swag World]], [[little swag]], [[Remilia]], and [[111k]].
 
 In [[111k]], Biscuit publicly credited Bosch with the [[little swag]] Collection Block (10 Nov 2026). Bosch had already posted “drifella and drilady swag for 111k” on 3 Nov 2026, 5:00am AEDT: https://x.com/supermetalx/status/2117315845554622931
 
+### In the press (added 17/11/2026)
+
+- **Bankless (Metaversal), 15 Feb 2024** ([[The Rise of Avant-Garde NFTs]]): Bosch is "known for his 2021 collection, SupermetalMons," which he developed "into a physical chess-like board game." It says [[Little Swag World]] launched in December 2023.
+- **cult.now, 15 Sep 2025:** a review of [[One of Us Is Real and It's Not You]] calls Bosch and [[Evil Biscuit]] "two artists forged in the furnace of the Avant NFT underground."
+
 Sources: [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/#proj-super-metal-mons)
 [Biscuit, little swag credit, 10 Nov 2026](https://x.com/bis__cut/status/2119807426769858893)
+- [William M. Peaster, “The Rise of Avant-Garde NFTs,” Metaversal (Bankless), 15 Feb 2024](https://metaversal.banklesshq.com/p/the-rise-of-avant-garde-nfts)
+- [cult.now, “One Of Us Is Real And It’s Not You: Supermetal Bosch & Evil Biscuit,” 15 Sep 2025](https://www.cult.now/mag/one-of-us-is-real-and-its-not-you-supermetal-bosch-evil-biscuits)

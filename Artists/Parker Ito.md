@@ -38,4 +38,16 @@ This paragraph records only what is published in the References. It is not a tra
 
 See also [[Drilady]], [[111k]], and [[Remilia]].
 
+### In the press (added 17/11/2026)
+
+- **OpenSea, 1 Dec 2025** ([[In Conversation With Parker Ito (OpenSea)]]): "For the last year and a half, I've been involved primarily with the Avant Gay Solana scene." *Inference:* that dates his involvement to about mid-2024.
+- **Brian Droitcour, Outland, 3 Feb 2026** ([[After the Art World]]): "His NFT collections released in 2025 translate that impulse into schizocollage PFPs that cannibalize art history."
+- **Alex Estorick, Right Click Save, 12 Oct 2026** ([[Parker Ito on the Dumb Truth of Contemporary Art]]): Ito says, "I have basically no knowledge of NFTs outside of the Avant Gay scene," and calls [[Horses?7]] "my most important artwork." The interview coins "Dumb Art."
+- **Wallpaper\*, 15 Oct 2026:** at Rose Easton during Frieze London, Ito's world is "part mechanical, part craft."
+- More in [[Press coverage]].
+
 Sources: [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/)
+- [Hannah Vanek, “In Conversation With Parker Ito,” OpenSea, 1 Dec 2025](https://opensea.io/blog/articles/in-conversation-with-parker-ito)
+- [Brian Droitcour, “After the Art World, Part 2,” Outland, 3 Feb 2026](https://outlandart.substack.com/p/after-the-art-world-part-2)
+- [Alex Estorick, “Parker Ito on the Dumb Truth of Contemporary Art,” Right Click Save, 12 Oct 2026](https://www.rightclicksave.com/article/parker-ito-on-the-dumb-truth-of-contemporary-art)
+- [Hannah Silver, Frieze London 2026 live updates, Wallpaper*, 15 Oct 2026](https://www.wallpaper.com/art/live/frieze-london-2026-live-updates-from-the-wallpaper-team)

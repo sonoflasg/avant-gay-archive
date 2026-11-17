@@ -13,4 +13,12 @@ This note records only what is published there. It is not a transcript, and it d
 
 Compiled by SonOfLasG from the paper’s References.
 
+### In the press (added 17/11/2026)
+
+- **Brian Droitcour, Right Click Save, 4 May 2026** ([[Artmaxxing The New Bad Image]]): discusses Terrorism's trading cards, layered "with imagery from devotional paintings and Renaissance masterworks." In the RCS forum (Aug 2026) he names "terrorism and Evil Biscuit" among emerging artists who have embraced the trading-card format.
+- **Bitcoin Magazine, 18 Aug 2026** ([[The Pack Is the Painting]]): calls the artist "Ariamis (formerly Terrorism)."
+
 Sources: [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/#references)
+- [Brian Droitcour, “Artmaxxing | The New Bad Image,” Right Click Save, 4 May 2026](https://www.rightclicksave.com/article/artmaxxing-the-new-bad-image-exhibition-brian-droitcour)
+- [Brian Droitcour, “Trading Card Aesthetics,” Right Click Save forum, Aug 2026](https://www.rightclicksave.com/post/44/trading-card-aesthetics)
+- [Dennis Koch, “The Pack Is the Painting,” Bitcoin Magazine, 18 Aug 2026](https://bitcoinmagazine.com/culture/the-pack-is-the-painting-evil-biscuit-and-the-schizocollage-movement-come-to-hong-kong)

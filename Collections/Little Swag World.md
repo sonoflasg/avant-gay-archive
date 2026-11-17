@@ -37,4 +37,9 @@ The marketplace details ([[Tensor]], [[Magic Eden]]) and the reception claims ab
 
 Further sources: [Brian Droitcour, “Seams and Synthesis,” Le Random, 2 Feb 2026](https://www.lerandom.art/editorial/seams-and-synthesis-schizocollage-and-ai-aesthetics); [GardenParty85, Right Click Save, 3 Nov 2025](https://www.rightclicksave.com/article/notes-from-the-avant-nft-underground-avant-gay-solana); [Le Random ep. 28](https://www.lerandom.art/episodes/jared-madere-on-yeche-lange-vvv-and-the-solana-avant-scenes-impact); [Le Random, 10 Aug 2026](https://www.lerandom.art/editorial/jared-madere-and-fairybaby-on-vvv-and-the-world-as-material)
 
+### Launch date, another account (added 17/11/2026)
+
+- **According to Bankless (Metaversal), 15/02/2024:** Little Swag World "launched in December 2023," alongside a Solana token. This sits beside the Automat paper's 15 Jan 2024 above. Source: [[The Rise of Avant-Garde NFTs]]
+
 Sources: [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/#apx-b)
+- [William M. Peaster, “The Rise of Avant-Garde NFTs,” Metaversal (Bankless), 15 Feb 2024](https://metaversal.banklesshq.com/p/the-rise-of-avant-garde-nfts)

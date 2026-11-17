@@ -32,8 +32,15 @@ Either way, the draft’s claim that the community had moved to VVV “by late 2
 - **Radio.** Le Random’s December 2025 bio says lowbie hosts WORLD RECEIVER for VVV.so.
 - **$VAJ.** The Automat paper mentions a $VAJ project on which Gremlins2Movie worked with Madere. The earlier draft also linked a character, [[Vajunnie]], to the platform. No public source for that link was found in this pass.
 
+### In the press (added 17/11/2026)
+
+- **Outland, 12 Nov 2025:** "The NFT marketplace vvv.so launched in early 2025 and has already cultivated an active community of artists and collectors around a style known as gay NFTs or schizocollage." This launch date agrees with GardenParty85's.
+- **Outland, 12 Feb 2026:** quotes VVV's manifesto posted to X: "We're not trying to rebuild the 2021 market. We don't want that market back."
+
 Sources:
 - [Peter Bauman, “Jared Madere and fairybaby on VVV and the World as Material,” Le Random, 10 Aug 2026](https://www.lerandom.art/editorial/jared-madere-and-fairybaby-on-vvv-and-the-world-as-material)
 - [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/#proj-vvv)
 - [GardenParty85, “Notes from the Avant NFT Underground,” Right Click Save, 3 Nov 2025](https://www.rightclicksave.com/article/notes-from-the-avant-nft-underground-avant-gay-solana)
 - [Le Random timeline, Drifella III](https://timeline.lerandom.art/m/drifella-iii-by-evil-biscuit)
+- [Outland, “Context Creator,” 12 Nov 2025](https://outlandart.substack.com/p/context-creator)
+- [Outland, “Context Creator: The Platform Collapse Edition,” 12 Feb 2026](https://outlandart.substack.com/p/context-creator-the-platform-collapse)

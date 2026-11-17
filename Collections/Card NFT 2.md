@@ -20,4 +20,9 @@ Compiled by SonOfLasG from that paper’s public project register; this is a stu
 
 Further sources: [Peter Bauman, “Evil Biscuit on card nft 2, Destruction & Rebirth,” Le Random, 8 Jun 2026](https://www.lerandom.art/editorial/evil-biscuit-on-card-nft-2-destruction-rebirth); [Giannis Sourdis, Right Click Save forum, 16 Jun 2026](https://www.rightclicksave.com/post/8/avant-gay-nfts-are-dead-long-live-avant-gay-nfts)
 
+### In the press (added 17/11/2026)
+
+Dennis Koch (Bitcoin Magazine, 18 Aug 2026) says Biscuit made "roughly eleven thousand cards, sold in packs, each digital card redeemable for a physical one if the collector is willing to burn the NFT to get it." The article repeats the Felix Art Fair / SOLOS debut. See [[The Pack Is the Painting]].
+
 Sources: [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/#proj-card-nft-2)
+- [Dennis Koch, “The Pack Is the Painting,” Bitcoin Magazine, 18 Aug 2026](https://bitcoinmagazine.com/culture/the-pack-is-the-painting-evil-biscuit-and-the-schizocollage-movement-come-to-hong-kong)

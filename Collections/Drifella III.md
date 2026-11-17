@@ -29,8 +29,15 @@ See also [[Schizocollage]], [[trait-maxxing]], [[Le Random]].
 
 [[Blood Splatter]] [[Dratini]] [[Pokémon]] [[Twin Towers]] [[Jester]] [[Shadow Fella]] [[Joker]] [[Spiky DJ Ref]] [[Earl Ref]] [[Call of Duty Ref]] [[Bullets ref]] [[Postdemon ref]] [[Niqab ref]] [[Milady]] [[Gun ref]] [[NY ref]] [[Alien Frens ref]] [[Merzbow ref]] [[Noise Music ref]] [[Anime ref]] [[Mujahideen ref]] [[Al-Qaeda ref]] [[Viennese Actionist ref ]] [[Resistance ref]] [[Death ref]] [[Literature ref]] [[Kami-Yaburi ref]] [[Japanese Gutai group ref]] [[Despair ref]] [[Vito Acconci ref]] [[Rambo III ref]] [[Propaganda ref]] [[Bored Ape ref]] [[CryptoPunks ref]] [[Cartoons ref]] [[Film ref]] [[High Fashion ref]] [[Crucifix ref]] [[Memes ref]] [[Pulsedemon ref]] [[Branding ref]] [[Painterliness ref]] [[Cubist collage ref]] [[Surrealist automatism ref]]
 
+### Critical readings (added 17/11/2026)
+
+- **Brian Droitcour, Outland, 23 Dec 2025** ([[After the Art World]]): "Each work shows a triptych installed in a room." He reads the collection "as an image of categories dissolving. Collectibles melt into art; art melts into collectibles."
+- **Outland, "Context Creator," 12 Nov 2025:** "Biscuit's Drifella III uses the collage generator's depth of field to mimic exhibition views, where his past works appear as paintings hanging on a wall, while figurines stand below them on the floor."
+
 Sources:
 - [Peter Bauman, “Drifella III: Room for Complexity,” Le Random, 9 Oct 2025](https://www.lerandom.art/editorial/drifella-iii-room-for-complexity)
 - [Le Random timeline, Drifella III](https://timeline.lerandom.art/m/drifella-iii-by-evil-biscuit)
 - [Le Random timeline, Standouts of 2025](https://timeline.lerandom.art/m/standouts-of-2025)
 - [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/#proj-drifella-iii)
+- [Brian Droitcour, “After the Art World, Part 1,” Outland, 23 Dec 2025](https://outlandart.substack.com/p/after-the-art-world-part-1)
+- [Outland, “Context Creator,” 12 Nov 2025](https://outlandart.substack.com/p/context-creator)

@@ -26,6 +26,11 @@ See also [[Avant Gay]], [[Schizocollage]], [[Le Random]].
 
 [[Blood Splatter]] [[Dratini]] [[Pokémon]] [[Twin Towers]] [[Jester]] [[Shadow Fella]] [[Joker]] [[Spiky DJ Ref]] [[Earl Ref]] [[Call of Duty Ref]] [[Bullets ref]] [[Postdemon ref]] [[Niqab ref]] [[Milady]] [[Gun ref]] [[NY ref]] [[Alien Frens ref]] [[Merzbow ref]] [[Noise Music ref]] [[Anime ref]] [[Mujahideen ref]] [[Al-Qaeda ref]] [[Viennese Actionist ref ]] [[Resistance ref]] [[Death ref]] [[Literature ref]] [[Kami-Yaburi ref]] [[Japanese Gutai group ref]] [[Despair ref]] [[Vito Acconci ref]] [[Rambo III ref]] [[Propaganda ref]] [[Bored Ape ref]] [[CryptoPunks ref]] [[Cartoons ref]] [[Film ref]] [[High Fashion ref]] [[Crucifix ref]] [[Memes ref]] [[Pulsedemon ref]] [[Branding ref]] [[Painterliness ref]] [[Cubist collage ref]] [[Surrealist automatism ref]]
 
+### Outland's reading (added 17/11/2026)
+
+Outland's newsletter (12 Nov 2025) says the collection "stands out for its use of negative space. While still speaking the language of the maximalist digital collage, the artists lean into silhouettes and outlines to leave voids and absences." See [[Press coverage]].
+
 Sources:
 - [Peter Bauman, “Parker Ito and Evil Biscuit on Possessed Spirits,” Le Random, 31 Oct 2025](https://www.lerandom.art/editorial/parker-ito-and-evil-biscuit-on-possessed-spirits)
 - [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/#proj-heavy-liquid-graphic)
+- [Outland, “Context Creator,” 12 Nov 2025](https://outlandart.substack.com/p/context-creator)

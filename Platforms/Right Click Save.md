@@ -12,4 +12,15 @@ Right Click Save is an online magazine about digital art, with articles, intervi
 - Giannis Sourdis, “Avant/Gay NFTs are dead. Long live Avant/Gay NFTs.,” forum post, 16 Jun 2026 (AEST). It covers [[Horses?7]] and [[Card NFT 2]]. In an X post that day (9:15pm AEST) the author said he regretted not mentioning that Horses?7 dropped on VVV, because he could no longer edit the post. https://www.rightclicksave.com/post/8/avant-gay-nfts-are-dead-long-live-avant-gay-nfts ; https://x.com/Greekdx/status/2066842093557825735
 - Alex Estorick, “Parker Ito on the Dumb Truth of Contemporary Art,” 12 Oct 2026. [[Parker Ito]] discusses Avant Gay, “trait maxing” and Zombie Formalism, calls [[Horses?7]] “my most important artwork,” and says [[Drilady]] is “probably my favorite NFT collection that I’ve made”: https://www.rightclicksave.com/article/parker-ito-on-the-dumb-truth-of-contemporary-art
 
+### More Right Click Save items (added 17/11/2026)
+
+- Entries: [[Artmaxxing The New Bad Image]] and [[Parker Ito on the Dumb Truth of Contemporary Art]].
+- "A-Z of Digital Art 2026" (Jan 2026), under "Avant NFTs": "2025 cemented the Avant NFT scene as a hive of grassroots, natively digital, and often provocative activity."
+- "Right Click Save's Top 10 Stories in 2025" (23 Dec 2025) puts GardenParty85's history at No. 5.
+- Brian Droitcour's forum post "Trading Card Aesthetics" (Aug 2026).
+- Full list in [[Press coverage]].
+
 Sources: [Right Click Save](https://www.rightclicksave.com/)
+- [Right Click Save, “A-Z of Digital Art 2026”](https://www.rightclicksave.com/article/a-z-of-digital-art-2026-art-and-technology-a-to-z)
+- [Right Click Save, “Top 10 Stories in 2025,” 23 Dec 2025](https://www.rightclicksave.com/article/right-click-saves-top-10-stories-in-2025-artificial-intelligence-digital-art-nfts)
+- [Brian Droitcour, “Trading Card Aesthetics,” Right Click Save forum, Aug 2026](https://www.rightclicksave.com/post/44/trading-card-aesthetics)

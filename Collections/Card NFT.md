@@ -19,4 +19,9 @@ It fits Evil Biscuit’s broader practice ([[Drifella]] series, [[Heavy Liquid G
 
 It’s part of the movement’s push beyond standard PFPs into hybrid, gallery-friendly formats while keeping the raw, insider energy.
 
+### In the press (added 17/11/2026)
+
+[[Brian Droitcour]] (Outland, 10 Nov 2026) describes the artist Rax showing "packs from Evil Biscuit's Card NFT in a binder" at a roadside trading-card table during Art Blocks Marfa Weekend. He writes that Card NFT "draws on the established practice of hand-embellishing trading cards."
+
 Sources: [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/#proj-card-nft)
+- [Brian Droitcour, “Coding a New Gift Economy,” Outland, 10 Nov 2026](https://outlandart.substack.com/p/coding-a-new-gift-economy)

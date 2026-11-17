@@ -27,4 +27,11 @@ In short, **Drifella 2 is the spiritual centerpiece of the Avant Gay aesthetic**
 
 [[Blood Splatter]] [[Dratini]] [[Pokémon]] [[Twin Towers]] [[Jester]] [[Shadow Fella]] [[Joker]] [[Spiky DJ Ref]] [[Earl Ref]] [[Call of Duty Ref]] [[Bullets ref]] [[Postdemon ref]] [[Niqab ref]] [[Milady]] [[Gun ref]] [[NY ref]] [[Alien Frens ref]] [[Merzbow ref]] [[Noise Music ref]] [[Anime ref]] [[Mujahideen ref]] [[Al-Qaeda ref]] [[Viennese Actionist ref ]] [[Resistance ref]] [[Death ref]] [[Literature ref]] [[Kami-Yaburi ref]] [[Japanese Gutai group ref]] [[Despair ref]] [[Vito Acconci ref]] [[Rambo III ref]] [[Propaganda ref]] [[Bored Ape ref]] [[CryptoPunks ref]] [[Cartoons ref]] [[Film ref]] [[High Fashion ref]] [[Crucifix ref]] [[Memes ref]] [[Pulsedemon ref]] [[Branding ref]] [[Painterliness ref]] [[Cubist collage ref]] [[Surrealist automatism ref]]
 
+### In the press (added 17/11/2026)
+
+- **According to [[Jared Madere]], Archetype, 14/05/2024:** DriFella's approach "involves creating a few thousand image components that are pseudo-randomly collaged together according to predefined weights. The resulting images feel like violent onslaughts of stickers piled on top of each other." Source: [[In Conversation With Jared Madere (Archetype)]]
+- **According to Dennis Koch, Bitcoin Magazine, 18/08/2026:** [[Parker Ito]] "credits Drifella 2 with establishing the aesthetic the whole scene became known for." Source: [[The Pack Is the Painting]]
+
 Sources: [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/#proj-drifella-2)
+- [Katie Chiou, “IN CONVERSATION WITH: Jared Madere,” Archetype, 14 May 2024](https://www.archetype.fund/media/in-conversation-with-jared-madere)
+- [Dennis Koch, “The Pack Is the Painting,” Bitcoin Magazine, 18 Aug 2026](https://bitcoinmagazine.com/culture/the-pack-is-the-painting-evil-biscuit-and-the-schizocollage-movement-come-to-hong-kong)

@@ -35,6 +35,13 @@ Other New York shows recorded by the Automat paper include *Wendy* (2024–25) a
 
 [[vvv.so]] developed from Yeche. GardenParty85 says “Yeche built” it in early 2025, and Le Random’s timeline calls VVV “the digital arm of Galerie Yeche Lange.” VVV’s co-founders Madere and fairybaby say the idea grew when Madere brought in Wretched Worm and Miles Peyton, “who he had been running Yeche Lange with.” See that entry.
 
+### More press accounts, side by side (added 17/11/2026)
+
+- **According to Bankless (Metaversal), 15/02/2024:** Yeche Lange was "born in June 2022" and "comes from the minds of curators Jared Madere, Milo Conroy, Wretched Worm, and developer Miles Peyton." It names the inaugural show "Tournament for Swollen Hearts Round Un." This date sits beside Artnet's "for the past three years" (about 2021) and GardenParty85's 2022. Source: [[The Rise of Avant-Garde NFTs]]
+- **According to Archetype, 14/05/2024:** the team "also includes Milo Conroy, Wretched Worm, Miles Peyton, Supermetal Bosch, Anastasios Karnazes, and Hikkimourning." Madere says the 2022 Pie Keys collection "basically funded the gallery treasury for two years." Source: [[In Conversation With Jared Madere (Archetype)]]
+- **According to Andrew Russeth, Artnet News, 21/12/2025:** Yeche "has been doing outrageous shows in an office at the tip of Manhattan (though it's suddenly gone dark)." This is a single-source report; no other source here confirms or explains it.
+- Reviews of [[One of Us Is Real and It's Not You]]: see [[Press coverage]].
+
 Sources:
 - [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/#apx-b)
 - [GardenParty85, “Notes from the Avant NFT Underground,” Right Click Save, 3 Nov 2025](https://www.rightclicksave.com/article/notes-from-the-avant-nft-underground-avant-gay-solana)
@@ -42,3 +49,6 @@ Sources:
 - [Le Random timeline, One Of Us Is Real And It’s Not You](https://timeline.lerandom.art/m/one-of-us-is-real-and-it-s-not-you-at-galerie-yeche-lange)
 - [Peter Bauman, “Jared Madere and fairybaby on VVV and the World as Material,” Le Random, 10 Aug 2026](https://www.lerandom.art/editorial/jared-madere-and-fairybaby-on-vvv-and-the-world-as-material)
 - [Le Random podcast ep. 28, Jared Madere, 10 Oct 2025](https://www.lerandom.art/episodes/jared-madere-on-yeche-lange-vvv-and-the-solana-avant-scenes-impact)
+- [William M. Peaster, “The Rise of Avant-Garde NFTs,” Metaversal (Bankless), 15 Feb 2024](https://metaversal.banklesshq.com/p/the-rise-of-avant-garde-nfts)
+- [Katie Chiou, “IN CONVERSATION WITH: Jared Madere,” Archetype, 14 May 2024](https://www.archetype.fund/media/in-conversation-with-jared-madere)
+- [Andrew Russeth, “Pour One Out for the Galleries That Closed in 2025,” Artnet News, 21 Dec 2025](https://news.artnet.com/art-world/contemporary-art-galleries-2025-2731623)

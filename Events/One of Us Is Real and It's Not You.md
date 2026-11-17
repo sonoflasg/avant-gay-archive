@@ -15,7 +15,14 @@ Date: 14/11/2026
 
 Le Random’s timeline lists the gallery team at the time as curators Jared Madere, Wretched Worm and Supermetal Bosch, editor Anastasios Karnazes and developer Miles Peyton. Other sources name the team differently; see [[Galerie Yeche Lange]].
 
+### Press (added 17/11/2026)
+
+- **cult.now, 15 Sep 2025:** "If Bosch builds worlds, Evil Biscuit burns them down."
+- **Emergent Magazine** lists the show as running from "June 26, 2025 - September 14, 2025," with installation views.
+
 Sources:
 - [Le Random Generative Art Timeline, “One Of Us Is Real And It’s Not You at Galerie Yeche Lange”](https://timeline.lerandom.art/m/one-of-us-is-real-and-it-s-not-you-at-galerie-yeche-lange)
 - [Brian Droitcour, “Seams and Synthesis,” Le Random, 2 Feb 2026](https://www.lerandom.art/editorial/seams-and-synthesis-schizocollage-and-ai-aesthetics)
 - [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/)
+- [cult.now, “One Of Us Is Real And It’s Not You: Supermetal Bosch & Evil Biscuit,” 15 Sep 2025](https://www.cult.now/mag/one-of-us-is-real-and-its-not-you-supermetal-bosch-evil-biscuits)
+- [Emergent Magazine, exhibition page](https://www.emergentmag.com/exhibitions/one-of-us-is-real-and-its-not-you-at-galerie-yeche-lange)
