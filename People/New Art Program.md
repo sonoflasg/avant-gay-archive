@@ -11,6 +11,8 @@ The paper’s public References section records that this interview was used for
 
 This note records only what is published there. It is not a transcript, and it does not add private correspondence.
 
+18 Nov 2026: [[Evil Biscuit]] credited New Art Program with the 111k Collection Block [[DriFPS]], and New Art Program described his contribution in public the same day. See [[DriFPS]].
+
 Compiled by SonOfLasG from the paper’s References.
 
 Sources: [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/#references)

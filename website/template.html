@@ -543,12 +543,25 @@ function select(n, fromKey) {
   });
   const body = document.getElementById("pBody");
   if (n.summary && n.summary.trim().length > 5) {
-    body.textContent = n.summary
+    const plain = n.summary
       .replace(/\[\[([^\]|]+)(\|[^\]]+)?\]\]/g, "$1")
       .replace(/\*\*([^*]+)\*\*/g, "$1")
       .replace(/\*([^*\n]+)\*/g, "$1")
       .replace(/^#{1,6}\s*/gm, "")
       .replace(/^\s*-\s+/gm, "· ");
+    // Markdown links [text](https://…) become real links; everything else stays text.
+    body.textContent = "";
+    const mdLink = /\[([^\]\n]+)\]\((https?:\/\/[^\s)]+)\)/g;
+    let last = 0, m;
+    while ((m = mdLink.exec(plain))) {
+      if (m.index > last) body.appendChild(document.createTextNode(plain.slice(last, m.index)));
+      const a = document.createElement("a");
+      a.href = m[2]; a.textContent = m[1];
+      a.target = "_blank"; a.rel = "noopener noreferrer";
+      body.appendChild(a);
+      last = mdLink.lastIndex;
+    }
+    if (last < plain.length) body.appendChild(document.createTextNode(plain.slice(last)));
   } else {
     body.innerHTML = '<span class="stubmsg">' + (n.type === "phantom"
       ? "This entity is referenced across the archive but doesn’t have its own entry yet. Know the story? Use “Write this entry” below."
