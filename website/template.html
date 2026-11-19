@@ -158,9 +158,16 @@
   #closeBtn:hover { color: var(--ink); }
 
   /* ---------- legend ---------- */
+  #chrome-bottom {
+    position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 10;
+    display: flex; flex-wrap: nowrap; justify-content: space-between;
+    align-items: flex-end; gap: 16px;
+    pointer-events: none;
+  }
   #legend {
-    position: fixed; bottom: 16px; left: 16px; z-index: 10;
+    position: relative; z-index: 11;
     display: flex; gap: 14px; flex-wrap: wrap; font-size: 10.5px; color: var(--dim);
+    pointer-events: auto; flex: 1 1 auto; min-width: 0;
   }
   #legend button {
     display: flex; align-items: center; gap: 5px; background: none; border: 1px solid transparent;
@@ -183,10 +190,17 @@
   #legend .lg-all { display: none; color: var(--accent2); }
   #legend.filtering .lg-all { display: flex; }
 
-  #hint { position: fixed; bottom: 16px; right: 22px; z-index: 10;
-    font-size: 10.5px; color: var(--dim); letter-spacing: 0.05em; }
+  #hint {
+    position: relative; z-index: 10;
+    font-size: 10.5px; color: var(--dim); letter-spacing: 0.05em;
+    pointer-events: auto; flex: 0 0 auto; white-space: nowrap;
+    text-align: right;
+  }
   #hint a { color: var(--accent2); text-decoration: none; }
   #hint a:hover { text-decoration: underline; }
+  @media (max-width: 800px) {
+    #hint { display: none; }
+  }
 
   /* ---------- contribute sheet ---------- */
   #contribSheet {
@@ -283,8 +297,10 @@
 </aside>
 
 <div id="lightbox"><img alt=""></div>
+<div id="chrome-bottom">
 <div id="legend" role="toolbar" aria-label="Filter by category"></div>
 <div id="hint">drag to explore · scroll to zoom · click a node · <a id="hintRepo" href="#contribute">submit material ✚</a> · <a id="hintData" href="archive.json">data</a></div>
+</div>
 <canvas id="c"></canvas>
 
 <script>

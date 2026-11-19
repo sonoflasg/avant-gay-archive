@@ -314,7 +314,13 @@ def main():
             if st.startswith("D"):
                 if is_entry(parts[1]):
                     stem = Path(parts[1]).stem.lower()
-                    if any(Path(r.split("\t")[-1]).stem.lower() == stem and not r.startswith("D") for r in diff):
+                    folder_move = any(
+                        Path(r.split("\t")[-1]).stem.lower() == stem
+                        and not r.startswith("D")
+                        and Path(r.split("\t")[-1]).parent != Path(parts[1]).parent
+                        for r in diff
+                    )
+                    if folder_move:
                         rep.warn(parts[1], "entry moved to another folder (same name, so links still resolve)")
                     else:
                         dest = documented_retitle(parts[1], diff)
