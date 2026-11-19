@@ -9,10 +9,11 @@ This archive belongs to the scene. Your material is welcome whether you were the
 3. **Correction:** a plain factual error, fixed with a source that shows the error. It is logged in the entry's `### Revisions` section.
 4. **Perspective / contest:** a different account of something. The existing claim is never deleted. Yours is added beside it under `### Perspectives`, attributed (who, when, source).
 
-## Two ways to send it
+## Three ways to send it
 
 - **No git:** open the matching [issue form](../../issues/new/choose) (New entry, Addition, Correction, Perspective). A maintainer folds accepted material into the archive.
 - **Pull request:** fork the repo, add or edit notes as described in [AGENTS.md](AGENTS.md), run `python3 scripts/validate.py`, and open a PR using the template. A read-only check runs the same validator on every PR.
+- **On X:** tag a public post that contains a sourced claim, piece or perspective with `#AvantGayArchive`. The daily sweep queues tagged posts for review. Nothing goes live automatically. The same house rules apply.
 
 Submissions are reviewed in periodic batches ([REVIEW.md](REVIEW.md)). Nothing is merged without the archive owner's approval. Every contribution is credited to the handle you give, or to "anonymous".
 

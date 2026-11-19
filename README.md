@@ -34,9 +34,14 @@ Everyone's welcome, and you don't need to know git. AI agents are welcome too: p
 - **Fix a factual error:** [Correction](../../issues/new?template=correction.yml), with a source that shows the error
 - **Dispute a claim:** [Perspective](../../issues/new?template=contest.yml). Your account is added beside the existing one; nothing is deleted.
 - **Propose a missing entry:** [New entry](../../issues/new?template=new-entry.yml)
+- **No GitHub?** Tag a public X post that makes a sourced claim, piece or perspective with `#AvantGayArchive`. The daily sweep queues tagged posts for review; nothing goes live automatically. The same house rules apply (see [CONTRIBUTING.md](CONTRIBUTING.md)).
 - **Comfortable with markdown?** Fork the repo, follow AGENTS.md, run `python3 scripts/validate.py`, and open a pull request.
 
 Accepted contributions are credited in the entry. Disputed accounts aren't merged into one "truth" — they stand side by side, attributed.
+
+## Data & reuse
+
+A machine-readable export of every entry is at https://avantgay.sonoflasg.com/archive.json (CSV: https://avantgay.sonoflasg.com/archive.csv). If you reuse it, cite the Avant Gay Archive and the entry's own sources. The archive is [CC BY-SA 4.0](LICENSE.md).
 
 ## Building locally
 

@@ -21,8 +21,9 @@ A community archive of the Avant Gay scene (Solana and Ethereum NFT art, roughly
 | Add facts or sources to an existing entry | **Addition** | `contribute.yml` | Addition |
 | Fix something that is wrong in an existing entry | **Correction** | `correction.yml` | Correction |
 | Dispute a claim, or record a different account | **Perspective (contest)** | `contest.yml` | Perspective |
+| Suggest a sourced claim from X (no GitHub) | **Hashtag** | Tag a public post with `#AvantGayArchive` | — |
 
-Forms live at `https://github.com/sonoflasg/avant-gay-archive/issues/new/choose`. A pull request is better if you can make one, because it is reviewed exactly as merged. An issue is fine. Maintainers convert accepted issues into entries.
+Forms live at `https://github.com/sonoflasg/avant-gay-archive/issues/new/choose`. A pull request is better if you can make one, because it is reviewed exactly as merged. An issue is fine. Maintainers convert accepted issues into entries. A tagged X post is also fine: it is queued for review the same way.
 
 Before you start, search the vault for the name (filenames are case-insensitive; also try spelling variants). If an entry exists, use Addition, Correction or Perspective. Do not create a duplicate.
 
@@ -53,6 +54,9 @@ If the original claim had no attribution, keep it and attribute it to the entry'
 
 ### 2d. New entry
 Use the template for its type (section 4). Put the file in the folder for that type. The folder sets the node colour/type on the site.
+
+### 2e. Public X post
+Tag a public post that contains a sourced claim, piece or perspective with `#AvantGayArchive`. The maintainer's daily sweep queues tagged posts for review. Nothing goes live automatically. The same house rules apply: public sources only, no DMs or group-chat screenshots, no wallets, no doxxing. Contesting a claim adds your view beside the existing one; it never erases it.
 
 ## 3. Required format (every entry)
 
@@ -162,6 +166,19 @@ Pull requests containing any of these are closed.
 
 Open the matching form at https://github.com/sonoflasg/avant-gay-archive/issues/new/choose. Agents can produce the form contents as text for the human to paste. Include the entry name, the exact text to add or change, every source URL (X posts with AEDT/AEST times), the AI disclosure and how to credit you.
 
-## 8. Disclosure and credit
+## 8. Steps: public X post (no GitHub)
+
+Post a sourced claim, piece or perspective on X and tag it `#AvantGayArchive`. The daily sweep queues tagged posts for review; nothing is added to the archive until a maintainer accepts it. The forbidden list in section 5 still applies.
+
+## 9. Disclosure and credit
 
 Say whether you used an LLM or agent, which one, and whether a human checked every claim against its source. Agent-assisted work is welcome. Unchecked agent output is not. Credit goes to your handle (or "anonymous") in the PR or issue, in git history, and, for substantial work, in the entry's Revisions or Author line.
+
+## 10. Data & reuse
+
+A machine-readable export of every entry is published with the site:
+
+- JSON: https://avantgay.sonoflasg.com/archive.json
+- CSV: https://avantgay.sonoflasg.com/archive.csv
+
+The archive is licensed under [CC BY-SA 4.0](LICENSE.md). If you reuse it, cite the Avant Gay Archive and the entry's own sources.

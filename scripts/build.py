@@ -4,11 +4,16 @@
 Usage: python3 scripts/build.py
 Reads every .md note in the repo (= the vault), extracts wikilinks and
 metadata, injects the graph data into website/template.html, and writes
-the finished site to site/index.html.
+the finished site to site/index.html, plus a machine-readable
+export at site/archive.json and site/archive.csv.
 """
+import csv
 import json
 import re
 import shutil
+import subprocess
+import sys
+from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -38,6 +43,12 @@ XHANDLE = re.compile(r"^X:\s*@?([A-Za-z0-9_]{1,15})\s*$", re.M)
 # Metadata lines: attribution, not graph edges and not summary text.
 META_LINE = re.compile(r"^(Source|Author|Date|Status|X):.*$", re.M | re.I)
 PFP_DIR = ROOT / "website" / "pfp"
+
+SITE_URL = "https://avantgay.sonoflasg.com"
+SOURCES_HEAD = re.compile(r"^(#+\s*)?(\*\*)?(Further\s+)?Sources\b", re.I)  # plural: do not match the Source: header
+MD_LINK = re.compile(r"\[([^\]]+)\]\((https?://[^)\s]+)\)")
+BARE_URL = re.compile(r"https?://[^\s)\]>\"']+")
+HEADING = re.compile(r"^#+\s+")
 
 
 def pfp_index():
@@ -92,6 +103,172 @@ def slugify(name: str) -> str:
     return re.sub(r"[^A-Za-z0-9.\-]+", "-", name).strip("-").lower()
 
 
+
+def parse_sources(text: str):
+    """URLs from every Sources section, with link text as title when present."""
+    lines = text.splitlines()
+    chunk, in_s = [], False
+    for line in lines:
+        if SOURCES_HEAD.match(line.strip()):
+            in_s = True
+            rest = SOURCES_HEAD.sub("", line, count=1).lstrip(":* ").strip()
+            if rest:
+                chunk.append(rest)
+            continue
+        if in_s:
+            if HEADING.match(line) or line.strip() == "---":
+                in_s = False
+                continue
+            chunk.append(line)
+    blob = "\n".join(chunk)
+    out, seen = [], set()
+    for m in MD_LINK.finditer(blob):
+        title, url = m.group(1).strip(), m.group(2).strip()
+        if url not in seen:
+            seen.add(url)
+            out.append({"title": title, "url": url})
+    for m in BARE_URL.finditer(blob):
+        url = m.group(0).rstrip(".,;:")
+        if url not in seen:
+            seen.add(url)
+            out.append({"title": None, "url": url})
+    return out
+
+
+def first_line(clean: str) -> str:
+    """First non-empty body line, with light markdown stripped."""
+    for line in clean.splitlines():
+        s = line.strip().lstrip("-*# ").strip()
+        if not s:
+            continue
+        s = MD_LINK.sub(r"\1", s)
+        s = re.sub(r"\[\[([^\]|]+)(?:\|([^\]]+))?\]\]", lambda m: m.group(2) or m.group(1), s)
+        s = re.sub(r"\*\*([^*]+)\*\*", r"\1", s)
+        s = re.sub(r"\*([^*]+)\*", r"\1", s)
+        return s[:300]
+    return ""
+
+
+def git_last_modified():
+    """Relative vault path -> ISO date of the latest commit that touched it."""
+    out = {}
+    try:
+        proc = subprocess.run(
+            ["git", "log", "--format=%cI", "--name-only", "--diff-filter=ACMR"],
+            cwd=ROOT, capture_output=True, text=True, check=False,
+        )
+    except OSError:
+        return out
+    if proc.returncode != 0:
+        return out
+    date = None
+    for line in proc.stdout.splitlines():
+        if not line:
+            continue
+        if len(line) >= 20 and line[0].isdigit() and "T" in line[:20]:
+            date = line.strip()
+            continue
+        if date and line.endswith(".md") and line not in out:
+            out[line] = date
+    return out
+
+
+def export_status(node):
+    if node.get("type") == "phantom":
+        return "phantom"
+    st = (node.get("status") or "").lower()
+    if st.startswith("needs-sources"):
+        return "needs-sources"
+    return "written"
+
+
+def generated_at():
+    try:
+        from zoneinfo import ZoneInfo
+        return datetime.now(ZoneInfo("Australia/Melbourne")).isoformat(timespec="seconds")
+    except Exception:
+        return datetime.now(timezone.utc).isoformat(timespec="seconds")
+
+
+def scan_export(path: Path):
+    """Run the validator's wallet/secret checks on an export file."""
+    try:
+        import validate  # late: validate already imports this module
+    except Exception as e:
+        print(f"warning: could not scan {path.name} ({e})")
+        return
+    rel = str(path.relative_to(ROOT))
+    lines = [(i + 1, line) for i, line in enumerate(path.read_text(encoding="utf-8").splitlines())]
+    rep = validate.Report()
+    validate.scan_privacy(rep, rel, lines, strict=True)
+    for w in rep.warnings:
+        print("export warning:", w)
+    if rep.errors:
+        for err in rep.errors:
+            print("export error:", err)
+        sys.exit(f"refusing to write a live export that fails the privacy scan: {path.name}")
+
+
+def write_export(data):
+    """Write site/archive.json and site/archive.csv from the graph + vault files."""
+    lastmod = git_last_modified()
+    entries = []
+    for n in data["nodes"]:
+        header = (n.get("status") or "").lower()
+        rec = {
+            "title": n["id"],
+            "path": n.get("path"),
+            "type": n["type"] if n["type"] != "phantom" else "phantom",
+            "folder": n.get("folder") or None,
+            "status": export_status(n),
+            "contested": header.startswith("contested"),
+            "summary": first_line(n.get("summary") or ""),
+            "xHandle": n.get("xHandle"),
+            "links": list(n.get("outlinks") or []),
+            "backlinks": n.get("backlinks", 0),
+            "sources": n.get("sources") or [],
+            "date": n.get("date"),
+            "lastModified": lastmod.get(n["path"]) if n.get("path") else None,
+        }
+        entries.append(rec)
+    entries.sort(key=lambda e: (e["title"] or "").lower())
+    payload = {
+        "archive": "Avant Gay Archive",
+        "url": SITE_URL + "/",
+        "data": SITE_URL + "/archive.json",
+        "csv": SITE_URL + "/archive.csv",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "Cite the Avant Gay Archive and the entry's own sources.",
+        "generated": generated_at(),
+        "entryCount": len(entries),
+        "entries": entries,
+    }
+    OUT.parent.mkdir(parents=True, exist_ok=True)
+    json_path = OUT.parent / "archive.json"
+    csv_path = OUT.parent / "archive.csv"
+    json_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    with csv_path.open("w", encoding="utf-8", newline="") as f:
+        w = csv.writer(f)
+        w.writerow(["title", "path", "type", "folder", "status", "contested",
+                    "summary", "xHandle", "links", "backlinks", "sources",
+                    "date", "lastModified"])
+        for e in entries:
+            sources = "; ".join(
+                (s["title"] + " | " + s["url"]) if s.get("title") else s["url"]
+                for s in e["sources"]
+            )
+            w.writerow([
+                e["title"], e["path"] or "", e["type"], e["folder"] or "",
+                e["status"], "true" if e["contested"] else "false",
+                e["summary"], e["xHandle"] or "", "; ".join(e["links"]),
+                e["backlinks"], sources, e["date"] or "", e["lastModified"] or "",
+            ])
+    scan_export(json_path)
+    scan_export(csv_path)
+    print(f"wrote site/archive.json and site/archive.csv — {len(entries)} entries")
+
+
 def build_graph():
     notes = {}
     md_files = collect_files()
@@ -144,6 +321,7 @@ def build_graph():
             "id": name,
             "type": TYPE_BY_FOLDER.get(folder, "concept"),
             "folder": folder,
+            "path": rel.as_posix(),
             # Full note text: longer compiled entries need to be readable in the panel.
             "summary": clean[:20000],
             "source": src.group(1) if src else None,
@@ -154,6 +332,7 @@ def build_graph():
             "xHandle": handle,
             "pfp": pfp["image"] if pfp else None,
             "pfpCaptured": pfp["captured"].split(" ")[0] if pfp else None,
+            "sources": parse_sources(text),
             "outlinks": [],
         }
 
@@ -171,9 +350,9 @@ def build_graph():
             if ct not in notes:
                 notes[ct] = {
                     "id": target, "type": "phantom", "folder": "",
-                    "summary": "", "source": None, "author": None,
+                    "path": None, "summary": "", "source": None, "author": None,
                     "date": None, "status": None, "stub": True, "outlinks": [], "images": [],
-                    "xHandle": None, "pfp": None, "pfpCaptured": None,
+                    "xHandle": None, "pfp": None, "pfpCaptured": None, "sources": [],
                 }
             links.append({"source": name, "target": notes[ct]["id"]})
             notes[canon(name)]["outlinks"].append(notes[ct]["id"])
@@ -189,20 +368,25 @@ def build_graph():
     for l in uniq:
         backlinks[canon(l["target"])] = backlinks.get(canon(l["target"]), 0) + 1
     for c, n in notes.items():
+        n["outlinks"] = list(dict.fromkeys(n["outlinks"]))
         n["backlinks"] = backlinks.get(c, 0)
-        n["degree"] = n["backlinks"] + len(set(n["outlinks"]))
-        del n["outlinks"]
+        n["degree"] = n["backlinks"] + len(n["outlinks"])
 
     return {"nodes": list(notes.values()), "links": uniq}
 
 
 def main():
     data = build_graph()
+    OUT.parent.mkdir(parents=True, exist_ok=True)
+    write_export(data)
+    for n in data["nodes"]:
+        n.pop("path", None)
+        n.pop("sources", None)
+        n.pop("outlinks", None)
     html = TEMPLATE.read_text(encoding="utf-8")
     html = html.replace("__GRAPH_DATA__", json.dumps(data, ensure_ascii=False))
     html = html.replace("__REPO__", REPO)
     html = html.replace("__VOTES_URL__", VOTES_URL)
-    OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(html, encoding="utf-8")
     # site icons (favicon.svg, favicon.ico, favicon-32.png, apple-touch-icon.png)
     for icon in (ROOT / "website" / "icons").glob("*"):

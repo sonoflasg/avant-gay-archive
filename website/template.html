@@ -184,6 +184,37 @@
   #hint a { color: var(--accent2); text-decoration: none; }
   #hint a:hover { text-decoration: underline; }
 
+  /* ---------- contribute sheet ---------- */
+  #contribSheet {
+    display: none; position: fixed; top: 52px; left: 22px; z-index: 18;
+    width: min(420px, calc(100vw - 44px)); max-height: calc(100vh - 80px);
+    overflow-y: auto; padding: 22px 24px 20px;
+    background: var(--panel); backdrop-filter: blur(18px);
+    border: 1px solid var(--hair); border-radius: 14px;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.45);
+    scrollbar-width: thin; scrollbar-color: #333 transparent;
+  }
+  #contribSheet.open { display: block; }
+  #contribSheet h2 { font-size: 16px; letter-spacing: 0.08em; font-weight: 700; margin: 0 28px 8px 0; }
+  #contribSheet .lead { font-size: 12.5px; color: #cfcdd6; line-height: 1.55; margin-bottom: 16px; }
+  #contribSheet h3 { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--dim); margin: 14px 0 6px; }
+  #contribSheet p, #contribSheet li { font-size: 12.5px; line-height: 1.55; color: #cfcdd6; }
+  #contribSheet a { color: var(--accent2); text-decoration: none; }
+  #contribSheet a:hover { text-decoration: underline; }
+  #contribSheet .forms { display: flex; flex-wrap: wrap; gap: 8px 14px; margin: 6px 0 2px; }
+  #contribSheet .forms a { font-size: 12px; }
+  #contribSheet .rules, #contribSheet .data {
+    margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--hair);
+    font-size: 11.5px; color: var(--dim); line-height: 1.55;
+  }
+  #contribSheet .data { margin-top: 10px; padding-top: 0; border-top: none; }
+  #contribClose {
+    position: absolute; top: 14px; right: 14px; background: none; border: none;
+    color: var(--dim); font-size: 20px; cursor: pointer; line-height: 1;
+  }
+  #contribClose:hover { color: var(--ink); }
+
   @media (max-width: 720px) {
     #keys { display: none; }
     #search { width: 150px; }
@@ -195,8 +226,29 @@
 
 <div id="hdr">
   <h1>AVANT <em>GAY</em></h1>
-  <span>a living archive of the scene on Solana · <a id="hdrRepo" href="#" target="_blank" rel="noopener">contribute ↗</a></span>
+  <span>a living archive of the scene on Solana · <a id="hdrRepo" href="#contribute">contribute</a></span>
 </div>
+
+<aside id="contribSheet" role="dialog" aria-labelledby="contribTitle" aria-modal="false" hidden>
+  <button id="contribClose" type="button" title="close">×</button>
+  <h2 id="contribTitle">Contribute</h2>
+  <p class="lead">Everyone's welcome. Submissions are reviewed before they go live.</p>
+  <h3>Forms</h3>
+  <p>No coding needed. You'll need a GitHub account, which is free and quick to set up.</p>
+  <p class="forms">
+    <a id="sheetAdd" href="#" target="_blank" rel="noopener">Add context</a>
+    <a id="sheetCorrect" href="#" target="_blank" rel="noopener">Correct an error</a>
+    <a id="sheetContest" href="#" target="_blank" rel="noopener">Contest a claim</a>
+    <a id="sheetNew" href="#" target="_blank" rel="noopener">New entry</a>
+  </p>
+  <h3>Pull request or AI agent</h3>
+  <p>Follow the <a id="sheetGuide" href="#" target="_blank" rel="noopener">contributor guide</a>.</p>
+  <h3>On X</h3>
+  <p>Tag a public post that contains a sourced claim, piece or perspective with <strong>#AvantGayArchive</strong>. The daily sweep queues tagged posts for review. Nothing goes live automatically.</p>
+  <p class="rules">House rules: public sources only; no DMs or group-chat screenshots; no wallets; no doxxing. Contesting a claim adds your view beside the existing one; it never erases it.</p>
+  <p class="data">Data &amp; reuse: <a href="archive.json">archive.json</a> · <a href="archive.csv">archive.csv</a>. Cite the Avant Gay Archive and the entry's own sources. <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
+</aside>
+
 <input id="search" type="text" placeholder="search the archive…" autocomplete="off">
 <button id="resetView" type="button" title="Reset zoom and pan, close the open entry (filters stay)">reset view</button>
 <nav id="keys"><h2>Keywords</h2><div id="keyList"></div></nav>
@@ -228,7 +280,7 @@
 
 <div id="lightbox"><img alt=""></div>
 <div id="legend" role="toolbar" aria-label="Filter by category"></div>
-<div id="hint">drag to explore · scroll to zoom · click a node · <a id="hintRepo" href="#" target="_blank" rel="noopener">submit material ✚</a></div>
+<div id="hint">drag to explore · scroll to zoom · click a node · <a id="hintRepo" href="#contribute">submit material ✚</a> · <a id="hintData" href="archive.json">data</a></div>
 <canvas id="c"></canvas>
 
 <script>
@@ -259,13 +311,31 @@ const TYPE_LABEL = {
 const GUIDE_URL = REPO_URL + "/blob/main/AGENTS.md";
 const FORMS = { addition: "contribute.yml", correction: "correction.yml", perspective: "contest.yml", "new-entry": "new-entry.yml" };
 function contribUrl(node, kind) {
-  if (!node) return REPO_URL + "/issues/new/choose";
-  const k = kind || (node.type === "phantom" ? "new-entry" : "addition");
+  if (!node && !kind) return REPO_URL + "/issues/new/choose";
+  const k = kind || (node && node.type === "phantom" ? "new-entry" : "addition");
+  if (!node) return REPO_URL + "/issues/new?template=" + FORMS[k];
   const title = k === "new-entry" ? "New entry: " + node.id : "[" + node.id + "] " + k + ": ";
   return REPO_URL + "/issues/new?template=" + FORMS[k] + "&title=" + encodeURIComponent(title);
 }
-document.getElementById("hdrRepo").href = GUIDE_URL;
-document.getElementById("hintRepo").href = contribUrl(null);
+document.getElementById("sheetGuide").href = GUIDE_URL;
+document.getElementById("sheetAdd").href = contribUrl(null, "addition");
+document.getElementById("sheetCorrect").href = contribUrl(null, "correction");
+document.getElementById("sheetContest").href = contribUrl(null, "perspective");
+document.getElementById("sheetNew").href = contribUrl(null, "new-entry");
+
+const contribSheet = document.getElementById("contribSheet");
+function openContribute(e) {
+  if (e) e.preventDefault();
+  contribSheet.hidden = false;
+  contribSheet.classList.add("open");
+}
+function closeContribute() {
+  contribSheet.classList.remove("open");
+  contribSheet.hidden = true;
+}
+document.getElementById("hdrRepo").addEventListener("click", openContribute);
+document.getElementById("hintRepo").addEventListener("click", openContribute);
+document.getElementById("contribClose").addEventListener("click", closeContribute);
 
 const canvas = document.getElementById("c");
 const ctx = canvas.getContext("2d");
@@ -731,6 +801,7 @@ document.getElementById("resetView").onclick = resetView;
 document.addEventListener("keydown", e => {
   if (e.key === "Escape" && document.activeElement?.id !== "search") {
     if (document.getElementById("lightbox").classList.contains("open")) return;
+    if (contribSheet.classList.contains("open")) { closeContribute(); return; }
     if (selected) deselect(); else if (filter) setFilter(null);
   }
 });
