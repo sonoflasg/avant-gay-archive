@@ -56,8 +56,9 @@
 
   /* ---------- keyword sidebar ---------- */
   #keys {
-    position: fixed; left: 0; top: 60px; bottom: 0; width: 216px; z-index: 10;
-    padding: 10px 0 24px 16px; overflow-y: auto;
+    position: fixed; left: 0; top: 60px; width: 216px; z-index: 10;
+    bottom: calc(16px + var(--chrome-h, 56px) + 10px);
+    padding: 10px 0 16px 16px; overflow-y: auto;
     scrollbar-width: thin; scrollbar-color: #333 transparent;
     mask-image: linear-gradient(to bottom, transparent, black 14px, black calc(100% - 14px), transparent);
   }
@@ -365,7 +366,17 @@ function resize() {
   canvas.width = W * dpr; canvas.height = H * dpr;
   canvas.style.width = W + "px"; canvas.style.height = H + "px";
 }
-resize(); window.addEventListener("resize", () => { resize(); tick(); });
+function syncKeysBottom() {
+  const bar = document.getElementById("chrome-bottom");
+  const h = bar ? bar.getBoundingClientRect().height : 42;
+  document.documentElement.style.setProperty("--chrome-h", h + "px");
+}
+resize();
+syncKeysBottom();
+window.addEventListener("resize", () => { resize(); syncKeysBottom(); tick(); });
+if (window.ResizeObserver) {
+  new ResizeObserver(syncKeysBottom).observe(document.getElementById("chrome-bottom"));
+}
 
 const nodes = DATA.nodes;
 const links = DATA.links.map(l => ({...l}));
@@ -792,6 +803,7 @@ function setFilter(f) {
   legend.classList.toggle("filtering", !!filter);
   legendBtns.forEach((b, key) => b.setAttribute("aria-pressed", String(!!filter && filter.has(key))));
   if (hovered && !shown(hovered)) hovered = null;
+  syncKeysBottom();
   tick();
 }
 function legendButton(key, html, cls, title) {
@@ -819,6 +831,7 @@ Object.entries(TYPE_LABEL).forEach(([t, label]) => {
     };
 });
 legendButton(null, "× show all", "lg-all", "Clear the category filter").onclick = () => setFilter(null);
+syncKeysBottom();
 
 // ---------- reset view ----------
 const DEFAULT_VIEW = () => d3.zoomIdentity.translate(W / 2 + 40, H / 2).scale(0.85);
