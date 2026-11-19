@@ -56,8 +56,9 @@
 
   /* ---------- keyword sidebar ---------- */
   #keys {
-    position: fixed; left: 0; top: 60px; bottom: 0; width: 216px; z-index: 10;
-    padding: 10px 0 24px 16px; overflow-y: auto;
+    position: fixed; left: 0; top: 60px; width: 216px; z-index: 10;
+    bottom: calc(16px + var(--chrome-h, 56px) + 10px);
+    padding: 10px 0 16px 16px; overflow-y: auto;
     scrollbar-width: thin; scrollbar-color: #333 transparent;
     mask-image: linear-gradient(to bottom, transparent, black 14px, black calc(100% - 14px), transparent);
   }
@@ -365,7 +366,14 @@ function resize() {
   canvas.width = W * dpr; canvas.height = H * dpr;
   canvas.style.width = W + "px"; canvas.style.height = H + "px";
 }
-resize(); window.addEventListener("resize", () => { resize(); tick(); });
+function syncKeysBottom() {
+  const bar = document.getElementById("chrome-bottom");
+  const h = bar ? bar.getBoundingClientRect().height : 42;
+  document.documentElement.style.setProperty("--chrome-h", h + "px");
+}
+resize();
+syncKeysBottom();
+window.addEventListener("resize", () => { resize(); syncKeysBottom(); tick(); });
 
 const nodes = DATA.nodes;
 const links = DATA.links.map(l => ({...l}));
@@ -432,14 +440,57 @@ function labelWidth(n, px, bold) {
   return n[key] * px;
 }
 
+// Spread clusters: longer links between hubs, local repulsion, extra collision
+// padding. Gentle x/y centering keeps isolates (e.g. dun) from flying off.
+function linkDistance(l) {
+  const a = l.source.degree || 0, b = l.target.degree || 0;
+  // Leaves stay near their hub; links between two well-connected nodes stretch
+  // so neighbouring clusters sit apart instead of collapsing into one ball.
+  return 50 + 30 * Math.sqrt(Math.min(a, b)) + 10 * Math.log(1 + Math.max(a, b));
+}
+function linkStrength(l) {
+  const a = l.source.degree || 0, b = l.target.degree || 0;
+  return 0.45 / Math.sqrt(1 + Math.min(a, b) / 6);
+}
 const sim = d3.forceSimulation(nodes)
-  .force("link", d3.forceLink(links).id(d => d.id).distance(d => 46).strength(0.25))
-  .force("charge", d3.forceManyBody().strength(d => -60 - d.degree * 4))
-  .force("center", d3.forceCenter(0, 0))
-  .force("collide", d3.forceCollide(d => d.r + 3))
-  .on("tick", tick);
+  .force("link", d3.forceLink(links).id(d => d.id).distance(linkDistance).strength(linkStrength))
+  .force("charge", d3.forceManyBody().strength(d => -90 - (d.degree || 0) * 14).distanceMin(6).distanceMax(520))
+  .force("collide", d3.forceCollide(d => d.r + 16).iterations(2))
+  .force("x", d3.forceX(0).strength(d => (d.degree || 0) < 2 ? 0.07 : 0.008))
+  .force("y", d3.forceY(0).strength(d => (d.degree || 0) < 2 ? 0.07 : 0.008))
+  .alphaDecay(0.018)
+  .stop();
+for (let i = 0; i < 400; i++) sim.tick();
+sim.on("tick", tick);
 
-let transform = d3.zoomIdentity.translate(W / 2 + 40, H / 2).scale(0.85);
+function layoutBox() {
+  const pts = nodes.filter(n => Number.isFinite(n.x) && Number.isFinite(n.y));
+  const mid = a => { const s = a.slice().sort((x, y) => x - y), m = Math.floor(s.length / 2); return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; };
+  const cx = mid(pts.map(n => n.x)), cy = mid(pts.map(n => n.y));
+  const dist = pts.map(n => Math.hypot(n.x - cx, n.y - cy)).sort((a, b) => a - b);
+  const cutoff = dist[Math.max(0, Math.floor(dist.length * 0.97) - 1)] * 1.15;
+  const keep = pts.filter(n => Math.hypot(n.x - cx, n.y - cy) <= cutoff);
+  return {
+    x0: Math.min(...keep.map(n => n.x - n.r)),
+    x1: Math.max(...keep.map(n => n.x + n.r)),
+    y0: Math.min(...keep.map(n => n.y - n.r)),
+    y1: Math.max(...keep.map(n => n.y + n.r))
+  };
+}
+function fitTransform() {
+  const b = layoutBox();
+  const padL = 230, padR = 40, padT = 64;
+  const bar = document.getElementById("chrome-bottom");
+  const padB = (bar ? bar.getBoundingClientRect().height + 16 : 60) + 12;
+  const bw = Math.max(40, b.x1 - b.x0), bh = Math.max(40, b.y1 - b.y0);
+  const k = Math.max(0.12, Math.min(6, 0.92 * Math.min((W - padL - padR) / bw, (H - padT - padB) / bh)));
+  return d3.zoomIdentity
+    .translate(padL + (W - padL - padR) / 2 - k * (b.x0 + b.x1) / 2,
+               padT + (H - padT - padB) / 2 - k * (b.y0 + b.y1) / 2)
+    .scale(k);
+}
+
+let transform = d3.zoomIdentity;
 const zoom = d3.zoom().scaleExtent([0.12, 6])
   // Let a press on a node go to node dragging; empty space pans, wheel always zooms.
   .filter(e => {
@@ -450,7 +501,7 @@ const zoom = d3.zoom().scaleExtent([0.12, 6])
     return !pick(pt.clientX - r.left, pt.clientY - r.top);
   })
   .on("zoom", e => { transform = e.transform; tick(); });
-d3.select(canvas).call(zoom).call(zoom.transform, transform);
+d3.select(canvas).call(zoom).call(zoom.transform, fitTransform());
 
 function tick() {
   ctx.save();
@@ -792,6 +843,7 @@ function setFilter(f) {
   legend.classList.toggle("filtering", !!filter);
   legendBtns.forEach((b, key) => b.setAttribute("aria-pressed", String(!!filter && filter.has(key))));
   if (hovered && !shown(hovered)) hovered = null;
+  syncKeysBottom();
   tick();
 }
 function legendButton(key, html, cls, title) {
@@ -819,12 +871,12 @@ Object.entries(TYPE_LABEL).forEach(([t, label]) => {
     };
 });
 legendButton(null, "× show all", "lg-all", "Clear the category filter").onclick = () => setFilter(null);
+syncKeysBottom();
 
 // ---------- reset view ----------
-const DEFAULT_VIEW = () => d3.zoomIdentity.translate(W / 2 + 40, H / 2).scale(0.85);
 function resetView() {
   if (selected) deselect();
-  d3.select(canvas).transition().duration(500).call(zoom.transform, DEFAULT_VIEW());
+  d3.select(canvas).transition().duration(500).call(zoom.transform, fitTransform());
 }
 document.getElementById("resetView").onclick = resetView;
 document.addEventListener("keydown", e => {
