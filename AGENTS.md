@@ -86,6 +86,7 @@ Rules:
 - **Wikilinks** are graph edges. Link to existing filenames exactly (`[[Galerie Yeche Lange]]`, not `[[Yeche Lange]]`). Use `[[Target|shown text]]` for a different label. A link to a name with no file creates a grey "phantom" node. Only do that on purpose, for something that deserves an entry. Link generously but meaningfully.
 - **The site shows plain text.** Use headings, bullet lists, bold and links. Do not use markdown tables (the site doesn't render them).
 - **File name = entry title.** Use the name the scene uses, with no slashes. One entry per file.
+- **Retitling an entry.** Use `git mv` so the filename matches the new title. Do not leave the old file in place, and do not leave a `[[OldName]]` wikilink (that would create a phantom). Record the change in a `### Revisions` note that cites the old path (`People/OldName.md`) so the validator can treat it as a rename, not a deletion. Keep the old name in the body so search still finds the entry.
 
 ### Citation rules
 - Cite **public URLs** for every claim: articles, mint/collection pages, exhibition pages, archived pages (web.archive.org is fine).

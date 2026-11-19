@@ -6,9 +6,9 @@ Role: community
 
 ---
 
-goob (X: @glorp_goob, display name goob) is a collector and documenter in the [[Avant Gay]] scene. His public X bio, as captured on 19 Nov 2026, reads “1333 Purple Swag Angel / Check out MiFella / Cigawrettes2 coming.” *Inference:* “1333 Purple Swag Angel” refers to [[13-33]] (also published as 13<33 / 1333 Covenant). The line “Cigawrettes2 coming” is recorded as his own public statement; this archive does not treat it as a published collection.
+goob (X: @glorp_goob, display name goob) is a collector and documenter in the [[Avant Gay]] scene. Their public X bio, as captured on 19 Nov 2026, reads “1333 Purple Swag Angel / Check out MiFella / Cigawrettes2 coming.” *Inference:* “1333 Purple Swag Angel” refers to [[13-33]] (also published as 13<33 / 1333 Covenant). The line “Cigawrettes2 coming” is recorded as their own public statement; this archive does not treat it as a published collection.
 
-He posts public showcases of collections and short accounts of how they relate.
+They post public showcases of collections and short accounts of how they relate.
 
 - **On the genealogy (7 Nov 2026, 7:31am AEDT):** “without Milady there is no MiFella / without MiFella there is no DriFella / without DriFella there is no DriLady”: https://x.com/glorp_goob/status/2118803427858006382 See [[Milady]], [[MiFella]], [[Drifella]] and [[Drilady]].
 - **Collection showcase (22 Oct 2026, 4:57am AEDT):** “Moar Goob NFT showcase,” including “Planet Peppa (GOATED) - @1_2_sl333p @ihateguppy”: https://x.com/glorp_goob/status/2112966445701513609 See [[Planet Peppa]] and [[Guppy]].

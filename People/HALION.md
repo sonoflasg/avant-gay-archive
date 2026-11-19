@@ -6,7 +6,7 @@ Role: community
 
 ---
 
-HALION (X: @HALION) is a collector in the [[Avant Gay]] scene. In an 8 Oct 2026 post he described himself as “not an artist,” while posting about [[Drilady]] and [[Drifella]]. Through October 2026 he posted repeatedly about Drilady. During the [[111k]] mint he posted about opening crates, hatching eggs, and buying work on the [[vvv.so]] marketplace. Several of those posts are already cited in the 111k entry.
+HALION (X: @HALION) is a collector in the [[Avant Gay]] scene. In an 8 Oct 2026 post they wrote “not an artist so I can't reply,” while posting about [[Drilady]] and [[Drifella]]. Through October 2026 they posted repeatedly about Drilady. During the [[111k]] mint they posted about opening crates, hatching eggs, and buying work on the [[vvv.so]] marketplace. Several of those posts are already cited in the 111k entry.
 
 - **On Drifella and Drilady (8 Oct 2026, 11:03am AEDT):** “not an artist so I can't reply / but every drifella deserves a drilady”: https://x.com/HALION/status/2107985164693610577
 - **The same phrase (4 Oct 2026, 4:14pm AEDT):** “every drifella deserves a drilady”: https://x.com/HALION/status/2106613794999087118

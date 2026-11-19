@@ -210,6 +210,39 @@ def check_removals(rep, f, old, new):
             rep.warn(f, msg + ". If this corrects an error, add a '### Revisions' note")
 
 
+
+def revisions_cite_old_path(text, old_path):
+    """True if a Revisions section mentions the previous entry path."""
+    in_rev = False
+    for line in text.splitlines():
+        if REVISION_HEAD.match(line):
+            in_rev = True
+            continue
+        if in_rev:
+            if line.startswith("#") or SOURCES_HEAD.match(line):
+                break
+            if old_path in line:
+                return True
+    return False
+
+
+def documented_retitle(old_path, diff):
+    """New or renamed entry whose Revisions note records a move from old_path."""
+    for row in diff:
+        parts = row.split("\t")
+        st, path = parts[0], parts[-1]
+        if not (st.startswith("A") or st.startswith("R")):
+            continue
+        if not is_entry(path):
+            continue
+        fp = ROOT / path
+        if fp.exists() and revisions_cite_old_path(
+            fp.read_text(encoding="utf-8", errors="replace"), old_path
+        ):
+            return path
+    return None
+
+
 def phantoms(rep, base):
     head = {n["id"].lower() for n in build.build_graph()["nodes"] if n["type"] == "phantom"}
     if not base:
@@ -274,6 +307,7 @@ def main():
         diff = git("diff", "--name-status", "-M", base, "--").stdout.splitlines()
         diff += [f"A\t{x}" for x in git("ls-files", "-o", "--exclude-standard").stdout.splitlines()]
         targets = []
+        retitled = set()
         for row in diff:
             parts = row.split("\t")
             st, path = parts[0], parts[-1]
@@ -283,9 +317,18 @@ def main():
                     if any(Path(r.split("\t")[-1]).stem.lower() == stem and not r.startswith("D") for r in diff):
                         rep.warn(parts[1], "entry moved to another folder (same name, so links still resolve)")
                     else:
-                        rep.err(parts[1], "deletes an entry; entries are not deleted (mark Status: needs-sources or add a Revisions note instead)")
+                        dest = documented_retitle(parts[1], diff)
+                        if dest:
+                            old = git("show", f"{base}:{parts[1]}").stdout
+                            targets.append((dest, old))
+                            retitled.add(dest)
+                            rep.warn(parts[1], f"entry retitled to {dest} (Revisions note records the old path)")
+                        else:
+                            rep.err(parts[1], "deletes an entry; entries are not deleted (mark Status: needs-sources or add a Revisions note instead)")
                 continue
             if is_entry(path):
+                if path in retitled:
+                    continue
                 old = None
                 if st.startswith(("M", "R")):
                     oldpath = parts[1]

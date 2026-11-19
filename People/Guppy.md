@@ -16,7 +16,7 @@ Compiled by SonOfLasG from the paper’s References.
 
 ### Public posts
 
-[[Guppy]] (@ihateguppy) also posts as a collector and commentator, alongside the work on [[Planet Peppa]]. In 2026 he posted about [[111k]], [[Little Swag World]], [[Drifella 2]], and work by [[yomme]].
+Guppy (@ihateguppy) also posts as a collector and commentator, alongside the work on [[Planet Peppa]]. In 2026 they posted about [[111k]], [[Little Swag World]], [[Drifella 2]], and work by [[yomme]].
 
 - **111k (19 Nov 2026, 3:53am AEDT):** “111k”: https://x.com/ihateguppy/status/2123097155812344267
 - **111k (13 Nov 2026, 5:05am AEDT):** “sheeeesh / 111k”: https://x.com/ihateguppy/status/2120941145790239092
@@ -24,7 +24,7 @@ Compiled by SonOfLasG from the paper’s References.
 - **Drifella 2 (24 Sep 2026, 4:34am AEDT):** “i still think about drifella 2”: https://x.com/ihateguppy/status/2102813833916203443
 - **yomme (12 Oct 2026, 5:31am AEDT):** “as a massive fan of yomme mi note cards were mandatory”: https://x.com/ihateguppy/status/2109351177917751517
 
-On 9 Nov 2026, 2:15am AEDT, replying to [[Patrician]], he posted “building Other Brothers”: https://x.com/ihateguppy/status/2119448845809541621
+On 9 Nov 2026, 2:15am AEDT, replying to [[Patrician]], they posted “building Other Brothers”: https://x.com/ihateguppy/status/2119448845809541621
 
 Sources: [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/#references)
 
