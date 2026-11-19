@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Corrections need a public source that shows the error. If people genuinely disagree about the point, use **Perspective** instead. Accepted corrections are logged in the entry's `### Revisions` section. Rules: [AGENTS.md](https://github.com/sonoflasg/avant-gay-archive/blob/main/AGENTS.md).
+        Corrections need a public source that shows the error. If people genuinely disagree about the point, use **Perspective** instead. To ask for a Community entry (yours, or one about you) to be changed or removed, use this form and say that clearly. Accepted corrections are logged in the entry's `### Revisions` section. Rules: [AGENTS.md](https://github.com/sonoflasg/avant-gay-archive/blob/main/AGENTS.md).
   - type: input
     id: entry
     attributes:

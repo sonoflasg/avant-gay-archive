@@ -25,7 +25,7 @@ sys.dont_write_bytecode = True
 import build  # noqa: E402
 
 DATE_RE = re.compile(r"^\d{2}/\d{2}/\d{4}$")
-META_RE = re.compile(r"^(Source|Author|Date|Status|X):", re.I)
+META_RE = re.compile(r"^(Source|Author|Date|Status|X|Role):", re.I)
 X_FIELD = re.compile(r"^@[A-Za-z0-9_]{1,15}$")
 STATUS_OK = ("needs-sources", "contested")
 URL_RE = re.compile(r"https?://[^\s)\]>\"']+")
@@ -134,6 +134,13 @@ def check_entry_shape(rep, f, text, new):
         rep.err(f, f"X field '{meta['x']}' must be a single handle like '@handle' (the account's own public X handle)")
     if "status" in meta and not meta["status"].lower().startswith(STATUS_OK):
         rep.err(f, f"Status '{meta['status']}' must be one of: {', '.join(STATUS_OK)} (or omit the line)")
+    if "role" in meta:
+        roles = [r.strip().lower() for r in meta["role"].split(",") if r.strip()]
+        unknown = [r for r in roles if r not in ("community",)]
+        if not roles or unknown:
+            rep.err(f, f"Role '{meta['role']}' must be 'community' (comma-separated known roles are allowed later)")
+        if "[[" in meta["role"]:
+            rep.warn(f, "Role is metadata, not a graph edge: write plain text (e.g. community), not a [[wikilink]]")
     if not any(l.strip() == "---" for l in lines[:14]):
         rep.warn(f, "no '---' line separating the header from the body")
     status = meta.get("status", "").lower()

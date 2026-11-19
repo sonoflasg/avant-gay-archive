@@ -40,8 +40,9 @@ AUTHOR = re.compile(r"^Author:\s*(.+)$", re.M | re.I)
 DATE = re.compile(r"^Date:\s*(.+)$", re.M | re.I)
 STATUS = re.compile(r"^Status:\s*(.+)$", re.M | re.I)
 XHANDLE = re.compile(r"^X:\s*@?([A-Za-z0-9_]{1,15})\s*$", re.M)
+ROLE = re.compile(r"^Role:\s*(.+)$", re.M | re.I)
 # Metadata lines: attribution, not graph edges and not summary text.
-META_LINE = re.compile(r"^(Source|Author|Date|Status|X):.*$", re.M | re.I)
+META_LINE = re.compile(r"^(Source|Author|Date|Status|X|Role):.*$", re.M | re.I)
 PFP_DIR = ROOT / "website" / "pfp"
 
 SITE_URL = "https://avantgay.sonoflasg.com"
@@ -224,6 +225,8 @@ def write_export(data):
             "contested": header.startswith("contested"),
             "summary": first_line(n.get("summary") or ""),
             "xHandle": n.get("xHandle"),
+            "roles": list(n.get("roles") or []),
+            "community": bool(n.get("community")),
             "links": list(n.get("outlinks") or []),
             "backlinks": n.get("backlinks", 0),
             "sources": n.get("sources") or [],
@@ -251,7 +254,7 @@ def write_export(data):
     with csv_path.open("w", encoding="utf-8", newline="") as f:
         w = csv.writer(f)
         w.writerow(["title", "path", "type", "folder", "status", "contested",
-                    "summary", "xHandle", "links", "backlinks", "sources",
+                    "summary", "xHandle", "roles", "community", "links", "backlinks", "sources",
                     "date", "lastModified"])
         for e in entries:
             sources = "; ".join(
@@ -261,7 +264,9 @@ def write_export(data):
             w.writerow([
                 e["title"], e["path"] or "", e["type"], e["folder"] or "",
                 e["status"], "true" if e["contested"] else "false",
-                e["summary"], e["xHandle"] or "", "; ".join(e["links"]),
+                e["summary"], e["xHandle"] or "", "; ".join(e["roles"]),
+                "true" if e["community"] else "false",
+                "; ".join(e["links"]),
                 e["backlinks"], sources, e["date"] or "", e["lastModified"] or "",
             ])
     scan_export(json_path)
@@ -314,6 +319,10 @@ def build_graph():
         xh = XHANDLE.search(text)
         handle = xh.group(1) if xh else None
         pfp = pfps.get(handle.lower()) if handle else None
+        role_m = ROLE.search(text)
+        roles = []
+        if role_m:
+            roles = [r.strip().lower() for r in role_m.group(1).split(",") if r.strip()]
         clean = META_LINE.sub("", body)
         clean = re.sub(r"\n{3,}", "\n\n", clean).strip().strip("-").strip()
         notes[canon(name)] = {
@@ -330,6 +339,8 @@ def build_graph():
             "status": status.group(1).strip() if status else None,
             "stub": len(clean) < 20,
             "xHandle": handle,
+            "roles": roles,
+            "community": "community" in roles,
             "pfp": pfp["image"] if pfp else None,
             "pfpCaptured": pfp["captured"].split(" ")[0] if pfp else None,
             "sources": parse_sources(text),
@@ -352,7 +363,8 @@ def build_graph():
                     "id": target, "type": "phantom", "folder": "",
                     "path": None, "summary": "", "source": None, "author": None,
                     "date": None, "status": None, "stub": True, "outlinks": [], "images": [],
-                    "xHandle": None, "pfp": None, "pfpCaptured": None, "sources": [],
+                    "xHandle": None, "roles": [], "community": False,
+                    "pfp": None, "pfpCaptured": None, "sources": [],
                 }
             links.append({"source": name, "target": notes[ct]["id"]})
             notes[canon(name)]["outlinks"].append(notes[ct]["id"])

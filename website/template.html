@@ -176,6 +176,10 @@
   #legend .lg-faces { color: var(--ink); border-color: rgba(255, 79, 163, 0.55); padding: 3px 9px; margin-right: 4px; }
   #legend .lg-faces:hover { border-color: var(--accent); }
   #legend .lg-faces[aria-pressed="true"] { border-color: var(--accent); background: rgba(255, 79, 163, 0.14); }
+  #legend .lg-community i { background: #f0a6ca; }
+  #legend .lg-community { color: var(--ink); border-color: rgba(240, 166, 202, 0.7); padding: 3px 9px; margin-right: 4px; }
+  #legend .lg-community:hover { border-color: #f0a6ca; }
+  #legend .lg-community[aria-pressed="true"] { border-color: #f0a6ca; background: rgba(240, 166, 202, 0.16); }
   #legend .lg-all { display: none; color: var(--accent2); }
   #legend.filtering .lg-all { display: flex; }
 
@@ -380,13 +384,16 @@ links.forEach(l => { nbrs.get(l.source)?.add(l.target); nbrs.get(l.target)?.add(
 let selected = null, hovered = null, focusSet = null;
 
 // ---------- category filter (legend) ----------
-// filter = null shows everything; otherwise a Set of node types, or the special "faces" view.
+// filter = null shows everything; otherwise a Set of node types, or a special view
+// ("faces", or "community" for the Role: community metadata tag).
 let filter = null;
 const FACES = "faces";
+const COMMUNITY = "community";
 function shown(n) {
   if (n === selected) return true;
   if (!filter) return true;
   if (filter.has(FACES)) return !!n.pfp;
+  if (filter.has(COMMUNITY)) return !!n.community;
   return filter.has(n.type);
 }
 // In the faces view, pictures are drawn at a legible minimum size (drawing only; layout unchanged).
@@ -565,7 +572,8 @@ function select(n, fromKey) {
   selected = n; focusSet = null;
   if (!fromKey) document.querySelectorAll(".key.active").forEach(k => k.classList.remove("active"));
   const col = COLORS[n.type] || COLORS.phantom;
-  document.getElementById("pType").textContent = TYPE_LABEL[n.type] || n.type;
+  const typeLabel = TYPE_LABEL[n.type] || n.type;
+  document.getElementById("pType").textContent = n.community ? typeLabel + " · community" : typeLabel;
   document.getElementById("pType").style.color = col;
   document.getElementById("pTitle").textContent = n.id;
   const meta = [];
@@ -759,7 +767,8 @@ document.getElementById("search").addEventListener("keydown", e => {
 
 // ---------- legend: category filters ----------
 // Click a category to show only it; click more to add them; click an active one to remove it.
-// "faces" shows persona nodes that have an X profile picture. "show all" resets.
+// "faces" shows persona nodes that have an X profile picture.
+// "community" shows people tagged Role: community. "show all" resets.
 const legend = document.getElementById("legend");
 const legendBtns = new Map();
 function setFilter(f) {
@@ -780,10 +789,14 @@ function legendButton(key, html, cls, title) {
 const facesCount = nodes.filter(n => n.pfp).length;
 legendButton(FACES, '<i></i>faces (' + facesCount + ')', "lg-faces", "Show only people and accounts with an X profile picture")
   .onclick = () => setFilter(filter && filter.has(FACES) ? null : new Set([FACES]));
+const communityCount = nodes.filter(n => n.community).length;
+legendButton(COMMUNITY, '<i></i>community (' + communityCount + ')', "lg-community", "Show collectors, commentators and others who live the scene day to day")
+  .onclick = () => setFilter(filter && filter.has(COMMUNITY) ? null : new Set([COMMUNITY]));
+function isSpecialFilter(f) { return f && (f.has(FACES) || f.has(COMMUNITY)); }
 Object.entries(TYPE_LABEL).forEach(([t, label]) => {
   legendButton(t, '<i style="background:' + COLORS[t] + '"></i>' + label, "", "Show " + label + " (click again to remove)")
     .onclick = () => {
-      if (!filter || filter.has(FACES)) return setFilter(new Set([t]));
+      if (!filter || isSpecialFilter(filter)) return setFilter(new Set([t]));
       const f = new Set(filter);
       f.has(t) ? f.delete(t) : f.add(t);
       setFilter(f);

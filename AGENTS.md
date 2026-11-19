@@ -66,6 +66,7 @@ Author: <plain-text compiler or author, e.g. your handle>
 Date: DD/MM/YYYY
 Status: needs-sources        # optional; see below
 X: @handle                   # optional; persona entries only, see below
+Role: community              # optional; see below
 
 ---
 
@@ -80,6 +81,7 @@ Rules:
 - **Header lines are metadata, not graph edges.** Write `Author:` as plain text. Never put `[[wikilinks]]` in `Source/Author/Date/Status`.
 - **Date** is `DD/MM/YYYY`: the date of the work or event for articles and threads, or the compile date for compiled entries.
 - **X** (optional, for people, artists, collectives, platforms and accounts): the entity's own public X handle, as `X: @handle`. Add it only when a source confirms it is the right account: the Automat paper or another cited source linking the name to the handle, or the account's own profile clearly naming the entity. Never guess. Maintainers capture the profile picture locally (`scripts/pfp_capture.py`, `website/pfp/manifest.json`); don't add image files yourself. Like the other header lines, it is metadata, not a graph edge.
+- **Role** (optional): `Role: community` marks a person, artist or account who lives the scene day to day as a collector, commentator, curator/documenter, Spaces host or meme-maker. It is metadata, not a graph edge, and it does not move the file. People who also make work stay in `People/` or `Artists/` and gain the Community filter on the map alongside their existing type. Write about what they did and said publicly, not who they are. A person can ask for a Community entry to be changed or removed through the [issue forms](https://github.com/sonoflasg/avant-gay-archive/issues/new/choose).
 - **Status:** omit it for a sourced entry. Use `needs-sources` when claims still lack sources (never delete such entries; source them). Use `contested` when the entry holds unresolved competing accounts.
 - **Wikilinks** are graph edges. Link to existing filenames exactly (`[[Galerie Yeche Lange]]`, not `[[Yeche Lange]]`). Use `[[Target|shown text]]` for a different label. A link to a name with no file creates a grey "phantom" node. Only do that on purpose, for something that deserves an entry. Link generously but meaningfully.
 - **The site shows plain text.** Use headings, bullet lists, bold and links. Do not use markdown tables (the site doesn't render them).
@@ -97,11 +99,12 @@ Rules:
 
 Fill in only what the sources support. Drop sections you can't source.
 
-**Artist** (`Artists/Name.md`), **Person** (`People/Name.md`): critics, collectors, curators, organisers
+**Artist** (`Artists/Name.md`), **Person** (`People/Name.md`): critics, collectors, curators, organisers. Add `Role: community` when the sources show they also live the scene day to day (collector, commentator, curator/documenter, host). Keep the file in its folder; the tag adds a Community filter on the map, it does not change the node type.
 ```
 Source: <their public profile or the main source>
 Author: <you>
 Date: DD/MM/YYYY
+Role: community              # optional
 
 ---
 

@@ -25,6 +25,7 @@ Author: <plain text, e.g. your handle>
 Date: DD/MM/YYYY
 Status: needs-sources     # optional: needs-sources | contested
 X: @handle                # optional: a persona's own confirmed X handle
+Role: community           # optional: day-to-day collector, commentator, curator, host
 
 ---
 
@@ -34,7 +35,9 @@ Sources:
 - [Author, “Title,” publication, date](https://…)
 ```
 
-`X:` holds a person's, collective's or platform's own public X handle, and only one a source confirms. The site shows that account's profile picture from a local copy. The header lines are metadata, not graph edges, so don't put `[[wikilinks]]` in them. `Status: needs-sources` flags a draft that still lacks primary sources. Never delete those notes; source them. Grey "phantom" nodes on the site are entries the archive already wants.
+`X:` holds a person's, collective's or platform's own public X handle, and only one a source confirms. The site shows that account's profile picture from a local copy. `Role: community` is an optional tag for people who live the scene day to day (collectors, commentators, curators/documenters, Spaces hosts, meme-makers). It does not move the file or change the node type; it adds a Community filter on the map. The header lines are metadata, not graph edges, so don't put `[[wikilinks]]` in them. `Status: needs-sources` flags a draft that still lacks primary sources. Never delete those notes; source them. Grey "phantom" nodes on the site are entries the archive already wants.
+
+If you have a Community entry and want it changed or removed, say so through the [issue forms](../../issues/new/choose) (Correction or Perspective is fine). The archive will not treat that as a dispute to be argued out in public if you are asking about your own entry.
 
 ## Editorial principles
 

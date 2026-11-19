@@ -2,6 +2,7 @@ Source: https://x.com/SAlgotrader
 Author: SonOfLasG
 Date: 14/11/2026
 X: @SAlgotrader
+Role: community
 
 ---
 
@@ -30,9 +31,11 @@ Patrician’s statements, quoted as his own account. Times are Melbourne time.
 - **On Tezos (10 Nov 2026, 7:57am AEDT):** “I like tezos. I will continue to release gay experiments there. I actually feel like there's potential for a gay renaissance there under the right conditions.” https://x.com/SAlgotrader/status/2119897076225999134 This replies to Giannis Sourdis, who had noted that artists including @SAlgotrader and @urmeinong have minted on Tezos.
 - **On a Merzbow trait (13 Nov 2026, 10:00am AEDT):** “That's a killer Merzbow drif. Maybe the most quintessential mifella trait.” https://x.com/SAlgotrader/status/2121015244227027176
 
+- **On a collection he calls John, and [[MiFella]] (19 Nov 2026, 12:54pm AEDT):** “If you're new to gay nft and don't know John, this might seem inexplicable to you, but I'm telling you, go look through the collection, really look. It really is up there close to MiFella for nailing something very specific culturally. Parker Ito wears one for a reason.” https://x.com/SAlgotrader/status/2123233423363879345 See [[Parker Ito]].
+
 Other public posts link his name to the same works:
-- A post by @glorp_goob (18 Oct 2026, 1:25am AEDT) credits “PiFella 2 Parasite Chamber by @SAlgotrader” (https://x.com/glorp_goob/status/2111463699592397094).
-- A @glorp_goob showcase (22 Oct 2026, 8:25pm AEDT) lists “Yeche Lunch - @SAlgotrader @1_2_sl333p” (https://x.com/glorp_goob/status/2113200007264235759).
+- A post by [[goob]] (@glorp_goob, 18 Oct 2026, 1:25am AEDT) credits “PiFella 2 Parasite Chamber by @SAlgotrader” (https://x.com/glorp_goob/status/2111463699592397094).
+- A [[goob]] (@glorp_goob) showcase (22 Oct 2026, 8:25pm AEDT) lists “Yeche Lunch - @SAlgotrader @1_2_sl333p” (https://x.com/glorp_goob/status/2113200007264235759).
 
 Sources:
 - [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/#references)
@@ -44,3 +47,4 @@ Sources:
 - [@SAlgotrader, 11 Nov 2026 3:59am AEDT](https://x.com/SAlgotrader/status/2120199749999395031)
 - [@SAlgotrader, 10 Nov 2026 7:57am AEDT](https://x.com/SAlgotrader/status/2119897076225999134)
 - [@SAlgotrader, 13 Nov 2026 10:00am AEDT](https://x.com/SAlgotrader/status/2121015244227027176)
+- [@SAlgotrader, 19 Nov 2026 12:54pm AEDT](https://x.com/SAlgotrader/status/2123233423363879345)
