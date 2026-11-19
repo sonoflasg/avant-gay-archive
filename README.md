@@ -2,7 +2,7 @@
 
 A community archive of the Avant Gay scene on Solana: the artists, collections, memes, feuds, forks, and lore — kept as an interlinked knowledge graph rather than a single narrative.
 
-**Live site:** https://sonoflasg.github.io/avant-gay-archive/
+**Live site:** https://avantgay.sonoflasg.com/
 
 Culture is a living organism. No single article can capture a scene; this archive holds many perspectives side by side, linked the way the culture actually connects. It started as one person's Obsidian vault, but ownership of the record belongs to the scene.
 

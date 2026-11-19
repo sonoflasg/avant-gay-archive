@@ -39,7 +39,10 @@ On 4 May 2026, 9:38am AEST, he posted a short video of a node map. The post says
 
 The repository README says the archive "started as one person's Obsidian vault". The earliest dated drafts in the vault are from 2–3 May 2026. *Inference:* the 4 May post shows that vault in progress.
 
-The public repository (first commit 5 Jul 2026) and site are https://github.com/sonoflasg/avant-gay-archive and https://sonoflasg.github.io/avant-gay-archive/. He is the repository's maintainer. Contributions follow CONTRIBUTING.md and AGENTS.md.
+The public repository (first commit 5 Jul 2026) and site are https://github.com/sonoflasg/avant-gay-archive and https://avantgay.sonoflasg.com/. He is the repository's maintainer. Contributions follow CONTRIBUTING.md and AGENTS.md.
+
+### Revisions
+- 19/11/2026 · SonOfLasG: Site address changed from https://sonoflasg.github.io/avant-gay-archive/ to https://avantgay.sonoflasg.com/. The old address now redirects (HTTP 301) to the new one: https://avantgay.sonoflasg.com/
 
 Sources:
 - [Automat, "Avant-Gay," 9 Nov 2026](https://automat.art/research/avant-gay/)

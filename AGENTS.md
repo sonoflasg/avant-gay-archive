@@ -6,7 +6,7 @@ This page tells an agent (or a person) exactly how to add to this archive. Read 
 
 ## 1. What this archive is
 
-A community archive of the Avant Gay scene (Solana and Ethereum NFT art, roughly 2021 onward), kept as an Obsidian vault and published as a graph at https://sonoflasg.github.io/avant-gay-archive/.
+A community archive of the Avant Gay scene (Solana and Ethereum NFT art, roughly 2021 onward), kept as an Obsidian vault and published as a graph at https://avantgay.sonoflasg.com/.
 
 - **Many attributed perspectives, not one story.** Every claim belongs to someone: a source, a participant, a critic. Write "X says…", not "it is a fact that…", whenever accounts differ.
 - **Disagreement stands side by side.** Never resolve a dispute by picking a winner or deleting a version.

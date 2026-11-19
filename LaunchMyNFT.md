@@ -22,11 +22,11 @@ phantom.com
 Background & Token
 
 - Founded around 2021–2022, based in Amsterdam (unfunded company).
-- There's an associated token called $MYNFT (Ethereum contract: 0xBF54EfdfF72Cdd3dE7b219bB8B41332A6cC96C9e), which was meant to power platform features, though it's not heavily traded or emphasized on the current site.
+- There's an associated token called $MYNFT, which was meant to power platform features, though it's not heavily traded or emphasized on the current site.
     
     coinmarketcap.com
     
-- Community: Active Discord (discord.gg/lmnft) and Twitter/X (@LaunchMyNFT).
+- Community: Twitter/X (@LaunchMyNFT).
 
 Pros & ConsPros:
 
@@ -46,5 +46,8 @@ Overall, it's a solid tool if you're a creator wanting to experiment with NFTs q
 bitrue.com
 
 You can check it out directly at [launchmynft.io](https://www.launchmynft.io/), browse live collections, or try creating one. Let me know if you want help with specifics like how to launch a collection!
+
+### Revisions
+- 19/11/2026 · SonOfLasG: Removed the $MYNFT token contract address and the community invite link. The archive does not publish wallet or contract addresses or invite links (see AGENTS.md). Nothing else in the entry changed. Source for the platform: https://www.launchmynft.io/
 
 Sources: [Automat, “Avant-Gay,” 9 Nov 2026](https://automat.art/research/avant-gay/#proj-launchmynft)
